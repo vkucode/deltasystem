@@ -1,9 +1,9 @@
+// @ts-check
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  images: {
-    domains: ["193.203.169.241"],
-    unoptimized: true,
-  },
+  /* config options here */
+  // output: "export",
 };
+
 module.exports = nextConfig;
