@@ -1,0 +1,8 @@
+Model Information:
+* title:	Burj Khalifa
+* source:	https://sketchfab.com/3d-models/burj-khalifa-4c61a54e608e4f69a131c26224cba2d1
+* author:	Macwelshman (https://sketchfab.com/Macwelshman)
+
+Model License:
+* license type:	SKETCHFAB Editorial (https://sketchfab.com/licenses)
+* requirements:	Use only in connection with events that are newsworthy or of public interest

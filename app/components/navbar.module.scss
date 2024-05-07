@@ -1,0 +1,16 @@
+.mainNav{
+    @apply fixed w-screen z-50 flex left-0 items-center justify-center uppercase;
+    background-color: rgba($color: #fff, $alpha: 1);
+    color: var(--textColorGold);
+    // background: rgb(76,185,182);
+    // background: linear-gradient(25deg, rgba(76,185,182,1) 0%, rgba(30,75,74,1) 100%);
+    .logoDiv{
+        @apply h-full py-7 px-16;
+        background: rgb(76,185,182);
+    background: linear-gradient(25deg, rgba(76,185,182,1) 0%, rgba(30,75,74,1) 100%);
+    }
+    .navLink{
+        @apply hidden lg:block h-[30px] overflow-hidden font-medium;
+        // color: var(--textColorGold);
+    }
+}

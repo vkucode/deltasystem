@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+.aboutUsSection{
+    @apply flex flex-col justify-center py-10 mb-64;
+    background-image: url('/assets/img/accueil/aboutUsFond.png');
+    h1{
+        @apply uppercase text-center;
+        letter-spacing: 5px;
+        color: var(--textColorGold);
+        font-family: var(--titleFont);
+    }
+    p{
+        @apply text-center max-w-5xl text-sm md:text-base;
+    }
+    .contactBTN{
+        @apply uppercase border-[3px] py-3 px-7 mt-8;
+        color: var(--textColorGold);
+        border-color: var(--textColorGold);
+        transition: 0.2s all ease-in-out;
+    }
+    .contactBTN:hover{
+        background: var(--textColorGold);
+        color: var(--textColorGreen);
+        box-shadow: 0px 0px 10px 1px var(--textColorGold)
+    }
+    .separateur{
+        @apply w-64 h-[2px] my-5;
+        background: var(--textColorGold); 
+    }
+    .offresBTN{
+        @apply uppercase text-center border-[3px] py-3 px-7 mt-8;
+        color: var(--textColorGreen);
+        border-color: var(--textColorGreen);
+        transition: 0.2s all ease-in-out;
+    }
+    .offresBTN:hover{
+        background: var(--textColorGreen);
+        color: var(--textColorGold);
+        box-shadow: 0px 0px 10px 1px var(--textColorGreen)
+    }
+
+}
