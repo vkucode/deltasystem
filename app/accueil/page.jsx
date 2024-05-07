@@ -92,7 +92,7 @@ const Accueil = () => {
                 <spotLight position={[70, 70, 0]} intensity={100000}/> color="#c9deff"*/} 
                 <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
                 <Model scale={scale} rotation={rotation}/>
-                <OrbitControls enableZoom={false} enablePan={false} minDistance={5.5} maxDistance={5.5} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
+                {/* <OrbitControls enableZoom={false} enablePan={false} minDistance={5.5} maxDistance={5.5} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
           </Canvas>
         </div>
       </section>
