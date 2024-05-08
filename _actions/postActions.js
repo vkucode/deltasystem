@@ -1,12 +1,11 @@
 "use server";
-
 import PostModel from "@/models/postModel";
 import connectDB from "@/config/database";
 
 export async function getPosts() {
   try {
     await connectDB();
-    const data = JSON.parse(JSON.stringify(await PostModel.find()));
+    const data = await PostModel.find().lean();
 
     // throw new Error("Error!");
 

@@ -1,7 +1,20 @@
 import { Schema, model, models } from "mongoose";
 
-const postSchema = new Schema({
-    msg: {
+const postSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    localisation: {
+      type: Object,
+      required: true,
+    },
+    details: {
+      type: Object,
+      required: true,
+    },
+    price: {
       type: String,
       required: true,
     },
@@ -9,6 +22,6 @@ const postSchema = new Schema({
   { timestamps: true }
 );
 
-const PostModel = models.post || model("post", postSchema);
+const PostModel = models.locals || model("locals", postSchema);
 
 export default PostModel;

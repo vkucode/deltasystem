@@ -1,0 +1,67 @@
+.contactPage{
+    @apply flex flex-col min-h-[50vh] mt-[15%] lg:mt-0 lg:flex-row w-screen justify-start items-center;
+    .infoDiv{
+        @apply w-full lg:w-3/4 flex flex-col justify-center py-10 items-center uppercase;
+        background: var(--textColorGreen);
+        font-family: "Montserrat";
+        div{
+            @apply border-l-[4px] lg:pl-8 pl-5;
+            border-color: var(--textColorGold);
+            color: var(--textColorGold);
+            letter-spacing: 3px;
+            h2{
+                @apply text-2xl;
+            }
+            p{
+                @apply text-base pl-8
+            }
+        }
+    }
+    .formDiv{
+        @apply w-full lg:w-fit flex flex-col ml-0 mt-0 lg:-ml-[20%] lg:mt-[10%] justify-center items-center bg-white font-medium py-10 px-5 lg:px-16;
+        box-shadow: 0px 0px 50px 1px #000;
+        h1{
+            @apply text-3xl uppercase;
+            color: var(--textColorGreen);
+            letter-spacing: 3px;
+            font-family: 'Montserrat';
+        }
+        div{
+            @apply flex flex-row lg:gap-5 gap-2 mt-8;
+
+            input{
+                @apply border-[1px] border-teal-950 py-3 px-0 lg:px-5;
+                font-family: 'Montserrat';
+                letter-spacing: 2px;
+            }
+            input::placeholder{
+                @apply pl-5 lg:pl-0
+            }
+
+        }
+        textarea{
+            @apply border-[1px] border-teal-950 py-3 px-5 mt-5 w-full;
+            max-height: 150px;
+        }
+        textarea::placeholder{
+            font-family: 'Montserrat';
+            letter-spacing: 2px;
+        }
+        .sendBTN{
+            @apply uppercase py-3 px-8 mt-5;
+            color: var(--textColorGold);
+            border: 2px solid var(--textColorGreen);
+            background: var(--textColorGreen);
+            font-family: 'Montserrat';
+            scale: 0.95;
+            letter-spacing: 2px;
+            transition: 0.2s all ease-in-out;
+        }
+        .sendBTN:hover{
+            scale: 1;
+            color: var(--textColorGreen);
+            background: var(--textColorGold);
+
+        }
+    }
+}

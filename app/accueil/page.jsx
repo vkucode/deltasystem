@@ -1,10 +1,9 @@
 'use client'
 import React, {useEffect, useRef, useState} from 'react'
 import Image from 'next/image';
-import { useThree, useFrame } from '@react-three/fiber';
-import { OrbitControls, useTexture } from '@react-three/drei';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls, Segment, useTexture } from '@react-three/drei';
 import { ChromaticAberration, Bloom, EffectComposer } from '@react-three/postprocessing';
-import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -13,15 +12,22 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import styles from './accueil.module.scss'
 import Link from 'next/link';
 import AboutUs from './components/aboutUs';
+import 'animate.css';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import ScrollSmoother from 'gsap/src/ScrollSmoother';
 
 
 const Accueil = () => {
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     const model3d = "assets/models/new/burj.glb";
     const rotationRef = useRef([0.1, 0.1, 0.1]);
-    const [rotation, setRotation] = useState([5.5, 0, 0]);
+    const [logoDelta, setLogoDelta] = useState("animate__fadeInUp animate__delay-1s")
+    const [rotation, setRotation] = useState([5.2, 0, 0]);
     const [scale, setScale] = useState(0.07);  //0.07
     const [rotationSpeed, setRotationSpeed] = useState(0.001); // Viteza de rotație inițială
-    const [positionY, setPositionY] = useState(-7); // Poziția inițială pe axa Y
+    const [positionY, setPositionY] = useState(-8); // Poziția inițială pe axa Y
   
     const Model = ({ scale }) => {
       const modelRef = useRef();
@@ -50,55 +56,90 @@ const Accueil = () => {
       }
       });
 
-      useFrame(() => {
-          if (modelRef.current) {
-              modelRef.current.rotation.y += rotationSpeed;
-          }
-      });
+      // useFrame(() => {
+      //     if (modelRef.current) {
+      //         modelRef.current.rotation.y += rotationSpeed;
+      //     }
+      // });
 
       return <primitive ref={modelRef} object={model.scene} scale={scale} rotation={rotation} position={[0, positionY, 0]} />;
   };
+
+
+{/*--------------------------------------------Animatiile de intrare si animatiile la burj Khalifa */}
+    useEffect(() => {
+
+      ScrollSmoother.create({
+        smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+        effects: true, // looks for data-speed and data-lag attributes on elements
+        smoothTouch: 0.4, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+      });
+      
+    }, []);
+
+
+  useEffect(() => {
+
+    ScrollTrigger.create({
+      trigger: "#timeLineBurj",
+      markers: true,
+      start: "top 400px",
+      end: "bottom 200px",
+      scrub: 2,
+      onEnter: () => setRotation([4.9, 0, 0]),
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const rotationValueY = progress * 3 * Math.PI;
+        const rotationValueX = 5.2 + progress * (6.1 - 5.2);
+        const setPostitionBurjY = -8 + (progress * (0 - 45));
+        setRotation([rotationValueX, rotationValueY, 0]);
+        setPositionY(setPostitionBurjY);
+      }
+
+    });
+
+
+
+  }, []);
+
   
-      const CustomOrbitControls = () => {
-        const controls = useRef();
-        const { camera } = useThree();
-    
-        useEffect(() => {
-          if (controls.current) {
-            controls.current.enableZoom = false; // Dezactivează zoom-ul
-            controls.current.enablePan = false; // Asigură că pan-ul este dezactivat
-            controls.current.minDistance = 5.5;
-            controls.current.maxDistance = 5.5;
-            controls.current.minPolarAngle = Math.PI / 2;
-            controls.current.maxPolarAngle = Math.PI / 2;
-          }
-        }, []);
-        return <OrbitControls ref={controls} args={[camera]} />;
-    };
-  
+
+
+
+
+
+
+{/* ----------------------------------------------------------- Animatiile de intrare si animatiile la burj Khalifa */}
+
+
+
     return (
       <>
-      
-      <section className={styles.modelSection}>
-        <div className={styles.videoBack}>
-          <video src="assets/video/sky.mp4" muted autoPlay loop/>
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+        <section className={`${styles.modelSection}`} >
+          
+        </section>
+        {/* <section>
+            <AboutUs />
+        </section> */}
         </div>
-        <div className={styles.logoBack}>
-          <Image src="/assets/img/accueil/logoBig.png" width={2000} height={500} alt='logo Delta' />
-        </div>
-        <div className={styles.burjKhalif}>
-          <Canvas style={{ width: "100vw", height: "100vh" }}>
-                {/* <pointLight position={[12, -2, 0]} intensity={10000} />
-                <spotLight position={[70, 70, 0]} intensity={100000}/> color="#c9deff"*/} 
-                <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
-                <Model scale={scale} rotation={rotation}/>
-                {/* <OrbitControls enableZoom={false} enablePan={false} minDistance={5.5} maxDistance={5.5} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
-          </Canvas>
-        </div>
-      </section>
-      <section>
-          <AboutUs />
-      </section>
+      </div>
+      <div>
+      <div className={`${styles.videoBack} fixed animate__animated animate__fadeIn`}>
+            <video src="assets/video/sky.mp4" muted autoPlay loop/>
+          </div>
+          <div className={styles.logoBack}>
+            <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} id='logoDelta' alt='logo Delta' />
+          </div>
+          <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 top-[30vh] w-full`} id='timeLineBurj'></div>
+          <div className={`${styles.burjKhalif} fixed z-30 animate__animated animate__fadeIn animate__delay-2s`} id='burjKhalifa'>
+            <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
+                  <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
+                  <Model scale={scale} rotation={rotation}/>
+            </Canvas>
+          </div>
+      </div>
       </>
     );
 }

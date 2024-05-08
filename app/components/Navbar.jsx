@@ -33,7 +33,7 @@ const FlyoutNav = () => {
       ${
         scrolled
           ? "bg-teal-900 md:bg-white py-0 shadow-xl text-emerald-800"
-          : "bg-white-950/0 py-0 shadow-none text-white"
+          : "bg-white-950/0 py-0 shadow-none text-emerald-800"
       }`}
     >
       <div className="mx-auto flex w-full items-center gap-24 justify-between lg:justify-center">
@@ -50,7 +50,7 @@ const FlyoutNav = () => {
 
 const Logo = () => {
   return (
-    <a href="#">
+    <a href="/">
       <div className="py-5 px-10 bg-teal-900">
         <Image src="/assets/img/navbar/logoHeader.png" width={200} height={100} alt="logo Delta" />
       </div>
@@ -220,7 +220,7 @@ export default Navbar;
 const LINKS = [
   {
     text: "Achat",
-    href: "#",
+    href: "/achat",
   },
   {
     text: "Location",
@@ -236,7 +236,7 @@ const LINKS = [
   },
   {
     text: "Nous contacter",
-    href: "#",
+    href: "/contact",
   },
   {
     text: "EN | FR",
