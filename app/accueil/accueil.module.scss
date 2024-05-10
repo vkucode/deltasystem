@@ -1,9 +1,6 @@
 
 .modelSection{
-    position: relative;
-    height: 550vh;
-    width: 100vw;
-    overflow-x: hidden!important;
+    @apply relative z-40 h-[650vh] w-screen;
 }
 .videoBack{
     @apply fixed z-0 top-0 left-0 w-screen h-screen object-cover;
@@ -20,17 +17,15 @@
         @apply w-full;
     }
 }
-.burjKhalif{
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden!important;
-}
-.textLogo{
-    @apply absolute w-full h-dvh flex flex-col justify-center items-center p-20 z-10;
-    background: rgba($color: #fff, $alpha: 0.2);
-    backdrop-filter: blur(0px);
+.textDiv{
+    @apply fixed z-40;
+    font-family: 'Montserrat';
+    mix-blend-mode: normal;
     h1{
-        @apply uppercase text-3xl mt-4;
-        letter-spacing: 7px;
+        @apply text-8xl uppercase text-green-50 font-bold;
+        letter-spacing: 10px;
+    }
+    p{
+        @apply text-xl;
     }
 }

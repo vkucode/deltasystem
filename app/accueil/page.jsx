@@ -3,7 +3,6 @@ import React, {useEffect, useRef, useState} from 'react'
 import Image from 'next/image';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Segment, useTexture } from '@react-three/drei';
-import { ChromaticAberration, Bloom, EffectComposer } from '@react-three/postprocessing';
 import { Suspense } from 'react';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -23,11 +22,13 @@ const Accueil = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     const model3d = "assets/models/new/burj.glb";
     const rotationRef = useRef([0.1, 0.1, 0.1]);
-    const [logoDelta, setLogoDelta] = useState("animate__fadeInUp animate__delay-1s")
-    const [rotation, setRotation] = useState([5.2, 0, 0]);
+    const [burjOpacityStyle, setBurjOpacityStyle] = useState("hidden");
+    const [logoDelta, setLogoDelta] = useState("animate__fadeInUp animate__delay-1s");
+    const [windowsStyles, setWindowsStyles] = useState("");
+    const [rotation, setRotation] = useState([-1, 0, 0]);
     const [scale, setScale] = useState(0.07);  //0.07
     const [rotationSpeed, setRotationSpeed] = useState(0.001); // Viteza de rotație inițială
-    const [positionY, setPositionY] = useState(-8); // Poziția inițială pe axa Y
+    const [positionY, setPositionY] = useState(-80); // Poziția inițială pe axa Y
   
     const Model = ({ scale }) => {
       const modelRef = useRef();
@@ -72,26 +73,55 @@ const Accueil = () => {
       ScrollSmoother.create({
         smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
         effects: true, // looks for data-speed and data-lag attributes on elements
-        smoothTouch: 0.4, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+        smoothTouch: 2, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+        content: "#smooth-content",
+        wrapper: "smooth-wrapper"
       });
       
     }, []);
 
+    useEffect(() => {
+
+      ScrollTrigger.create({
+        trigger: "#tlBurjFirst",
+        start: "top 100px",
+        end: "bottom 100px",
+        scrub: true,
+        // markers: true,
+        ease: "power2.out",
+        onEnter: () => {setPositionY('-80'), setLogoDelta("opacity-50")},
+        onLeave: () => setPositionY('-8'),
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const negativeOpacity = 100 - (progress * 100);
+          const setPostitionBurjY = -80 + (progress * 72);
+          const rotationValueX = -1.5 + (progress * 1);
+          setLogoDelta("opacity-" + negativeOpacity);
+          setRotation([rotationValueX, 0, 0]);
+          setPositionY(setPostitionBurjY);
+        }
+        
+      });
+  
+  
+  
+    }, []);
+  
 
   useEffect(() => {
 
     ScrollTrigger.create({
       trigger: "#timeLineBurj",
-      markers: true,
+      endTrigger: "",
       start: "top 400px",
       end: "bottom 200px",
-      scrub: 2,
-      onEnter: () => setRotation([4.9, 0, 0]),
+      scrub: true,
+      onEnter: () => {setRotation([-0.5, 0, 0]);},
       onUpdate: (self) => {
         const progress = self.progress;
         const rotationValueY = progress * 3 * Math.PI;
-        const rotationValueX = 5.2 + progress * (6.1 - 5.2);
-        const setPostitionBurjY = -8 + (progress * (0 - 45));
+        const rotationValueX = -0.5 + (progress * 0.5);
+        const setPostitionBurjY = -8 + (progress * (0 - 50));
         setRotation([rotationValueX, rotationValueY, 0]);
         setPositionY(setPostitionBurjY);
       }
@@ -102,14 +132,38 @@ const Accueil = () => {
 
   }, []);
 
-  
-
-
-
-
-
-
 {/* ----------------------------------------------------------- Animatiile de intrare si animatiile la burj Khalifa */}
+{/* ----------------------------------------------------------- Animatiile de intrare si disparitie TEXT */}  
+
+const [firstTextDiv, setFirstTextDiv] = useState("opacity-0");
+
+useEffect(() => {
+
+  ScrollTrigger.create({
+    trigger: "#tlFirstTextDiv",
+    start: "top 600px",
+    end: "bottom 400px",
+    // markers: true,
+    scrub: true,
+    onEnter: () => setFirstTextDiv("animate__fadeInUp"),
+    onLeave: () => setFirstTextDiv("animate__fadeOutUp"),
+    onLeaveBack: () => setFirstTextDiv("animate__fadeOutUp"),
+    onEnterBack: () => setFirstTextDiv("animate__fadeInUp"),
+    onToggle: (self) => {
+      setFirstTextDiv("animate__fadeInUp")
+    }
+
+  });
+
+
+
+}, []);
+
+
+
+
+{/* ----------------------------------------------------------- Animatiile de intrare si disparitie TEXT */}  
+
 
 
 
@@ -118,28 +172,41 @@ const Accueil = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
         <section className={`${styles.modelSection}`} >
-          
-        </section>
-        {/* <section>
-            <AboutUs />
-        </section> */}
+          </section>        
         </div>
       </div>
+
       <div>
-      <div className={`${styles.videoBack} fixed animate__animated animate__fadeIn`}>
-            <video src="assets/video/sky.mp4" muted autoPlay loop/>
+        <div className={`${styles.videoBack} fixed animate__animated animate__fadeIn`}>
+              <video src="assets/video/sky.mp4" muted autoPlay loop/>
+            </div>
+            <div className={`${styles.logoBack}`} id='logoDelta'>
+                <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
+
+              </div>
+
+            
+            {/**--------------------------------------------------------------------------------------------- */}  
+            <div id='tlBurjFirst' className={`w-screen min-h-[150vh] top-[10vh] absolute z-0`}></div>
+            <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 md:top-[200vh] top-[220vh] w-full`} id='timeLineBurj'></div>
+            <div id='tlFirstTextDiv' className={`absolute min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
+            {/**--------------------------------------------------------------------------------------------- */}  
+            <div className={`fixed animate__animated top-0 z-30  w-full min-h-[100vh]`} id='burjKhalifa'>
+              <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
+                    <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
+                    <Model scale={scale} rotation={rotation}/>
+              </Canvas>
+            </div>
+        </div>
+
+        <section>
+          <div  className={`${styles.textDiv} text-center left-[50%] top-[70%] translate-y-[-50%] translate-x-[-50%]`}>
+            <h1 className={`animate__animated ${firstTextDiv}`}>Welcome to Delta</h1>
           </div>
-          <div className={styles.logoBack}>
-            <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} id='logoDelta' alt='logo Delta' />
-          </div>
-          <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 top-[30vh] w-full`} id='timeLineBurj'></div>
-          <div className={`${styles.burjKhalif} fixed z-30 animate__animated animate__fadeIn animate__delay-2s`} id='burjKhalifa'>
-            <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
-                  <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
-                  <Model scale={scale} rotation={rotation}/>
-            </Canvas>
-          </div>
-      </div>
+          {/* <div className={`${styles.textDiv} hidden`}>
+            <h1>Lorem Ipsum</h1>
+          </div> */}
+        </section>
       </>
     );
 }
