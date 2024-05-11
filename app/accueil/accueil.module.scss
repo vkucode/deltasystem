@@ -22,7 +22,7 @@
     font-family: 'Montserrat';
     mix-blend-mode: normal;
     h1{
-        @apply text-8xl uppercase text-green-50 font-bold;
+        @apply text-5xl md:text-8xl uppercase text-green-50 font-bold;
         letter-spacing: 10px;
     }
     p{

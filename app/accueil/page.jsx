@@ -135,7 +135,12 @@ const Accueil = () => {
 {/* ----------------------------------------------------------- Animatiile de intrare si animatiile la burj Khalifa */}
 {/* ----------------------------------------------------------- Animatiile de intrare si disparitie TEXT */}  
 
-const [firstTextDiv, setFirstTextDiv] = useState("opacity-0");
+const [firstTextDiv, setFirstTextDiv] = useState("hidden");
+const [secondTextDiv, setSecondTextDiv] = useState("hidden");
+const [thirdTextDiv, setThirdTextDiv] = useState("hidden");
+const [fourthTextDiv, setFourthTextDiv] = useState("hidden");
+const [lastTextDiv, setLastTextDiv] = useState("hidden");
+
 
 useEffect(() => {
 
@@ -190,6 +195,10 @@ useEffect(() => {
             <div id='tlBurjFirst' className={`w-screen min-h-[150vh] top-[10vh] absolute z-0`}></div>
             <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 md:top-[200vh] top-[220vh] w-full`} id='timeLineBurj'></div>
             <div id='tlFirstTextDiv' className={`absolute min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
+            <div id='tlSecondTextDiv' className=''></div>
+            <div id='tlThirdTextDiv' className=''></div>
+            <div id='tlFourthTextDiv' className=''></div>
+            <div id='tlLastTextDiv' className=''></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed animate__animated top-0 z-30  w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
@@ -200,12 +209,21 @@ useEffect(() => {
         </div>
 
         <section>
-          <div  className={`${styles.textDiv} text-center left-[50%] top-[70%] translate-y-[-50%] translate-x-[-50%]`}>
+          <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${firstTextDiv}`}>Welcome to Delta</h1>
           </div>
-          {/* <div className={`${styles.textDiv} hidden`}>
-            <h1>Lorem Ipsum</h1>
-          </div> */}
+          <div className={`${styles.textDiv}`}>
+            <h1 className={`animate__animated ${secondTextDiv}`}>Lorem Ipsum</h1>
+          </div>
+          <div className={`${styles.textDiv}`}>
+            <h1 className={`animate__animated ${thirdTextDiv}`}>Lorem Ipsum</h1>
+          </div>
+          <div className={`${styles.textDiv}`}>
+            <h1 className={`animate__animated ${fourthTextDiv}`}>Lorem Ipsum</h1>
+          </div>
+          <div className={`${styles.textDiv}`}>
+            <h1 className={`animate__animated ${lastTextDiv}`}>Lorem Ipsum</h1>
+          </div>
         </section>
       </>
     );
