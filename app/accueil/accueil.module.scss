@@ -22,10 +22,24 @@
     font-family: 'Montserrat';
     mix-blend-mode: normal;
     h1{
-        @apply text-5xl md:text-8xl uppercase text-green-50 font-bold;
+        @apply text-2xl sm:text-4xl md:text-7xl uppercase font-bold;
         letter-spacing: 10px;
+    }
+    button{
+        @apply uppercase mr-3 ml-0 mt-3 py-2 px-10 text-lg border-2 border-teal-900; 
     }
     p{
         @apply text-xl;
+    }
+    .cardHome{
+        @apply h-full w-[33.3%] scale-95 flex flex-col border-2 border-teal-700 justify-center items-center py-2 md:px-5 px-3 bg-teal-700 text-white;
+        transition: 0.2s all ease-in-out;
+        h1{
+            @apply md:text-3xl text-sm uppercase;
+            letter-spacing: 5px;
+        }
+    }
+    .cardHome:hover{
+        @apply bg-transparent scale-100 text-teal-700;
     }
 }
