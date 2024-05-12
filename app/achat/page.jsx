@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './achat.module.scss'
 import { getPosts } from "@/_actions/postActions";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default async function AchatPage(){
   const { data, errMsg } = await getPosts();
