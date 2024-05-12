@@ -361,12 +361,12 @@ useEffect(() => {
             <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 md:top-[210vh] top-[220vh] w-full`} id='timeLineBurj'></div>
             <div id='tlFirstTextDiv' className={`absolute min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
             <div id='tlSecondTextDiv' className={`absolute min-h-[40vh] top-[260vh] z-0 w-screen`}></div>
-            <div id='recenterBurj2to3' className={`absolute min-h-[20vh] top-[320vh] z-0 w-screen`}></div>
-            <div id='tlThirdTextDiv' className={`absolute min-h-[40vh] top-[350vh] z-0 w-screen`}></div>
-            <div id='recenterBurj3to4' className={`absolute min-h-[20vh] top-[410vh] z-0 w-screen`}></div>
-            <div id='tlFourthTextDiv' className='absolute min-h-[40vh] top-[440vh] z-0 w-screen'></div>
-            <div id='recenterBurj4to5' className={`absolute min-h-[30vh] top-[500vh] z-0 w-screen`}></div>
-            <div id='tlLastTextDiv' className='absolute min-h-[20vh] top-[560vh] z-0 w-screen'></div>
+            <div id='recenterBurj2to3' className={`absolute min-h-[40vh] top-[310vh] z-0 w-screen`}></div>
+            <div id='tlThirdTextDiv' className={`absolute min-h-[40vh] top-[360vh] z-0 w-screen`}></div>
+            <div id='recenterBurj3to4' className={`absolute min-h-[40vh] top-[420vh] z-0 w-screen`}></div>
+            <div id='tlFourthTextDiv' className='absolute min-h-[40vh] top-[470vh] z-0 w-screen'></div>
+            <div id='recenterBurj4to5' className={`absolute min-h-[40vh] top-[520vh] z-0 w-screen`}></div>
+            <div id='tlLastTextDiv' className='absolute min-h-[40vh] top-[560vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed animate__animated top-0 z-30  w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
@@ -386,13 +386,13 @@ useEffect(() => {
               <button>button</button>
             </h1>
           </div>
-          <div className={`${styles.textDiv} text-left left-[40%] md:left-[25%] md:top-[50%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
+          <div className={`${styles.textDiv} text-left left-[40%] md:left-[25%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${thirdTextDiv} text-teal-800`}>
               Lorem&nbsp;Ipsum3<br />
               <button>button</button>
             </h1>
           </div>
-          <div className={`${styles.textDiv} text-right left-[60%] md:left-[75%] md:top-[50%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
+          <div className={`${styles.textDiv} text-right left-[60%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${fourthTextDiv} text-teal-800`}>
               Lorem&nbsp;Ipsum4<br />
               <button>button</button>
