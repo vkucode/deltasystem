@@ -32,14 +32,20 @@
         @apply text-xl;
     }
     .cardHome{
-        @apply h-full w-[33.3%] scale-95 flex flex-col border-2 border-teal-700 justify-center items-center py-2 md:px-5 px-3 bg-teal-700 text-white;
+        @apply h-full w-[33.3%] scale-95 flex flex-col border-2 justify-center items-center py-2 md:px-5 px-3;
         transition: 0.2s all ease-in-out;
+        background: var(--textColorGreen);
+        border-color: var(--textColorGreen);
         h1{
             @apply md:text-3xl text-sm uppercase;
+            color: var(--textColorGold);
             letter-spacing: 5px;
         }
     }
     .cardHome:hover{
         @apply bg-transparent scale-100 text-teal-700;
+        h1{
+            color: var(--textColorGreen);
+        }
     }
 }

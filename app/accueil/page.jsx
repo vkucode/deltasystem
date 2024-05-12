@@ -203,7 +203,7 @@ useEffect(() => {
   ScrollTrigger.create({
     trigger: "#recenterBurj2to3",
     start: "top 500px",
-    end: "bottom 450px",
+    end: "bottom 500px",
     // markers: true,
     id: "tl 2 to 3",
     scrub: true,
@@ -283,7 +283,7 @@ useEffect(() => {
     },
     onUpdate: (self) =>{
       const progress = self.progress;
-      const secondTextPosX = 0 - (progress * 4);
+      const secondTextPosX = 0 - (progress * 3);
       setPositionX(secondTextPosX);
     }
 
@@ -300,11 +300,11 @@ useEffect(() => {
     // markers: true,
     id: "tl 4 to 5",
     scrub: true,
-    onEnter: () => setPositionX(-4),
+    onEnter: () => setPositionX(-3),
     onLeave: () => setPositionX(0),
     onUpdate: (self) =>{
       const progress = self.progress;
-      const secondTextPosX = -4 + (progress * 4);
+      const secondTextPosX = -3 + (progress * 3);
       setPositionX(secondTextPosX);
     }
 
@@ -320,12 +320,12 @@ useEffect(() => {
     end: "bottom 400px",
     // markers: true,
     scrub: true,
-    onEnter: () => setLastTextDiv("animate__fadeInUp"),
+    onEnter: () => setLastTextDiv("animate__fadeInDown"),
     onLeave: () => setLastTextDiv(""),
     onLeaveBack: () => setLastTextDiv("animate__fadeOutUp"),
     onEnterBack: () => setLastTextDiv(""),
     onToggle: (self) => {
-      setLastTextDiv("animate__fadeInUp")
+      setLastTextDiv("animate__fadeInDown")
     },
   });
 
@@ -378,7 +378,7 @@ useEffect(() => {
 
         <section>
           <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${firstTextDiv} text-green-50`}>Welcome to Delta</h1>
+            <h1 className={`animate__animated ${firstTextDiv} text-white flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
           </div>
           <div className={`${styles.textDiv} text-right left-[65%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${secondTextDiv} text-teal-800`}>
@@ -399,15 +399,18 @@ useEffect(() => {
             </h1>
           </div>
           <div className={`${styles.textDiv} text-center left-[50%] md:top-[40%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${lastTextDiv} md:h-[130px] h-[100px] flex flex-row gap-1 md:gap-10 justify-center items-center`}>
-              <div className={`${styles.cardHome}`}>
-                <h1>Achat</h1>
-              </div>
-              <div className={`${styles.cardHome}`}>
-                <h1>Location</h1>
-              </div>
-              <div className={`${styles.cardHome}`}>
-                <h1>Gestion<br/>Locative</h1>
+            <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center`}>
+              <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-full max-w-[600px]' alt='logo' />
+              <div className='flex flex-row gap-1 md:h-[130px] h-[100px]  md:gap-10 justify-center items-center'>
+                <a href='/achat' className={`${styles.cardHome}`}>
+                  <h1>Achat</h1>
+                </a>
+                <a href='#' className={`${styles.cardHome}`}>
+                  <h1>Location</h1>
+                </a>
+                <a href='#' className={`${styles.cardHome}`}>
+                  <h1>Gestion<br/>Locative</h1>
+                </a>  
               </div>
             </h1>
           </div>
