@@ -348,8 +348,8 @@ useEffect(() => {
       </div>
 
       <div>
-        <div className={`${styles.videoBack} fixed animate__animated animate__fadeIn`}>
-              <video src="assets/video/sky.mp4" muted autoPlay loop/>
+        <div className={`${styles.videoBack} pointer-events-none fixed animate__animated animate__fadeIn`}>
+              <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/>
             </div>
             <div className={`${styles.logoBack}`} id='logoDelta'>
                 <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
@@ -368,7 +368,7 @@ useEffect(() => {
             <div id='recenterBurj4to5' className={`absolute min-h-[40vh] top-[520vh] z-0 w-screen`}></div>
             <div id='tlLastTextDiv' className='absolute min-h-[40vh] top-[560vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div className={`fixed animate__animated top-0 z-30  w-full min-h-[100vh]`} id='burjKhalifa'>
+            <div className={`fixed animate__animated top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
                     <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
                     <Model scale={scale} rotation={rotation}/>
@@ -400,7 +400,7 @@ useEffect(() => {
           </div>
           <div className={`${styles.textDiv} text-center left-[50%] md:top-[40%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center`}>
-              <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-full max-w-[600px]' alt='logo' />
+              <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
               <div className='flex flex-row gap-1 md:h-[130px] h-[100px]  md:gap-10 justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
                   <h1>Achat</h1>

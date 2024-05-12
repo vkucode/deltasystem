@@ -1,15 +1,15 @@
 
 .modelSection{
-    @apply relative z-40 h-[650vh] w-screen;
+    @apply relative z-[60] h-[650vh] w-screen;
 }
 .videoBack{
-    @apply fixed z-0 top-0 left-0 w-screen h-screen object-cover;
+    @apply fixed z-[60] top-0 left-0 w-screen h-screen object-cover;
     video{
         @apply w-screen h-screen object-cover;
     } 
 }
 .logoBack{
-    @apply absolute z-10 top-0 flex flex-col w-[80%] md:w-full md:px-20 justify-center items-center h-screen object-cover; 
+    @apply absolute z-[70] top-0 flex flex-col w-[80%] md:w-full md:px-20 justify-center items-center h-screen object-cover; 
     max-width: 1200px;
     left: 50%;
     transform: translateX(-50%);
@@ -18,7 +18,7 @@
     }
 }
 .textDiv{
-    @apply fixed z-40;
+    @apply fixed z-[70];
     font-family: 'Montserrat';
     mix-blend-mode: normal;
     h1{
