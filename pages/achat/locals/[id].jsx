@@ -48,7 +48,7 @@ import styles from './singleAchat.module.scss'
         <section className={styles.galleryImg}>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
         </section>
-        <section>
+        <section >
         <h1>{local.name}</h1>
         <p>Chambres: {local.details.chambre}</p>
         <p>Surface: {local.details.surface} m²</p>

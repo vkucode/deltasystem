@@ -1,4 +1,6 @@
 import { getPosts } from "@/_actions/postActions";
+import styles from '../achat/achat.module.scss'
+import Image from "next/image";
 
 
 export default async function LocationPage(){
