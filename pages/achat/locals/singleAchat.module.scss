@@ -1,0 +1,64 @@
+.localDetails{
+    @apply mt-[10vh] flex flex-col justify-center items-center;
+    .galleryImg{
+        @apply w-screen flex flex-row object-cover h-[350px];
+    }
+    .content{
+        @apply flex flex-col md:flex-row max-w-7xl w-full;
+        .detailsLocal{
+            @apply flex flex-col w-full md:w-[70%] mb-10 pl-5 md:pl-0;
+            font-family: 'Montserrat';
+            letter-spacing: 2px;
+            h1{
+                @apply uppercase text-3xl;
+            }
+            .caracteristics{
+                @apply w-full;
+                div{
+                    @apply w-full flex flex-row justify-between pb-[3px] pt-3 border-b-[1px] pr-10;
+                }
+            }
+        }
+        .contactBlock{
+            @apply flex flex-col w-full md:w-[30%] py-7 mt-5 h-fit;
+            box-shadow: -10px 10px 20px 0px #000;
+            font-family: 'Montserrat';
+            h2{
+                @apply text-xl uppercase text-teal-800 font-medium text-center;
+                letter-spacing: 2px;
+            }
+            form{
+                @apply w-full px-5 flex flex-col gap-2 justify-center items-center;
+                input{
+                    @apply w-full py-2 mt-1 border-b-[2px] border-teal-800 pl-3 text-black;
+                    outline: none;
+                    transition: 0.2s all ease-in-out;
+                }
+                input:focus{
+                    @apply border-b-[3px] border-teal-900;
+                    transition: 0.2s all ease-in-out;
+                }
+                input::placeholder{
+                    @apply uppercase text-sm text-teal-800;
+                }
+                textarea{
+                    @apply w-full py-2 mt-1 border-b-[2px] border-teal-800 pl-3 text-black;
+                    outline: none;
+                    min-height: 45px;
+                    max-height: 150px;
+                }
+                textarea::placeholder{
+                    @apply uppercase text-sm text-teal-800;
+                }
+                button{
+                    @apply bg-teal-800 border-2 scale-95 border-teal-800 mt-10 font-medium text-white py-2 px-5 uppercase;
+                    letter-spacing: 2px;
+                    transition: 0.2s all ease-in-out;
+                }
+                button:hover{
+                    @apply bg-transparent text-teal-800 scale-100;
+                }
+            }
+        }
+    }
+}

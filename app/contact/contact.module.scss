@@ -31,6 +31,7 @@
 
             input{
                 @apply border-[1px] border-teal-950 py-3 px-0 lg:px-5;
+                outline: none;
                 font-family: 'Montserrat';
                 letter-spacing: 2px;
             }
@@ -41,6 +42,7 @@
         }
         textarea{
             @apply border-[1px] border-teal-950 py-3 px-5 mt-5 w-full;
+            outline: none;
             max-height: 150px;
         }
         textarea::placeholder{

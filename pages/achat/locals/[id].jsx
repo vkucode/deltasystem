@@ -48,11 +48,56 @@ import styles from './singleAchat.module.scss'
         <section className={styles.galleryImg}>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
         </section>
-        <section >
-        <h1>{local.name}</h1>
-        <p>Chambres: {local.details.chambre}</p>
-        <p>Surface: {local.details.surface} m²</p>
-        <p>Prix: {local.price}</p>
+        <section className={styles.content}>
+            <div className={styles.detailsLocal}>
+
+                <div className='mt-5 mb-5'>
+                    <h1>{local.name}</h1>
+                    <h1>{local.localisation.city} - {local.localisation.country}</h1>
+                </div>
+                
+                <div className='flex flex-row w-full text-2xl pr-10 justify-between font-bold'>
+                    <p>{local.price}</p>
+                    <p>{local.details.surface} m<sup>2</sup></p>
+                </div>
+                
+                <p className='mt-5 mb-5 text-sm pr-10'>{local.description}</p>
+                
+                <div className='mt-10'>
+                    <h2 className='uppercase text-xl mb-3'>caractéristique&nbsp;du&nbsp;bien</h2>
+                    <div className={styles.caracteristics}>
+                        <div>
+                            <p>Ville</p><p>{local.localisation.city}</p>
+                        </div>
+                        <div>
+                           <p>Surface</p>
+                           <p>{local.details.surface}&nbsp;m<sup>2</sup></p>  
+                        </div>
+                        <div>
+                            <p>Chambre</p>
+                            <p>{local.details.chambre}</p>
+                        </div>
+                        <div>
+                            <p>Piece</p>
+                            <p>{local.details.chambre}</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div className={styles.contactBlock}>
+                <h2>contactez&nbsp;nous</h2>
+                <form action="#">
+                    <input type="text" placeholder='Prenom' required name='prenom' />
+                    <input type="text" placeholder='Nom de famille' required name='name' />
+                    <input type="email" placeholder='E-mail' required name='email' />
+                    <input type="tel" placeholder='Numero de telephone' required name='tel' />
+                    <textarea type="text" placeholder='Message' required name='message' />
+                    <button>envoyer&nbsp;ma&nbsp;demande</button>
+                </form>
+            </div>
         </section>
       </section>
       <Footer />

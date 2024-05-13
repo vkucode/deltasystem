@@ -1,9 +1,12 @@
 import Image from "next/image"
 import styles from './contact.module.scss'
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 export default function Contact(){
     return(
         <>
+        <Navbar />
         <section className={styles.contactPage}>
             <div className={styles.infoDiv}>
                 <div>
@@ -39,6 +42,7 @@ export default function Contact(){
                 </form>
             </div>
         </section>
+        <Footer />
         </>
     )
 } 
