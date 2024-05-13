@@ -1,4 +1,44 @@
 
 .achatPage{
-    @apply flex w-screen min-h-[50vh] mt-[10%] border-2 border-black;
+    @apply flex flex-col-reverse md:flex-row w-screen min-h-[80vh] mt-[10vh];
+}
+.filtersBlock{
+    @apply absolute max-w-6xl flex flex-row justify-center items-center w-full bg-white left-[50%] translate-x-[-50%] top-[10vh] border-[0.5px] border-black;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+.localsShow{
+    @apply flex flex-wrap justify-start items-center w-[100%] md:w-[50%] h-fit max-h-[80vh] overflow-auto pl-10 pr-5 gap-x-5 gap-y-5 py-5;
+    .localsCard{
+        @apply w-[300px] h-[350px] scale-95 relative cursor-pointer;
+        transition: 0.2s all ease-in-out;
+        box-shadow: 0px 0px 20px 0px #000;
+        .bgImg{
+            @apply absolute z-10 object-cover h-full w-full;
+            img{
+                @apply w-full h-full object-cover;
+            }
+        }
+        .cardContent{
+            @apply absolute flex flex-col gap-0 justify-center items-center bottom-0 left-0 py-5 w-[75%] z-20 bg-white;
+            font-family: 'Montserrat';
+            
+            h1{
+                @apply text-lg font-semibold uppercase text-center;
+                letter-spacing: 2px;
+            }
+            h2{
+                @apply text-base font-semibold uppercase;
+            }
+        }
+    }
+    .localsCard:hover{
+        @apply scale-100;
+    }
+}
+.mapShow{
+    @apply w-[100%] md:w-[50%] px-3;
+    .mapContainer{
+        z-index: 20;
+        box-shadow: 0px 0px 10px 0px #000;
+    }
 }

@@ -18,6 +18,18 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    img: {
+      type: String,
+      required: true,
+    },
+    gallery: {
+      type: Object,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
