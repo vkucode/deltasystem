@@ -89,7 +89,7 @@ export default function AchatPage() {
           {customIcon && (
             <MapContainer center={position} className={styles.mapContainer} zoom={12} minZoom={4} style={{ height: '100%', width: '100%' }} ref={mapRef}>
               <TileLayer
-                url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png?key=f28c5ed4-93a9-4006-96a9-71d2fc4a384e"
+                url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://vkucode.com" target="_blank">VKU CODE</a>'
               />
               {data.map((item) => (
