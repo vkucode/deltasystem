@@ -20,14 +20,37 @@ import Slider from 'react-slick';
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
 
-  const settings = {
-    dots: true,
+  var settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    slidesToScroll: 3,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      }
+    ]
   };
 
 
@@ -61,10 +84,16 @@ import Slider from 'react-slick';
       <FlipNavWrapper />
       <section className={styles.localDetails}>
         <section className={styles.galleryImg}>
+        <Slider {...settings}>
+          <div>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
+            </div>
               {local.gallery.img.map((imgUrl, index) => (
+                <div>
                 <Image key={index} src={`/assets/img/locals/achat/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
+                </div>
               ))}
+          </Slider>
         </section>
         <section className={styles.content}>
             <div className={styles.detailsLocal}>

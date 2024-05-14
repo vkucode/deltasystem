@@ -1,12 +1,19 @@
 .localDetails{
     @apply mt-[10vh] flex flex-col justify-center items-center;
     .galleryImg{
-        @apply w-screen flex flex-row object-cover h-[350px] bg-repeat overflow-x-hidden;
+        @apply w-screen h-[350px] content-center overflow-hidden;
+        div{
+            @apply w-full h-full;
+            img{
+                @apply w-full h-full object-cover;
+            }
+        }
+        
     }
     .content{
         @apply flex flex-col md:flex-row max-w-7xl w-full;
         .detailsLocal{
-            @apply flex flex-col w-full md:w-[70%] mb-10 pl-5 md:pl-0;
+            @apply flex flex-col w-full md:w-[70%] mb-10 pl-5 lg:pl-0;
             font-family: 'Montserrat';
             letter-spacing: 2px;
             h1{
