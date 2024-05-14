@@ -1,8 +1,7 @@
 // pages/achat/locals/[id].jsx
-
+'use client'
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '@/app/components/Navbar';
 import FlipNavWrapper from '@/app/components/NewNavbar';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
@@ -12,6 +11,8 @@ import styles from './singleAchat.module.scss'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 
   export default function LocalDetails(){
 
@@ -19,6 +20,24 @@ import Slider from 'react-slick';
   const { id } = router.query;
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
+
+  
+  const containerStyle = {
+    width: '100%',
+    height: '350px'
+  };
+
+  const [icon, setIcon] = useState(null);
+
+  const handleLoad = () => {
+    setIcon({
+      url: '/icon 1.png',
+      scaledSize: new window.google.maps.Size(35, 35),
+      origin: new window.google.maps.Point(0, 0),
+      anchor: new window.google.maps.Point(17.5, 17.5)
+    });
+    console.log("Google Maps script loaded");
+  }
 
   var settings = {
     infinite: true,
@@ -55,21 +74,20 @@ import Slider from 'react-slick';
 
 
   useEffect(() => {
-    if (!id) return;
-
     const fetchLocal = async () => {
       const response = await fetch(`/api/achat/locals/${id}`);
       const data = await response.json();
-
       if (response.ok) {
         setLocal(data);
       } else {
-        setError(data.message || 'Something went wrong');
+        console.error(data.message || 'Something went wrong');
       }
     };
 
     fetchLocal();
   }, [id]);
+
+
 
   if (error) return <div>Error: {error}</div>;
 
@@ -127,12 +145,37 @@ import Slider from 'react-slick';
                         <div>
                             <p>Piece</p>
                             <p>{local.details.chambre}</p>
-                            
+                        </div>
+                        <div className='hidden'>
+                            <p>lat</p>
+                            <p>{local.localisation.lat}</p>
+                        </div>
+                        <div className='hidden'>
+                            <p>lon</p>
+                            <p>{local.localisation.lon}</p>
                         </div>
                     </div>
-                    
                 </div>
-
+              <div className={styles.singleMap}>
+              <LoadScript
+                googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API}
+                onLoad={handleLoad} // Setează iconul după încărcarea scriptului
+              >
+                  <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={{
+                      lat: 25.197212026924976,
+                      lng: 55.274351126421536
+                    }}
+                    zoom={11}
+                  >
+                    {icon && <Marker
+                      position={{ lat: 25.197212026924976, lng: 55.274351126421536 }}
+                      icon={icon}
+                    />}
+                  </GoogleMap>
+                </LoadScript>
+              </div>
             </div>
             <div className={styles.contactBlock}>
                 <h2>contactez&nbsp;nous</h2>

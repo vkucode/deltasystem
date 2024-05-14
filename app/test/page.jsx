@@ -1,42 +1,48 @@
 'use client'
 import React from 'react'
-import { useState, useEffect } from 'react'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { useState, useRef } from 'react'
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 
 
 
 const page = () => {
 
-    gsap.registerPlugin(ScrollTrigger) 
+  const containerStyle = {
+    width: '500px',
+    height: '500px'
+  };
+  const google_key = process.env.GOOGLE_MAP_API;
+  
+  const center = {
+    lat: 25.197420260687252,
+    lng: 55.27459097432637
+  };
+  const [icon, setIcon] = useState(null);
 
-    // useEffect(() => {
-
-    
-    //     gsap.to("#a",{
-    //         scrollTrigger: {
-    //             trigger: "#a",
-    //             endTrigger: "#b",
-    //             markers: true,
-    //             start: "top center",
-    //             end: "+=300px",
-    //             scrub: 2,
-    //         },
-    //         x: 400,
-    //         rotation: 360,
-    //         duration: 3
-    //     })
-
-
-    // }, []);
+   const createIcon = () => ({
+    url: '/icon 1.png',
+    scaledSize: new window.google.maps.Size(35, 35),
+    origin: new window.google.maps.Point(0, 0),
+    anchor: new window.google.maps.Point(17.5, 17.5)
+  });
 
   return (
-    <div className='min-h-[100vh] mt-[10%] border-2 border-black'>
-        <div className='a w-20 h-20 mt-[50%] bg-black' id='a'></div>
-        <div className='b w-20 h-20 bg-blue-900' id='b'></div>
-
-
-    </div>
+    <LoadScript
+    googleMapsApiKey={google_key}
+    onLoad={() => setIcon(createIcon())} // Setează iconul după încărcarea scriptului
+  >
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={12}
+    >
+      {icon && <Marker
+        position={{ lat: 25.197420260687252, lng: 55.27459097432637 }}
+        icon={icon}
+      />}
+    </GoogleMap>
+  </LoadScript>
   )
 }
 

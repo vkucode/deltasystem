@@ -9,6 +9,7 @@ import { achatData } from './achatData';
 import Link from 'next/link';
 import styles from './achat.module.scss';
 
+
 // Importuri dinamice pentru componentele de la react-leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), {
   ssr: false
