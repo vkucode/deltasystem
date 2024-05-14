@@ -340,14 +340,16 @@ useEffect(() => {
 
     return (
       <>
+      
       <div id="smooth-wrapper">
         <div id="smooth-content">
         <section className={`${styles.modelSection}`} >
           </section>        
         </div>
       </div>
-
+     
       <div>
+        
         <div className={`${styles.videoBack} pointer-events-none fixed animate__animated animate__fadeIn`}>
               <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/>
             </div>

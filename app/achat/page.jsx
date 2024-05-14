@@ -2,6 +2,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import dynamic from 'next/dynamic';
 import Navbar from '../components/Navbar';
+import FlipNavWrapper from '../components/NewNavbar';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import { achatData } from './achatData';
@@ -33,7 +34,7 @@ export default function AchatPage() {
       const L = require('leaflet');
 
       const icon = new L.Icon({
-        iconUrl: '/icon_location.png',
+        iconUrl: '/icon 1.png',
         iconSize: [40, 40],
         iconAnchor: [16, 32],
         popupAnchor: [0, 0]
@@ -64,7 +65,8 @@ export default function AchatPage() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
+      <FlipNavWrapper />
       <section className={styles.achatPage}>
         <section className={styles.localsShow}>
           {data.map((item) => (

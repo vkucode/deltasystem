@@ -9,6 +9,7 @@ import {
   useScroll,
   motion,
 } from "framer-motion";
+import 'animate.css'
 
 const Navbar = () => {
   return (
@@ -28,12 +29,12 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full px-6 
+      className={`fixed top-0 animate__animated animate__fadeInDown z-50 w-full px-6 
       transition-all duration-300 ease-out lg:px-12
       ${
         scrolled
           ? "bg-teal-900 md:bg-white py-0 shadow-xl text-emerald-800"
-          : "bg-white-950/0 py-0 shadow-none text-emerald-800"
+          : "bg-teal-900 md:bg-white py-0 shadow-none text-emerald-800"
       }`}
     >
       <div className="mx-auto flex w-full items-center gap-24 justify-between lg:justify-center">
@@ -117,7 +118,7 @@ const MobileMenuLink = ({ children, href, FoldContent, setMenuOpen }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative text-neutral-950">
+    <div className="relative text-teal-900">
       {FoldContent ? (
         <div
           className="flex w-full cursor-pointer items-center justify-between border-b border-neutral-300 py-6 text-start text-2xl font-semibold"
@@ -194,7 +195,7 @@ const MobileMenu = () => {
                 <FiX className="text-3xl text-neutral-950" />
               </button>
             </div>
-            <div className="h-screen overflow-y-scroll bg-neutral-100 p-6">
+            <div className="h-screen overflow-y-scroll bg-white p-6">
               {LINKS.map((l) => (
                 <MobileMenuLink
                   key={l.text}

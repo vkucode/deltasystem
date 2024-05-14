@@ -3,11 +3,15 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '@/app/components/Navbar';
+import FlipNavWrapper from '@/app/components/NewNavbar';
 import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 import Head from 'next/head';
 import '../../../app/globals.css'
 import styles from './singleAchat.module.scss'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 
   export default function LocalDetails(){
 
@@ -15,6 +19,17 @@ import styles from './singleAchat.module.scss'
   const { id } = router.query;
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
 
   useEffect(() => {
     if (!id) return;
@@ -43,10 +58,13 @@ import styles from './singleAchat.module.scss'
         <title>{local ? `${local.name} - Delta Real Estate` : 'Loading...'}</title>
         <meta name="description" content={local ? `View details for ${local.name}, a property with ${local.details.chambre} bedrooms and ${local.details.surface} square meters available for sale at ${local.price}.` : 'Loading property details...'} />
       </Head>
-      <Navbar />
+      <FlipNavWrapper />
       <section className={styles.localDetails}>
         <section className={styles.galleryImg}>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
+              {local.gallery.img.map((imgUrl, index) => (
+                <Image key={index} src={`/assets/img/locals/achat/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
+              ))}
         </section>
         <section className={styles.content}>
             <div className={styles.detailsLocal}>

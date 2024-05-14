@@ -1,12 +1,15 @@
+'use client'
 import Image from "next/image"
 import styles from './contact.module.scss'
+import FlipNavWrapper from "../components/NewNavbar"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
 export default function Contact(){
     return(
         <>
-        <Navbar />
+        <FlipNavWrapper />
+        {/* <Navbar /> */}
         <section className={styles.contactPage}>
             <div className={styles.infoDiv}>
                 <div>

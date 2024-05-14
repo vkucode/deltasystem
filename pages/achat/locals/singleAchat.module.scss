@@ -1,7 +1,7 @@
 .localDetails{
     @apply mt-[10vh] flex flex-col justify-center items-center;
     .galleryImg{
-        @apply w-screen flex flex-row object-cover h-[350px];
+        @apply w-screen flex flex-row object-cover h-[350px] bg-repeat overflow-x-hidden;
     }
     .content{
         @apply flex flex-col md:flex-row max-w-7xl w-full;
