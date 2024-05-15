@@ -15,7 +15,7 @@ import 'animate.css';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollSmoother from 'gsap/src/ScrollSmoother';
-
+import CardCarousel from './components/selection';
 
 const Accueil = () => {
 
@@ -69,17 +69,19 @@ const Accueil = () => {
 
 
 {/*--------------------------------------------Animatiile de intrare si animatiile la burj Khalifa */}
-    useEffect(() => {
+    // useEffect(() => {
 
-      ScrollSmoother.create({
-        smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
-        effects: true, // looks for data-speed and data-lag attributes on elements
-        smoothTouch: 2, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-        content: "#smooth-content",
-        wrapper: "smooth-wrapper"
-      });
+    //   ScrollSmoother.create({
+    //     smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+    //     effects: true, // looks for data-speed and data-lag attributes on elements
+    //     smoothTouch: 2, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    //     content: "#smooth-content",
+    //     wrapper: "smooth-wrapper"
+    //   });
       
-    }, []);
+    // }, []);
+
+    const [animationBurjEntry, setAnimationBurjEntry] = useState("");
 
     useEffect(() => {
 
@@ -87,17 +89,16 @@ const Accueil = () => {
         trigger: "#tlBurjFirst",
         start: "top 100px",
         end: "bottom 100px",
+        id: "firstANIM",
         scrub: true,
-        // markers: true,
         ease: "power2.out",
-        onEnter: () => {setPositionY('-80'), setLogoDelta("opacity-50")},
-        onLeave: () => setPositionY('-6'),
+        onEnter: () => {setPositionY('-30'), setAnimationBurjEntry("animate__fadeInUp")},
+        onLeave: () => setPositionY('-11'),
         onUpdate: (self) => {
           const progress = self.progress;
-          const negativeOpacity = 100 - (progress * 100);
-          const setPostitionBurjY = -80 + (progress * 74);
+          const setPostitionBurjY = -30 + (progress * 19);
+          console.log(setPostitionBurjY);
           const rotationValueX = -1.5 + (progress * 1);
-          setLogoDelta("opacity-" + negativeOpacity);
           setRotation([rotationValueX, 0, 0]);
           setPositionY(setPostitionBurjY);
         }
@@ -116,14 +117,13 @@ const Accueil = () => {
       start: "top 350px",
       end: "bottom 200px",
       id: "tlLineBurj",
-      // markers: true,
       scrub: true,
       onEnter: () => {setRotation([0, 0, 0]);},
       onLeave: () => setRotation([0, 0, 0]),
       onUpdate: (self) => {
         const progress = self.progress;
         const rotationValueY = progress * 4 * Math.PI;
-        const setPostitionBurjY = -6 + (progress * (0 - 53));
+        const setPostitionBurjY = -11 + (progress * (0 - 49));
         setRotation([0, rotationValueY, 0]);
         setPositionY(setPostitionBurjY);
       }
@@ -140,7 +140,6 @@ const Accueil = () => {
 const [firstTextDiv, setFirstTextDiv] = useState("hidden");
 const [secondTextDiv, setSecondTextDiv] = useState("hidden");
 const [thirdTextDiv, setThirdTextDiv] = useState("hidden");
-const [fourthTextDiv, setFourthTextDiv] = useState("hidden");
 const [lastTextDiv, setLastTextDiv] = useState("hidden");
 
 {/**Animation First Div */}
@@ -179,7 +178,7 @@ useEffect(() => {
     trigger: "#tlSecondTextDiv",
     start: "top 600px",
     end: "bottom 400px",
-    // markers: true,
+    id:"secondTXT",
     scrub: true,
     onEnter: () => setSecondTextDiv("animate__fadeInRight"),
     onLeave: () => setSecondTextDiv("animate__fadeOutLeft"),
@@ -204,7 +203,6 @@ useEffect(() => {
     trigger: "#recenterBurj2to3",
     start: "top 500px",
     end: "bottom 500px",
-    // markers: true,
     id: "tl 2 to 3",
     scrub: true,
     onEnter: () => setPositionX(-4),
@@ -266,51 +264,6 @@ useEffect(() => {
 }, []);
 
 
-useEffect(() => {
-
-  ScrollTrigger.create({
-    trigger: "#tlFourthTextDiv",
-    start: "top 600px",
-    end: "bottom 400px",
-    // markers: true,
-    scrub: true,
-    onEnter: () => setFourthTextDiv("animate__fadeInRight"),
-    onLeave: () => setFourthTextDiv("animate__fadeOutLeft"),
-    onLeaveBack: () => setFourthTextDiv("animate__fadeOutRight"),
-    onEnterBack: () => setFourthTextDiv("animate__fadeInLeft"),
-    onToggle: (self) => {
-      setFourthTextDiv("animate__fadeInRight")
-    },
-    onUpdate: (self) =>{
-      const progress = self.progress;
-      const secondTextPosX = 0 - (progress * 3);
-      setPositionX(secondTextPosX);
-    }
-
-  });
-
-}, []);
-
-useEffect(() => {
-
-  ScrollTrigger.create({
-    trigger: "#recenterBurj4to5",
-    start: "top 500px",
-    end: "bottom 500px",
-    // markers: true,
-    id: "tl 4 to 5",
-    scrub: true,
-    onEnter: () => setPositionX(-3),
-    onLeave: () => setPositionX(0),
-    onUpdate: (self) =>{
-      const progress = self.progress;
-      const secondTextPosX = -3 + (progress * 3);
-      setPositionX(secondTextPosX);
-    }
-
-  });
-
-}, []);
 
 useEffect(() => {
 
@@ -351,7 +304,8 @@ useEffect(() => {
       <div>
         
         <div className={`${styles.videoBack} pointer-events-none fixed animate__animated animate__fadeIn`}>
-              <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/>
+              {/* <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/> */}
+              <Image src="/assets/img/accueil/bgImg.png" width={1000} height={1000}  />
             </div>
             <div className={`${styles.logoBack}`} id='logoDelta'>
                 <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
@@ -359,20 +313,18 @@ useEffect(() => {
 
             
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div id='tlBurjFirst' className={`w-screen min-h-[150vh] top-[10vh] absolute z-0`}></div>
+            <div id='tlBurjFirst' className={`w-screen min-h-[150vh] top-[0vh] absolute z-0`}></div>
             <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 md:top-[210vh] top-[220vh] w-full`} id='timeLineBurj'></div>
             <div id='tlFirstTextDiv' className={`absolute min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
-            <div id='tlSecondTextDiv' className={`absolute min-h-[40vh] top-[260vh] z-0 w-screen`}></div>
-            <div id='recenterBurj2to3' className={`absolute min-h-[40vh] top-[310vh] z-0 w-screen`}></div>
-            <div id='tlThirdTextDiv' className={`absolute min-h-[40vh] top-[360vh] z-0 w-screen`}></div>
-            <div id='recenterBurj3to4' className={`absolute min-h-[40vh] top-[420vh] z-0 w-screen`}></div>
-            <div id='tlFourthTextDiv' className='absolute min-h-[40vh] top-[470vh] z-0 w-screen'></div>
-            <div id='recenterBurj4to5' className={`absolute min-h-[40vh] top-[520vh] z-0 w-screen`}></div>
-            <div id='tlLastTextDiv' className='absolute min-h-[40vh] top-[560vh] z-0 w-screen'></div>
+            <div id='tlSecondTextDiv' className={`absolute border-2 border-black min-h-[70vh] top-[260vh] z-0 w-screen`}></div>
+            <div id='recenterBurj2to3' className={`absolute border-2 border-blue-600 min-h-[40vh] top-[340vh] z-0 w-screen`}></div>
+            <div id='tlThirdTextDiv' className={`absolute min-h-[70vh] top-[390vh] z-0 w-screen`}></div>
+            <div id='recenterBurj3to4' className={`absolute min-h-[40vh] top-[470vh] z-0 w-screen`}></div>
+            <div id='tlLastTextDiv' className='absolute min-h-[40vh] top-[520vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div className={`fixed animate__animated top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
-              <Canvas style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
-                    <directionalLight position={[-34.5, 200, 300]} intensity={40} scale={2000} castShadow={true} color="#c9deff" />
+            <div className={`fixed top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
+              <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
+                    <directionalLight position={[-34.5, 50, 300]} intensity={25} scale={2000} castShadow={true} color="#c9deff" />{/**c9deff */}
                     <Model scale={scale} rotation={rotation}/>
               </Canvas>
             </div>
@@ -382,36 +334,34 @@ useEffect(() => {
           <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${firstTextDiv} text-white flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
           </div>
-          <div className={`${styles.textDiv} text-right left-[65%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${secondTextDiv} text-teal-800`}>
-              Lorem&nbsp;Ipsum2<br />
-              <button>button</button>
+          <div className={`${styles.textDiv} text-center left-[60%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
+            <h1 className={`animate__animated ${secondTextDiv} text-white`}>
+            notre expertise<br />
+            <p className='py-5 px-2 mt-5 text-sm bg-white bg-opacity-30 backdrop-blur-sm rounded-xl'>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sunt quibusdam id inventore velit vel a totam soluta explicabo harum esse unde omnis nam aliquam dolores nisi dolorem, cupiditate iste?
+            </p>
+              <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </h1>
           </div>
-          <div className={`${styles.textDiv} text-left left-[40%] md:left-[25%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${thirdTextDiv} text-teal-800`}>
-              Lorem&nbsp;Ipsum3<br />
-              <button>button</button>
+          <div className={`${styles.textDiv} text-center left-[40%] md:left-[25%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
+            <h1 className={`animate__animated ${thirdTextDiv} text-white`}>
+              notre<br />selection<br />
+              <CardCarousel />
             </h1>
           </div>
-          <div className={`${styles.textDiv} text-right left-[60%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${fourthTextDiv} text-teal-800`}>
-              Lorem&nbsp;Ipsum4<br />
-              <button>button</button>
-            </h1>
-          </div>
-          <div className={`${styles.textDiv} text-center left-[50%] md:top-[40%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
+
+          <div className={`${styles.textDiv} text-center left-[50%] md:top-[50%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center`}>
               <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
-              <div className='flex flex-row gap-1 md:h-[130px] h-[100px]  md:gap-10 justify-center items-center'>
+              <div className='flex flex-row gap-0 h-fit justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
-                  <h1>Achat</h1>
+                  <Image src="/assets/img/accueil/ACHAT.png" width={300} height={300} />
                 </a>
                 <a href='#' className={`${styles.cardHome}`}>
-                  <h1>Location</h1>
+                  <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={300} height={300} />
                 </a>
                 <a href='#' className={`${styles.cardHome}`}>
-                  <h1>Gestion<br/>Locative</h1>
+                  <Image src="/assets/img/accueil/LOCATION.png" width={300} height={300} />
                 </a>  
               </div>
             </h1>

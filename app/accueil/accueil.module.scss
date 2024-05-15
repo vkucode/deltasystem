@@ -7,6 +7,9 @@
     video{
         @apply w-screen h-screen object-cover;
     } 
+    img{
+        @apply w-screen h-screen object-cover;
+    }
 }
 .logoBack{
     @apply absolute z-[70] top-0 flex flex-col w-[80%] md:w-full md:px-20 justify-center items-center h-screen object-cover; 
@@ -22,30 +25,31 @@
     font-family: 'Montserrat';
     mix-blend-mode: normal;
     h1{
-        @apply text-2xl sm:text-4xl md:text-7xl uppercase font-bold;
+        @apply text-4xl sm:text-4xl md:text-7xl uppercase font-bold;
         letter-spacing: 10px;
     }
-    button{
-        @apply uppercase mr-3 ml-0 mt-3 py-2 px-10 text-lg border-2 border-teal-900; 
+    .voirPlusBTN{
+        @apply uppercase mr-3 ml-0 mt-3 py-2 px-10 text-lg border-4 border-white; 
+        transition: 0.2s all ease-in-out;
+    }
+    .voirPlusBTN:hover{
+        @apply uppercase mr-3 ml-0 mt-3 py-2 px-10 text-lg border-4 bg-white text-teal-900 border-white; 
     }
     p{
-        @apply text-xl;
+        letter-spacing: 1px;
+        line-height: 1.5;
     }
     .cardHome{
-        @apply h-full w-[33.3%] scale-95 flex flex-col border-2 justify-center items-center py-2 md:px-5 px-3;
+        @apply h-full w-[33.3%] flex scale-95 flex-col border-none justify-center items-center py-2 md:px-5 px-3;
         transition: 0.2s all ease-in-out;
-        background: var(--textColorGreen);
-        border-color: var(--textColorGreen);
-        h1{
-            @apply md:text-3xl text-sm uppercase;
-            color: var(--textColorGold);
-            letter-spacing: 5px;
+        a{
+            @apply scale-95;
+        }
+        a:hover{
+            @apply scale-100;
         }
     }
     .cardHome:hover{
-        @apply bg-transparent scale-100 text-teal-700;
-        h1{
-            color: var(--textColorGreen);
-        }
+        @apply scale-100;
     }
 }

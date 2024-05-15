@@ -1,4 +1,3 @@
-'use client'
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -42,10 +41,9 @@ const CardCarousel = () => {
 
   return (
     <section className="bg-transparent" ref={ref}>
-      <div className="relative overflow-hidden p-4">
+      <div className="relative left-0 ml-0 overflow-hidden p-4">
         {/* CARDS */}
-        <div className="mx-auto max-w-6xl">
-          
+        <div className="mx-auto lg:max-w-4xl md:max-w-3xl max-w-[350px] ml-2 md:ml-20">
           <motion.div
             animate={{
               x: offset,
@@ -86,10 +84,10 @@ const CardCarousel = () => {
   );
 };
 
-const Card = ({ url, price, title, description }) => {
+const Card = ({ url, category, title, description }) => {
   return (
     <div
-      className="relative shrink-0 cursor-pointer bg-white shadow-md transition-all hover:scale-[1.015] hover:shadow-xl"
+      className="relative shrink-0 cursor-pointer rounded-2xl bg-white shadow-md transition-all hover:scale-[1.015] hover:shadow-xl"
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
@@ -99,10 +97,12 @@ const Card = ({ url, price, title, description }) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute bottom-0 bg-white z-20 py-4 w-3/4" style={{fontFamily: "Montserrat"}}>
-        <p className="text-xl uppercase text-black font-bold" style={{letterSpacing: "3px"}}>{title}</p>
-        <p className="text-sm text-black">{description}</p>
-        <p className="text-sm text-black" style={{letterSpacing: "3px"}}>{price}</p>
+      <div className="absolute inset-0 z-20 rounded-2xl bg-gradient-to-b from-black/90 via-black/20 to-black/0 p-6 text-white transition-[backdrop-filter] hover:backdrop-blur-sm">
+        <span className="text-xs font-semibold uppercase text-teal-300">
+          {category}
+        </span>
+        <p className="my-2 text-3xl font-bold">{title}</p>
+        <p className="text-lg text-slate-300">{description}</p>
       </div>
     </div>
   );
@@ -114,57 +114,57 @@ const items = [
   {
     id: 1,
     url: "/assets/img/accueil/appart.jpg",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 2,
     url: "/assets/img/accueil/appart2.png",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 3,
     url: "/assets/img/accueil/appart3.png",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 4,
     url: "/assets/img/accueil/appart.jpg",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 5,
     url: "/assets/img/accueil/appart.jpg",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 6,
     url: "/assets/img/accueil/appart.jpg",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
   {
     id: 7,
     url: "/assets/img/accueil/appart.jpg",
-    title: "Orbis",
+    category: "Dubai",
+    title: "Burj Khalifa",
     description:
-      "4 Chambres 150 m2",
-    price: "7 000 000 $"
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.",
   },
 ];
