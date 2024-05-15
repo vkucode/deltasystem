@@ -2,20 +2,17 @@
 import React, {useEffect, useRef, useState} from 'react'
 import Image from 'next/image';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Segment, useTexture } from '@react-three/drei';
-import { Suspense } from 'react';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import styles from './accueil.module.scss'
-import Link from 'next/link';
-import AboutUs from './components/aboutUs';
 import 'animate.css';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollSmoother from 'gsap/src/ScrollSmoother';
 import CardCarousel from './components/selection';
+import '../globals.css'
 
 const Accueil = () => {
 
@@ -69,17 +66,17 @@ const Accueil = () => {
 
 
 {/*--------------------------------------------Animatiile de intrare si animatiile la burj Khalifa */}
-    // useEffect(() => {
+    useEffect(() => {
 
-    //   ScrollSmoother.create({
-    //     smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
-    //     effects: true, // looks for data-speed and data-lag attributes on elements
-    //     smoothTouch: 2, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-    //     content: "#smooth-content",
-    //     wrapper: "smooth-wrapper"
-    //   });
+      ScrollSmoother.create({
+        smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+        effects: true, // looks for data-speed and data-lag attributes on elements
+        smoothTouch: 2, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+        content: "#smooth-content",
+        wrapper: "smooth-wrapper"
+      });
       
-    // }, []);
+    }, []);
 
     const [animationBurjEntry, setAnimationBurjEntry] = useState("");
 
