@@ -61,7 +61,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='w-full md:w-1/4'>
-          <h3>Les services DRN:</h3>
+          <h3>Les services Delta:</h3>
             <div className={styles.separateurInfo}></div>
             <ul type="none">
               <a href='#'><li>Achat immobilier</li></a>
