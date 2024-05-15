@@ -4,12 +4,12 @@
     @apply relative z-[60] h-[650vh] w-screen;
 }
 .videoBack{
-    @apply fixed z-[60] top-0 left-0 w-screen h-screen object-cover;
+    @apply fixed z-[60] top-0 left-0 w-screen h-dvh object-cover;
     video{
-        @apply w-screen h-screen object-cover;
+        @apply w-screen h-dvh object-cover;
     } 
     img{
-        @apply w-screen h-screen object-cover;
+        @apply w-screen h-dvh object-cover;
     }
 }
 .logoBack{
