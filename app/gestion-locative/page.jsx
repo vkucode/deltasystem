@@ -5,6 +5,7 @@ import styles from './gestion.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
 import Footer from "../components/Footer"
 import BasicFAQ from './components/accordition'
+import 'animate.css'
 
 export default function GestionLocative(){
     return(
@@ -12,7 +13,7 @@ export default function GestionLocative(){
         <FlipNavWrapper />
             <section className={styles.gestionPage}>
 
-                    <div className={styles.gestionHeader}>
+                    <div className={`animate__animated animate__fadeInDown ${styles.gestionHeader}`}>
                         <h1>gestion locative</h1>
                         <div className={styles.separateur}></div>
                     </div>
@@ -20,9 +21,9 @@ export default function GestionLocative(){
                         <div className={styles.backgoundContent}></div>
                         <div className={styles.contentGestion}>
                             <div className={styles.imgGestion}>
-                                <Image src="/assets/img/gestion/gestion.jpg" width={300} height={300} />
+                                <Image src="/assets/img/gestion/gestion.jpg" className="animate__animated animate__fadeInUp" width={300} height={300} />
                             </div>
-                            <div className={styles.textGestion}>
+                            <div className={`animate__animated animate__fadeInUp ${styles.textGestion}`}>
                                 <h1>exquisite lake austin contemporary estate</h1>
                                 <div className={styles.separateur}></div>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci voluptatem ullam laborum totam non! Nesciunt eos quia ratione asperiores. Asperiores quia quos labore in ab eos, laudantium officiis ipsum expedita.</p>

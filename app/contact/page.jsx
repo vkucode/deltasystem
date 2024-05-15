@@ -4,6 +4,7 @@ import styles from './contact.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import 'animate.css'
 
 export default function Contact(){
     return(
@@ -11,7 +12,7 @@ export default function Contact(){
         <FlipNavWrapper />
         {/* <Navbar /> */}
         <section className={styles.contactPage}>
-            <div className={styles.infoDiv}>
+            <div className={`animate__animated animate__fadeInLeft ${styles.infoDiv}`}>
                 <div>
                     <ul>
                         <li>
@@ -29,7 +30,7 @@ export default function Contact(){
                     </ul>
                 </div>
             </div>
-            <div className={styles.formDiv}>
+            <div className={`animate__animated animate__fadeInUp ${styles.formDiv}`}>
                 <h1>Contactez-Nous</h1>
                 <form action="#">
                     <div>

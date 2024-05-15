@@ -9,6 +9,7 @@ import { achatData } from './achatData';
 import Link from 'next/link';
 import styles from './achat.module.scss';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import 'animate.css'
 
 
 export default function AchatPage() {
@@ -63,7 +64,7 @@ export default function AchatPage() {
       {/* <Navbar /> */}
       <FlipNavWrapper />
       <section className={styles.achatPage}>
-        <section className={styles.localsShow}>
+        <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>
           {data.map((item) => (
             <Link href={`/achat/locals/${item._id}`} key={item._id} className={styles.localsCard}>
                 <div className={styles.bgImg}>
@@ -84,7 +85,7 @@ export default function AchatPage() {
             </Link>
           ))}
         </section>
-        <section className={styles.mapShow}>
+        <section className={`animate__animated animate__fadeIn ${styles.mapShow}`}>
         <LoadScript
             googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API}
             onLoad={initializeIcon}
