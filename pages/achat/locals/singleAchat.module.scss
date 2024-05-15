@@ -1,5 +1,5 @@
 .localDetails{
-    @apply mt-[10vh] flex flex-col justify-center items-center;
+    @apply mt-[9vh] md:mt-[10vh] flex flex-col justify-center items-center;
     .galleryImg{
         @apply w-screen h-[350px] content-center overflow-hidden;
         div{
@@ -13,14 +13,14 @@
     .content{
         @apply flex flex-col md:flex-row max-w-7xl w-full;
         .detailsLocal{
-            @apply flex flex-col w-full md:w-[70%] mb-10 pl-5 lg:pl-0;
+            @apply flex flex-col w-full md:w-[70%] mb-10;
             font-family: 'Montserrat';
             letter-spacing: 2px;
             h1{
-                @apply uppercase text-3xl;
+                @apply uppercase text-3xl pl-5 lg:pl-0;
             }
             .caracteristics{
-                @apply w-full;
+                @apply w-full pl-5 lg:pl-0;
                 div{
                     @apply w-full flex flex-row justify-between pb-[3px] pt-3 border-b-[1px] pr-10;
                 }
@@ -68,7 +68,7 @@
             }
         }
         .singleMap{
-            @apply mt-5;
+            @apply mt-5 w-screen md:w-full;
         }
     }
 }

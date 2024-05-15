@@ -65,8 +65,7 @@ export default function AchatPage() {
       <section className={styles.achatPage}>
         <section className={styles.localsShow}>
           {data.map((item) => (
-            <Link href={`/achat/locals/${item._id}`} key={item._id}>
-              <div className={styles.localsCard}>
+            <Link href={`/achat/locals/${item._id}`} key={item._id} className={styles.localsCard}>
                 <div className={styles.bgImg}>
                   <Image src={`/assets/img/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
                 </div>
@@ -81,7 +80,6 @@ export default function AchatPage() {
                     <p>{item.lat}</p>
                     <p>{item.lon}</p>
                   </div>
-                </div>
               </div>
             </Link>
           ))}
@@ -106,22 +104,6 @@ export default function AchatPage() {
               ))}
             </GoogleMap>
           </LoadScript>
-              
-          {/* {customIcon && (
-            <MapContainer center={position} className={styles.mapContainer} zoom={12} minZoom={4} style={{ height: '100%', width: '100%' }} ref={mapRef}>
-              <TileLayer
-                url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://vkucode.com" target="_blank">VKU CODE</a>'
-              />
-              {data.map((item) => (
-                <Marker position={[item.lat, item.lon]} icon={customIcon} title={item.price} key={item._id}>
-                  <Popup>
-                    {item.name}<Image src={`/assets/img/locals/achat/${item.img}`} width={250} height={250} alt={item.name} />
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          )} */}
         </section>
       </section>
       <Footer />

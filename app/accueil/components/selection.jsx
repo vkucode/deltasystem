@@ -43,7 +43,7 @@ const CardCarousel = () => {
     <section className="bg-transparent" ref={ref}>
       <div className="relative left-0 ml-0 overflow-hidden p-4">
         {/* CARDS */}
-        <div className="mx-auto lg:max-w-4xl md:max-w-3xl max-w-[350px] ml-5 md:ml-20">
+        <div className="mx-auto lg:max-w-4xl md:max-w-3xl max-w-[300px] ml-5 md:ml-20">
           <motion.div
             animate={{
               x: offset,

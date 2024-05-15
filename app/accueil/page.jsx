@@ -12,6 +12,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollSmoother from 'gsap/src/ScrollSmoother';
 import CardCarousel from './components/selection';
+import CarouselLocals from './components/carousel';
 import '../globals.css'
 
 const Accueil = () => {

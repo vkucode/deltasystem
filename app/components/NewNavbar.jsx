@@ -13,7 +13,7 @@ const FlipNavWrapper = () => {
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="fixed z-50 animate__animated animate__fadeInDown w-full bg-teal-900 lg:bg-white top-0 pr-10 lg:pr-5 flex items-center justify-between">
+    <nav className="fixed z-50 h-[90px] animate__animated animate__fadeInDown w-full bg-teal-900 lg:bg-white top-0 pr-10 lg:pr-5 flex items-center justify-between">
       <NavLeft setIsOpen={setIsOpen} />
       <NavMenu isOpen={isOpen} />
     </nav>

@@ -128,15 +128,15 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                     <h1>{local.localisation.city} - {local.localisation.country}</h1>
                 </div>
                 
-                <div className='flex flex-row w-full text-2xl pr-10 justify-between font-bold'>
+                <div className='flex flex-row w-full text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
                     <p>{local.price}</p>
                     <p>{local.details.surface} m<sup>2</sup></p>
                 </div>
                 
-                <p className='mt-5 mb-5 text-sm pr-10'>{local.description}</p>
+                <p className='mt-5 mb-5 pl-5 lg:pl-0 text-sm pr-10'>{local.description}</p>
                 
                 <div className='mt-10'>
-                    <h2 className='uppercase text-xl mb-3'>caractéristique&nbsp;du&nbsp;bien</h2>
+                    <h2 className='uppercase text-xl mb-3 pl-5 lg:pl-0'>caractéristique&nbsp;du&nbsp;bien</h2>
                     <div className={styles.caracteristics}>
                         <div>
                             <p>Ville</p><p>{local.localisation.city}</p>
@@ -153,14 +153,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                             <p>Piece</p>
                             <p>{local.details.chambre}</p>
                         </div>
-                        {/* <div className='hidden'>
-                            <p>lat</p>
-                            <p>{local.localisation.lat}</p>
-                        </div>
-                        <div className='hidden'>
-                            <p>lon</p>
-                            <p>{local.localisation.lon}</p>
-                        </div> */}
+                        
                     </div>
                 </div>
               <div className={styles.singleMap}>
