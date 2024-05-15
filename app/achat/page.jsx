@@ -1,6 +1,6 @@
 'use client'
-import React, {useState, useEffect, useRef} from 'react';
-import dynamic from 'next/dynamic';
+import React, {useState, useEffect, useRef, useCallback} from 'react';
+// import dynamic from 'next/dynamic';
 import Navbar from '../components/Navbar';
 import FlipNavWrapper from '../components/NewNavbar';
 import Footer from '../components/Footer';
@@ -8,44 +8,33 @@ import Image from 'next/image';
 import { achatData } from './achatData';
 import Link from 'next/link';
 import styles from './achat.module.scss';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-
-// Importuri dinamice pentru componentele de la react-leaflet
-const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), {
-  ssr: false
-});
-const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), {
-  ssr: false
-});
-const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), {
-  ssr: false
-});
-const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), {
-  ssr: false
-});
 
 export default function AchatPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [customIcon, setCustomIcon] = useState(null);
-  const mapRef = useRef(null)
+  const [icon, setIcon] = useState(null);
+  const mapRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const L = require('leaflet');
+  const containerStyle = {
+    width: '100%',
+    height: '100%'
+  };
 
-      const icon = new L.Icon({
-        iconUrl: '/icon 1.png',
-        iconSize: [40, 40],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, 0]
+
+  const initializeIcon = useCallback(() => {
+    if (typeof window !== 'undefined' && window.google && window.google.maps) {
+      setIcon({
+        url: '/icon 1.png',
+        scaledSize: new window.google.maps.Size(35, 35),
+        origin: new window.google.maps.Point(0, 0),
+        anchor: new window.google.maps.Point(17.5, 17.5)
       });
-
-      setCustomIcon(icon);
+      console.log("Google Maps script loaded and icon set");
     }
   }, []);
 
-  const position = [25.197420260687252, 55.27459097432637];
 
   useEffect(() => {
     const loadData = async () => {
@@ -53,16 +42,21 @@ export default function AchatPage() {
       if (fetchedData.length === 0) {
         setError("Failed to fetch data or no data available.");
       } else {
-        setData(fetchedData);
+        // Convert lat and lon to numbers
+        const convertedData = fetchedData.map(item => ({
+          ...item,
+          lat: parseFloat(item.lat),
+          lon: parseFloat(item.lon)
+        }));
+        setData(convertedData);
         setError(null);
       }
     };
 
     loadData();
   }, []);
-
   if (error) return <div>Error: {error}</div>;
-  if (!customIcon) return <div>Loading map...</div>; // Ensure icon is loaded
+  // if (!icon) return <div>Loading map...</div>; // Ensure icon is loaded
 
   return (
     <>
@@ -83,13 +77,37 @@ export default function AchatPage() {
                     <span>{item.surface}&nbsp;m<sup>2</sup></span>
                   </div>
                   <h2>{item.price}</h2>
+                  <div className='hidden'>
+                    <p>{item.lat}</p>
+                    <p>{item.lon}</p>
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
         </section>
         <section className={styles.mapShow}>
-          {customIcon && (
+        <LoadScript
+            googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API}
+            onLoad={initializeIcon}
+          >
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={{ lat: 25.197212026924976, lng: 55.274351126421536 }}
+              zoom={11}
+              ref={mapRef}
+            >
+              {icon && data.map((item) => (
+                <Marker
+                  key={item._id}
+                  position={{ lat: item.lat, lng: item.lon }}
+                  icon={icon}
+                />
+              ))}
+            </GoogleMap>
+          </LoadScript>
+              
+          {/* {customIcon && (
             <MapContainer center={position} className={styles.mapContainer} zoom={12} minZoom={4} style={{ height: '100%', width: '100%' }} ref={mapRef}>
               <TileLayer
                 url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -103,7 +121,7 @@ export default function AchatPage() {
                 </Marker>
               ))}
             </MapContainer>
-          )}
+          )} */}
         </section>
       </section>
       <Footer />

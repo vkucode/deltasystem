@@ -1,6 +1,6 @@
 // pages/achat/locals/[id].jsx
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import FlipNavWrapper from '@/app/components/NewNavbar';
 import Footer from '@/app/components/Footer';
@@ -20,24 +20,26 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   const { id } = router.query;
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
-
+  const [icon, setIcon] = useState(null);
   
   const containerStyle = {
     width: '100%',
     height: '350px'
   };
 
-  const [icon, setIcon] = useState(null);
 
-  const handleLoad = () => {
-    setIcon({
-      url: '/icon 1.png',
-      scaledSize: new window.google.maps.Size(35, 35),
-      origin: new window.google.maps.Point(0, 0),
-      anchor: new window.google.maps.Point(17.5, 17.5)
-    });
-    console.log("Google Maps script loaded");
-  }
+
+  const initializeIcon = useCallback(() => {
+    if (typeof window !== 'undefined' && window.google && window.google.maps) {
+      setIcon({
+        url: '/icon 1.png',
+        scaledSize: new window.google.maps.Size(35, 35),
+        origin: new window.google.maps.Point(0, 0),
+        anchor: new window.google.maps.Point(17.5, 17.5)
+      });
+      console.log("Google Maps script loaded and icon set");
+    }
+  }, []);
 
   var settings = {
     infinite: true,
@@ -78,16 +80,21 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       const response = await fetch(`/api/achat/locals/${id}`);
       const data = await response.json();
       if (response.ok) {
+        // Convert lat and lon to numbers
+        data.localisation.lat = parseFloat(data.localisation.lat);
+        data.localisation.lon = parseFloat(data.localisation.lon);
         setLocal(data);
       } else {
-        console.error(data.message || 'Something went wrong');
+        setError(data.message || 'Something went wrong');
       }
     };
 
-    fetchLocal();
+    if (id) {
+      fetchLocal();
+    }
   }, [id]);
 
-
+  
 
   if (error) return <div>Error: {error}</div>;
 
@@ -146,31 +153,31 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                             <p>Piece</p>
                             <p>{local.details.chambre}</p>
                         </div>
-                        <div className='hidden'>
+                        {/* <div className='hidden'>
                             <p>lat</p>
                             <p>{local.localisation.lat}</p>
                         </div>
                         <div className='hidden'>
                             <p>lon</p>
                             <p>{local.localisation.lon}</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
               <div className={styles.singleMap}>
               <LoadScript
                 googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API}
-                onLoad={handleLoad} // Setează iconul după încărcarea scriptului
+                onLoad={initializeIcon} // Setează iconul după încărcarea scriptului
               >
                   <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={{
-                      lat: 25.197212026924976,
-                      lng: 55.274351126421536
+                      lat: local.localisation.lat,
+                      lng: local.localisation.lon
                     }}
-                    zoom={11}
+                    zoom={13}
                   >
                     {icon && <Marker
-                      position={{ lat: 25.197212026924976, lng: 55.274351126421536 }}
+                      position={{ lat: local.localisation.lat, lng: local.localisation.lon }}
                       icon={icon}
                     />}
                   </GoogleMap>
