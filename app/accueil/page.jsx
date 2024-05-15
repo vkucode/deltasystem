@@ -355,10 +355,10 @@ useEffect(() => {
                 <a href='/achat' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/ACHAT.png" width={300} height={300} />
                 </a>
-                <a href='#' className={`${styles.cardHome}`}>
+                <a href='/gestion-locative' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={300} height={300} />
                 </a>
-                <a href='#' className={`${styles.cardHome}`}>
+                <a href='/achat' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/LOCATION.png" width={300} height={300} />
                 </a>  
               </div>
