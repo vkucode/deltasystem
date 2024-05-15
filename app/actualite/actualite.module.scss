@@ -12,9 +12,9 @@
         }
     }
     .archiveArticles{
-        @apply flex flex-row flex-wrap gap-5 max-w-7xl justify-center md:justify-start items-center;
+        @apply flex flex-row flex-wrap gap-5 w-full px-10 max-w-7xl justify-center md:justify-start items-center;
         .articleCard{
-            @apply cursor-pointer relative flex-col flex w-[300px] h-[350px];
+            @apply cursor-pointer relative flex flex-col w-full md:w-[32%] h-[350px];
             img{
                 @apply absolute w-full h-full object-cover object-bottom;
             }
