@@ -329,7 +329,7 @@ useEffect(() => {
 
         <section>
           <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${firstTextDiv} text-white flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
+            <h1 className={`animate__animated ${firstTextDiv} text-white !text-2xl md:text-4xl flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
           </div>
           <div className={`${styles.textDiv} text-center left-[60%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${secondTextDiv} text-white`}>
@@ -348,9 +348,9 @@ useEffect(() => {
           </div>
 
           <div className={`${styles.textDiv} text-center left-[50%] md:top-[50%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center`}>
+            <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center w-full`}>
               <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
-              <div className='flex flex-row gap-0 h-fit justify-center items-center'>
+              <div className='flex flex-row w-screen max-w-5xl h-fit justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/ACHAT.png" width={300} height={300} />
                 </a>

@@ -3,8 +3,8 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 
-const CARD_WIDTH = 350;
-const CARD_HEIGHT = 350;
+const CARD_WIDTH = 300;
+const CARD_HEIGHT = 300;
 const MARGIN = 20;
 const CARD_SIZE = CARD_WIDTH + MARGIN;
 
@@ -43,7 +43,7 @@ const CardCarousel = () => {
     <section className="bg-transparent" ref={ref}>
       <div className="relative left-0 ml-0 overflow-hidden p-4">
         {/* CARDS */}
-        <div className="mx-auto lg:max-w-4xl md:max-w-3xl max-w-[350px] ml-2 md:ml-20">
+        <div className="mx-auto lg:max-w-4xl md:max-w-3xl max-w-[350px] ml-5 md:ml-20">
           <motion.div
             animate={{
               x: offset,
@@ -102,7 +102,7 @@ const Card = ({ url, category, title, description }) => {
           {category}
         </span>
         <p className="my-2 text-3xl font-bold">{title}</p>
-        <p className="text-lg text-slate-300">{description}</p>
+        <p className="text-base text-slate-300">{description}</p>
       </div>
     </div>
   );
