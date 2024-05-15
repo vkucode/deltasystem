@@ -72,11 +72,11 @@ const Question = ({ title, children, defaultOpen = false }) => {
           variants={{
             open: {
               rotate: "180deg",
-              color: "rgb(124 58 237)",
+              color: "#1e4b4a",
             },
             closed: {
               rotate: "0deg",
-              color: "#030617",
+              color: "#1e4b4a",
             },
           }}
         >
