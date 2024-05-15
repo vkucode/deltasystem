@@ -310,14 +310,14 @@ useEffect(() => {
 
             
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div id='tlBurjFirst' className={`w-screen min-h-[150vh] top-[0vh] absolute z-0`}></div>
-            <div className={`${styles.timelineBurj} absolute min-h-[350vh] z-0 md:top-[210vh] top-[220vh] w-full`} id='timeLineBurj'></div>
-            <div id='tlFirstTextDiv' className={`absolute min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
-            <div id='tlSecondTextDiv' className={`absolute border-2 border-black min-h-[70vh] top-[260vh] z-0 w-screen`}></div>
-            <div id='recenterBurj2to3' className={`absolute border-2 border-blue-600 min-h-[40vh] top-[340vh] z-0 w-screen`}></div>
-            <div id='tlThirdTextDiv' className={`absolute min-h-[70vh] top-[390vh] z-0 w-screen`}></div>
-            <div id='recenterBurj3to4' className={`absolute min-h-[40vh] top-[470vh] z-0 w-screen`}></div>
-            <div id='tlLastTextDiv' className='absolute min-h-[40vh] top-[520vh] z-0 w-screen'></div>
+            <div id='tlBurjFirst' className={`w-screen hidden min-h-[150vh] top-[0vh] absolute z-0`}></div>
+            <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[210vh] top-[220vh] w-full`} id='timeLineBurj'></div>
+            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
+            <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[260vh] z-0 w-screen`}></div>
+            <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[340vh] z-0 w-screen`}></div>
+            <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[390vh] z-0 w-screen`}></div>
+            <div id='recenterBurj3to4' className={`absolute hidden min-h-[40vh] top-[470vh] z-0 w-screen`}></div>
+            <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[520vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
@@ -335,7 +335,7 @@ useEffect(() => {
             <h1 className={`animate__animated ${secondTextDiv} text-white`}>
             notre expertise<br />
             <p className='py-5 px-2 mt-5 text-sm bg-white bg-opacity-30 backdrop-blur-sm rounded-xl'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sunt quibusdam id inventore velit vel a totam soluta explicabo harum esse unde omnis nam aliquam dolores nisi dolorem, cupiditate iste?
+            Dans l'immobilier, la notion de "delta" symbolise les transitions vécues lors de l'achat ou de la vente d'une propriété. À l'image du delta en philosophie qui représente le changement, notre agence facilite ces moments clés en offrant un service adaptable et réactif, assurant un processus aussi fluide que possible.
             </p>
               <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </h1>

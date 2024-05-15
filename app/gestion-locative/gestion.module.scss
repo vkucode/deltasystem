@@ -25,14 +25,14 @@
         .imgGestion{
             @apply w-full max-w-[250px] md:max-w-[400px];
             img{
-                @apply w-full -mt-14 md:mt-0;
+                @apply w-full -mt-64 md:mt-0;
             }
         }
         .textGestion{
             @apply text-yellow-50 w-full md:text-left text-center;
             font-family: 'Montserrat';
             h1{
-                @apply uppercase text-3xl;
+                @apply uppercase text-2xl md:text-3xl;
             }
             .separateur{
                 @apply w-full bg-yellow-50 h-[2px] mt-2 mb-5;

@@ -16,7 +16,7 @@ export default function GestionLocative(){
                         <h1>gestion locative</h1>
                         <div className={styles.separateur}></div>
                     </div>
-                    <div className="w-screen mt-20 md:mt-0 relative flex flex-col h-fit justify-center items-center">
+                    <div className="w-screen mt-72 md:mt-0 relative flex flex-col h-fit justify-center items-center">
                         <div className={styles.backgoundContent}></div>
                         <div className={styles.contentGestion}>
                             <div className={styles.imgGestion}>
