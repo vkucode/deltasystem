@@ -1,0 +1,52 @@
+.gestionPage{
+    @apply md:mt-[200px] mt-[150px] flex flex-col;
+    .gestionHeader{
+        @apply flex flex-col justify-center items-center mb-10;
+        h1{
+            @apply text-4xl uppercase;
+            font-family: 'Montserrat';
+            letter-spacing: 2px;
+        }
+        .separateur{
+            @apply w-64 bg-teal-800 h-[2px] mt-5;
+        }
+    }
+    .backgoundContent{
+        @apply absolute z-0 w-full h-full bg-teal-800;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 55.3%);
+    }
+    @media (max-width: 768px) {
+        .backgoundContent{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89.8%);
+        }
+    }
+    .contentGestion{
+        @apply relative z-20 flex flex-col py-0 md:py-20 px-10 md:px-0 pb-36 md:flex-row max-w-6xl gap-5 justify-center items-center;
+        .imgGestion{
+            @apply w-full max-w-[250px] md:max-w-[400px];
+            img{
+                @apply w-full -mt-14 md:mt-0;
+            }
+        }
+        .textGestion{
+            @apply text-yellow-50 w-full md:text-left text-center;
+            font-family: 'Montserrat';
+            h1{
+                @apply uppercase text-3xl;
+            }
+            .separateur{
+                @apply w-full bg-yellow-50 h-[2px] mt-2 mb-5;
+            }
+            p{
+                @apply mb-8;
+            }
+            a{
+                @apply text-yellow-50 text-lg uppercase border-2 border-yellow-50 py-2 px-5;
+                transition: 0.2s all ease-in-out;
+            }
+            a:hover{
+                @apply bg-yellow-50 font-medium text-teal-800;
+            }
+        }
+    }
+}
