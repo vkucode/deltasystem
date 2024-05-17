@@ -331,13 +331,12 @@ useEffect(() => {
           <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${firstTextDiv} text-white !text-2xl md:text-4xl flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
           </div>
-          <div className={`${styles.textDiv} text-center left-[55%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
+          <div className={`${styles.textDiv} text-right left-[55%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <div className={`animate__animated ${secondTextDiv} text-white`}>
-              <h2 className='text-center'>Delta réinvente l’investissement immobilier.</h2><br />
+              <h2 className='text-right'>Delta réinvente l’investissement immobilier.</h2><br />
               <p className='bg-teal-900'>
               Delta offre des plans de paiement flexibles pour des appartements immédiatement disponibles, contrairement aux autres agences qui ne proposent ces facilités que pour des projets en construction. À Dubaï, cette approche unique vous permet de voir et d'acquérir votre propriété sans attendre. En choisissant Delta, vous bénéficiez d'une expertise inégalée et d'une tranquillité d'esprit incomparable.
               </p>
-                <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </div>
           </div>
           <div className={`${styles.textDiv} text-left left-[45%] md:left-[35%] lg:left-[25%] max-w-[700px] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
@@ -349,7 +348,6 @@ useEffect(() => {
               <p className='bg-teal-900 text-left max-w-[700px]'>
               Delta est une agence immobilière et un investisseur à Dubaï. Nos investissements personnels nous donnent une connaissance approfondie des promoteurs locaux et nous permettent de négocier des conditions avantageuses pour nos clients. Choisissez Delta pour profiter de notre expertise et des meilleures opportunités immobilières.
               </p>
-            <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </div>
           </div>
 
@@ -363,7 +361,7 @@ useEffect(() => {
                 <a href='/gestion-locative' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={400} height={300} />
                 </a>
-                <a href='/achat' className={`${styles.cardHome}`}>
+                <a href='/location' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/LOCATION.png" width={400} height={300} />
                 </a>  
               </div>

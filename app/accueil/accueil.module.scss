@@ -50,7 +50,7 @@
         line-height: 1.8;
     }
     .cardHome{
-        @apply h-full w-full flex scale-95 flex-col border-none justify-center items-center;
+        @apply h-[200px] w-auto md:h-full md:w-full flex scale-95 flex-col border-none justify-center items-center;
         transition: 0.2s all ease-in-out;
         a{
             @apply scale-95;

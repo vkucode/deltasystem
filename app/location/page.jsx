@@ -32,7 +32,7 @@ export default function AchatPage() {
   const initializeIcon = useCallback(() => {
     if (typeof window !== 'undefined' && window.google && window.google.maps) {
       setIcon({
-        url: '/icon 3.png',
+        url: '/icon 4.png',
         scaledSize: new window.google.maps.Size(35, 35),
         origin: new window.google.maps.Point(0, 0),
         anchor: new window.google.maps.Point(17.5, 17.5)
@@ -77,7 +77,7 @@ export default function AchatPage() {
             >
               <div className={styles.bgImg}>
                 <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
-                  <Image src="/assets/img/accueil/iconFiltreGreen.png" width={100} height={100} alt='filtre' />
+                  <Image src="/assets/img/accueil/iconFiltreWhite.png" width={100} height={100} alt='filtre' />
                 </div>
                 <Image src={`/assets/img/locals/location/${item.img}`} width={400} height={400} alt={item.name} />
               </div>
