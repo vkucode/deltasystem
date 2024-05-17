@@ -21,9 +21,9 @@ export default function GestionLocative(){
                     </div>
                     <div className="w-screen mt-72 md:mt-0 relative flex flex-col h-fit justify-center items-center">
                         <div className={styles.backgoundContent}>
-                            {/* <div className="max-w-6xl border-2 border-white">
-                                <Image src="/assets/img/gestion/try1.webp" className={`${styles.imgGestionBack} z-20`} width={500} height={500} />
-                            </div> */}
+                            <div className="max-w-6xl border-2 z-10 border-white">
+                                <Image src="/assets/img/gestion/img3.png" className={`${styles.imgGestionBack} z-20`} width={500} height={500} />
+                            </div>
                         </div>
                         
                         <div className={styles.contentGestion}>

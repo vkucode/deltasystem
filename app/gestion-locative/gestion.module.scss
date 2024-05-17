@@ -12,10 +12,15 @@
         }
     }
     .backgoundContent{
-        @apply absolute z-0 w-full h-full bg-teal-800 flex justify-center items-center flex-col;
+        @apply absolute z-0 w-full h-full bg-teal-800 flex flex-col justify-center items-center;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
     }
-    @media (max-width: 1400px) {
+    @media (min-width: 1700px) {
+        .backgoundContent{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 60%);
+        }
+    }
+    @media (max-width: 1500px) {
         .backgoundContent{
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
         }
@@ -26,10 +31,10 @@
         }
     }
     .imgGestionBack{
-        @apply absolute md:bottom-5 lg:bottom-14 bottom-2 right-0 w-full max-w-[600px];
+        @apply absolute bottom-0 right-0 w-full md:max-w-[800px] lg:max-w-[1000px] 2xl:max-w-[1200px];
     }
     .contentGestion{
-        @apply relative z-20 flex flex-col py-0 md:py-20 xl:pb-[300px] lg:pb-[250px] md:pb-[200px] px-10 md:px-0 pb-[250px] md:flex-row max-w-6xl gap-5 justify-center items-center;
+        @apply relative z-20 flex flex-col py-0 md:py-20 xl:pb-[500px] lg:pb-[500px] md:pb-[450px] px-10 md:px-0 pb-[350px] md:flex-row max-w-6xl gap-5 justify-center items-center;
         .imgGestion{
             @apply w-full max-w-[250px] md:max-w-[400px];
             img{
