@@ -1,5 +1,5 @@
 .contactPage{
-    @apply flex flex-col min-h-[50vh] mt-[30%] lg:mt-0 lg:flex-row w-screen justify-start items-center;
+    @apply flex flex-col min-h-[70vh] mt-[30%] mb-[20%] lg:mb-0 lg:mt-0 lg:flex-row w-screen justify-start items-center;
     .infoDiv{
         @apply w-full lg:w-3/4 flex flex-col justify-center py-10 items-center uppercase;
         background: var(--textColorGreen);

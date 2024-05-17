@@ -1,7 +1,7 @@
 'use client'
-import React, {useState, useEffect, useRef, useCallback} from 'react';
-// import dynamic from 'next/dynamic';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Navbar from '../components/Navbar';
+import { useRouter } from 'next/navigation';
 import FlipNavWrapper from '../components/NewNavbar';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -9,20 +9,25 @@ import { achatData } from './achatData';
 import Link from 'next/link';
 import styles from './achat.module.scss';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import 'animate.css'
-
+import ImgFooter from '../components/ImgFooter';
+import 'animate.css';
+import ContactForm from '../components/ContactForm';
 
 export default function AchatPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
   const mapRef = useRef(null);
+  const router = useRouter();
 
   const containerStyle = {
     width: '100%',
     height: '100%'
   };
 
+  const goToAnnonce = useCallback((id) => {
+    router.push(`/achat/locals/${id}`);
+  }, [router]);
 
   const initializeIcon = useCallback(() => {
     if (typeof window !== 'undefined' && window.google && window.google.maps) {
@@ -36,14 +41,12 @@ export default function AchatPage() {
     }
   }, []);
 
-
   useEffect(() => {
     const loadData = async () => {
       const fetchedData = await achatData();
       if (fetchedData.length === 0) {
         setError("Failed to fetch data or no data available.");
       } else {
-        // Convert lat and lon to numbers
         const convertedData = fetchedData.map(item => ({
           ...item,
           lat: parseFloat(item.lat),
@@ -56,37 +59,36 @@ export default function AchatPage() {
 
     loadData();
   }, []);
+
   if (error) return <div>Error: {error}</div>;
-  // if (!icon) return <div>Loading map...</div>; // Ensure icon is loaded
 
   return (
     <>
-      {/* <Navbar /> */}
       <FlipNavWrapper />
       <section className={styles.achatPage}>
         <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>
           {data.map((item) => (
             <Link href={`/achat/locals/${item._id}`} key={item._id} className={styles.localsCard}>
-                <div className={styles.bgImg}>
-                  <Image src={`/assets/img/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
+              <div className={styles.bgImg}>
+                <Image src={`/assets/img/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
+              </div>
+              <div className={styles.cardContent}>
+                <h1>{item.name}</h1>
+                <div className='flex flex-row gap-2'>
+                  <span>{item.chambre}&nbsp;Chambres</span>
+                  <span>{item.surface}&nbsp;m<sup>2</sup></span>
                 </div>
-                <div className={styles.cardContent}>
-                  <h1>{item.name}</h1>
-                  <div className='flex flex-row gap-2'>
-                    <span>{item.chambre}&nbsp;Chambres</span>
-                    <span>{item.surface}&nbsp;m<sup>2</sup></span>
-                  </div>
-                  <h2>{item.price}</h2>
-                  <div className='hidden'>
-                    <p>{item.lat}</p>
-                    <p>{item.lon}</p>
-                  </div>
+                <h2>{item.price}</h2>
+                <div className='hidden'>
+                  <p>{item.lat}</p>
+                  <p>{item.lon}</p>
+                </div>
               </div>
             </Link>
           ))}
         </section>
         <section className={`animate__animated animate__fadeIn ${styles.mapShow}`}>
-        <LoadScript
+          <LoadScript
             googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API}
             onLoad={initializeIcon}
           >
@@ -100,6 +102,7 @@ export default function AchatPage() {
                 <Marker
                   key={item._id}
                   position={{ lat: item.lat, lng: item.lon }}
+                  onClick={() => goToAnnonce(item._id)}
                   icon={icon}
                 />
               ))}
@@ -107,6 +110,8 @@ export default function AchatPage() {
           </LoadScript>
         </section>
       </section>
+      <ContactForm />
+      <ImgFooter />
       <Footer />
     </>
   );

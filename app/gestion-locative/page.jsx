@@ -5,6 +5,8 @@ import styles from './gestion.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
 import Footer from "../components/Footer"
 import BasicFAQ from './components/accordition'
+import ContactForm from "../components/ContactForm"
+import ImgFooter from "../components/ImgFooter"
 import 'animate.css'
 
 export default function GestionLocative(){
@@ -18,21 +20,35 @@ export default function GestionLocative(){
                         <div className={styles.separateur}></div>
                     </div>
                     <div className="w-screen mt-72 md:mt-0 relative flex flex-col h-fit justify-center items-center">
-                        <div className={styles.backgoundContent}></div>
+                        <div className={styles.backgoundContent}>
+                            {/* <div className="max-w-6xl border-2 border-white">
+                                <Image src="/assets/img/gestion/try1.webp" className={`${styles.imgGestionBack} z-20`} width={500} height={500} />
+                            </div> */}
+                        </div>
+                        
                         <div className={styles.contentGestion}>
+                        
+                        {/* <Image src="/assets/img/gestion/img2.png" className={`${styles.imgGestionBack} z-10`} width={500} height={500} /> */}
                             <div className={styles.imgGestion}>
                                 <Image src="/assets/img/gestion/gestion.jpg" className="animate__animated animate__fadeInUp" width={300} height={300} />
                             </div>
                             <div className={`animate__animated animate__fadeInUp ${styles.textGestion}`}>
-                                <h1>exquisite lake austin contemporary estate</h1>
+                                <h1>Choisissez DELTA, et transformez votre investissement immobilier en une source de revenus sans soucis.</h1>
                                 <div className={styles.separateur}></div>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci voluptatem ullam laborum totam non! Nesciunt eos quia ratione asperiores. Asperiores quia quos labore in ab eos, laudantium officiis ipsum expedita.</p>
+                                <p>DELTA propose un accompagnement complet aux propriétaires souhaitant louer leur bien et en assurer la gestion locative grâce à notre expertise spécialisée.
+                                <br /><br />
+                                Après l'acquisition de votre bien immobilier, nous prenons en charge toutes les démarches nécessaires pour que vous puissiez percevoir vos revenus locatifs. Que vous choisissiez une location traditionnelle ou saisonnière, nous gérons l'intégralité de votre bien.
+                                <br /><br />
+                                Nous offrons également un service de décoration d'intérieur pour meubler votre bien et en maximiser le rendement locatif
+                                </p>
                                 <a href="/contact">nous&nbsp;contacter</a>
                             </div>
                         </div>
                     </div>
                 <BasicFAQ />
             </section>
+        <ContactForm />
+        <ImgFooter />
         <Footer/>
         </>
     )

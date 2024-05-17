@@ -16,29 +16,12 @@ const Footer = () => {
 
   return (
     <section className={styles.footerSection}>
-      <div className={styles.textTop}>
-        <h1>
-          raisons&nbsp;de<br/>
-          nous&nbsp;contacter
-        </h1>
-        <div className={styles.separateur}></div>
-        <div>
-          <div className={styles.cards}>
-            <Card title="lorem Ipsum" image="/assets/img/footer/croissance.png" />
-            <Card title="lorem Ipsum" image="/assets/img/footer/batiment.png" />
-            <Card title="lorem Ipsum" image="/assets/img/footer/croissance.png" />
-          </div>
-        </div>
-      </div>
-      <div className={styles.imgFull}>
-        <Image src="/assets/img/footer/city.png" width={1000} height={100} />
-      </div>
-
+      
       {/* ----------------------------------------------------------------------- */}
 
       <div className={styles.footerInfo}>
         <div className='flex flex-col md:flex-row max-w-7xl md:gap-6 gap-10'>
-          <div className='w-full md:w-1/4'>
+          <div className='w-full md:w-1/3'>
             <Image src="/assets/img/footer/logo.png" className='mb-7' width={250} height={200} alt='Delta' />
             {/* <div className={styles.separateurInfo}></div> */}
             <ul>
@@ -47,20 +30,7 @@ const Footer = () => {
             </ul>
             
           </div>
-          <div className='w-full md:w-1/4'>
-            <h3>Immobilier:</h3>
-            <div className={styles.separateurInfo}></div>
-            <ul type="none">
-              <a href='#'><li>Actualite       </li></a>
-              <a href='#'><li>Acheter a Dubai </li></a>
-              <a href='#'><li>Investir a Dubai</li></a>
-              <a href='#'><li>Les chiffres    </li></a>
-              <a href='#'><li>Les Quartiers   </li></a>
-              <a href='#'><li>Les promoteurs  </li></a>
-              <a href='#'><li>Vivre a Dubai   </li></a>
-            </ul>
-          </div>
-          <div className='w-full md:w-1/4'>
+          <div className='w-full md:w-1/3'>
           <h3>Les services Delta:</h3>
             <div className={styles.separateurInfo}></div>
             <ul type="none">
@@ -70,12 +40,12 @@ const Footer = () => {
               <a href='#'><li>Estimer mon projet</li></a>
             </ul>
           </div>
-          <div className='w-full md:w-1/4'>
+          <div className='w-full md:w-1/3'>
           <h3>Informations:</h3>
             <div className={styles.separateurInfo}></div>
             <ul type="none">
               <a href='#'><li>Notre agence</li></a>
-              <a href='#'><li>Recrutement</li></a>
+              <a href='#'><li>Actualite       </li></a>
               <a href='#'><li>Mentions legales</li></a>
               <a href='#'><li>Politique de confidentialite</li></a>
             </ul>

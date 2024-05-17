@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react'
 import styles from './actualite.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
 import Footer from "../components/Footer"
+import ImgFooter from '../components/ImgFooter'
+import ContactForm from '../components/ContactForm'
 import Image from 'next/image'
 import { articlesData } from './articles'
 import { FaArrowRight } from "react-icons/fa";
@@ -52,6 +54,8 @@ export default function ActualiteArchive() {
 
             </div>
         </section>
+        <ContactForm />
+        <ImgFooter />
         <Footer />
         </>
     )

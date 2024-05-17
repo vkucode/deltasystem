@@ -184,23 +184,23 @@ const FooterCTAs = () => {
 const LINKS = [
   {
     title: "achat",
-    href: "#",
+    href: "/achat",
   },
   {
     title: "location",
-    href: "#",
+    href: "/location",
   },
   {
     title: "gestion locative",
-    href: "#",
+    href: "/gestion-locative",
   },
   {
     title: "actualite",
-    href: "#",
+    href: "/actualite",
   },
   {
     title: "notre agence",
-    href: "#",
+    href: "/notre-agence",
   },
 ];
 

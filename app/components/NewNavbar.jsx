@@ -13,7 +13,7 @@ const FlipNavWrapper = () => {
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="fixed z-50 h-[90px] animate__animated animate__fadeInDown w-full bg-teal-900 lg:bg-white top-0 pr-10 lg:pr-5 flex items-center justify-between">
+    <nav className="fixed z-50 h-[90px] lg:overflow-hidden animate__animated animate__fadeInDown w-full bg-teal-900 lg:bg-white top-0 pr-10 lg:pr-5 flex items-center justify-between">
       <NavLeft setIsOpen={setIsOpen} />
       <NavMenu isOpen={isOpen} />
     </nav>
@@ -24,8 +24,8 @@ const FlipNav = () => {
 const Logo = () => {
     return (
       <a href="/">
-        <div className="py-5 px-10 bg-teal-900">
-          <Image src="/assets/img/navbar/logoHeader.png" width={200} height={100} alt="logo Delta" />
+        <div className="py-8 pl-5 lg:px-16 bg-teal-900 max-h-[90px]">
+          <Image src="/assets/img/navbar/logoHeader.png" width={150} height={90} alt="logo Delta" />
         </div>
       </a>
       

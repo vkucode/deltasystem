@@ -145,9 +145,8 @@ useEffect(() => {
 
   ScrollTrigger.create({
     trigger: "#tlFirstTextDiv",
-    start: "top 600px",
+    start: "top 500px",
     end: "bottom 400px",
-    // markers: true,
     scrub: true,
     onEnter: () => setFirstTextDiv("animate__fadeInUp"),
     onLeave: () => setFirstTextDiv("animate__fadeOutUp"),
@@ -313,7 +312,7 @@ useEffect(() => {
             {/**--------------------------------------------------------------------------------------------- */}  
             <div id='tlBurjFirst' className={`w-screen hidden min-h-[100vh] top-[0vh] absolute z-0`}></div>
             <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[160vh] top-[170vh] w-full`} id='timeLineBurj'></div>
-            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[150vh] z-0 w-screen`}></div>
+            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[150vh] md:top-[135vh] z-0 w-screen`}></div>
             <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[210vh] z-0 w-screen`}></div>
             <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[290vh] z-0 w-screen`}></div>
             <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[340vh] z-0 w-screen`}></div>
@@ -321,7 +320,7 @@ useEffect(() => {
             <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[470vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
-              <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
+              <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100dvh", zIndex: 10 }}> 
                     <directionalLight position={[-34.5, 50, 300]} intensity={25} scale={2000} castShadow={true} color="#c9deff" />{/**c9deff */}
                     <Model scale={scale} rotation={rotation}/>
               </Canvas>
