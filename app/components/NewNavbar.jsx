@@ -37,7 +37,7 @@ const NavLeft = ({ setIsOpen }) => {
     <div className="flex flex-row w-full justify-between lg:justify-around items-center gap-6">
       <Logo />
       <NavLink text="Achat" link="/achat" />
-      <NavLink text="Location" link="/achat" />
+      <NavLink text="Location" link="/location" />
       <NavLink text="Gestion locative" link="/gestion-locative" />
       <NavLink text="actualite" link="/actualite" />
       <NavLink text="notre agence" link="/#" />
@@ -84,7 +84,7 @@ const NavMenu = ({ isOpen }) => {
       className="absolute p-4 bg-teal-900 shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4"
     >
       <MenuLink text="Achat" link="/achat" />
-      <MenuLink text="Location" link="/achat" />
+      <MenuLink text="Location" link="/location" />
       <MenuLink text="Gestion locative" link="/gestion-locative" />
       <MenuLink text="actualite" link="/actualite" />
       <MenuLink text="notre agence" link="/#" />

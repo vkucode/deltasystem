@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Navbar from '../components/Navbar';
 import { useRouter } from 'next/navigation';
 import FlipNavWrapper from '../components/NewNavbar';
 import Footer from '../components/Footer';
@@ -17,6 +16,7 @@ export default function AchatPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);  // State to track hovered item
   const mapRef = useRef(null);
   const router = useRouter();
 
@@ -68,8 +68,17 @@ export default function AchatPage() {
       <section className={styles.achatPage}>
         <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>
           {data.map((item) => (
-            <Link href={`/achat/locals/${item._id}`} key={item._id} className={styles.localsCard}>
+            <Link
+              href={`/achat/locals/${item._id}`}
+              key={item._id}
+              className={styles.localsCard}
+              onMouseEnter={() => setHoveredItem(item._id)}  // Set hovered item on mouse enter
+              onMouseLeave={() => setHoveredItem(null)}      // Reset hovered item on mouse leave
+            >
               <div className={styles.bgImg}>
+                <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
+                  <Image src="/assets/img/accueil/iconFiltre.png" width={100} height={100} alt='filtre' />
+                </div>
                 <Image src={`/assets/img/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
               </div>
               <div className={styles.cardContent}>
