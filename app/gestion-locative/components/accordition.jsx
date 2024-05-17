@@ -8,7 +8,7 @@ const BasicFAQ = () => {
     <div className="px-4 py-12">
       <div className="mx-auto max-w-3xl">
         
-        <Question title="En quoi consiste la gestion locative?" defaultOpen>
+        <Question title="En quoi consiste la gestion locative?">
           <p>
           La gestion locative englobe toutes les tâches liées à la location d'un bien au nom du propriétaire, que ce soit pour des locations de courte ou de longue durée. Cela comprend la recherche de locataires, la gestion des visites, la rédaction et la signature des contrats de location, la perception des loyers, ainsi que la gestion des réparations et de l'entretien. De plus, elle s'occupe des aspects administratifs et financiers de la location. L'agence sert d'intermédiaire entre le propriétaire et le locataire pour garantir une location fluide et sans tracas.
           </p>

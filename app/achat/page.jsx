@@ -120,7 +120,7 @@ export default function AchatPage() {
         </section>
       </section>
       <ContactForm />
-      <ImgFooter imgSrc="/assets/img/footer/city2.png" />
+      <ImgFooter imgSrc="/assets/img/footer/city.png" />
       <Footer />
     </>
   );

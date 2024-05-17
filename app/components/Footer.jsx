@@ -25,8 +25,8 @@ const Footer = () => {
             <Image src="/assets/img/footer/logo.png" className='mb-7' width={250} height={200} alt='Delta' />
             {/* <div className={styles.separateurInfo}></div> */}
             <ul>
-              <li><a href="#">Adresse: Baysquare Building 11 Business Bay 5th floor / Office 506-Dubai</a></li>
-              <li className='mt-5'><a href="#">Telephone: +971 58 558 7880</a></li>
+              <li><a href="https://maps.app.goo.gl/HziQ2BNkxxujq3Az7">Adresse: UAE - DUBAI - Business Bay - BAY SQUARE MARASI DRIVE THE BINARY TOWER / ÉTAGE 20</a></li>
+              <li className='mt-5'><a href="tel:+971585864096">Telephone: +971 58 586 4096</a></li>
             </ul>
             
           </div>

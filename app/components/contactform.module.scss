@@ -10,7 +10,7 @@
 .formDiv{
     @apply w-full flex flex-col ml-0 mt-0 justify-center items-center bg-white font-medium pb-10 px-5 lg:px-16;
     h1{
-        @apply text-3xl uppercase;
+        @apply text-xl md:text-3xl uppercase;
         color: var(--textColorGreen);
         letter-spacing: 3px;
         font-family: 'Montserrat';

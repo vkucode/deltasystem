@@ -48,7 +48,6 @@ export default function GestionLocative(){
                 <BasicFAQ />
             </section>
         <ContactForm />
-        <ImgFooter />
         <Footer/>
         </>
     )

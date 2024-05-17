@@ -14,12 +14,18 @@
     .archiveArticles{
         @apply flex flex-row flex-wrap gap-5 w-full px-10 max-w-7xl justify-center md:justify-start items-center;
         .articleCard{
-            @apply cursor-pointer relative flex flex-col w-full md:w-[32%] h-[350px];
+            @apply cursor-pointer relative flex flex-col w-full md:w-[32%] h-[350px] overflow-hidden;
+            .overlayBg{
+                @apply absolute z-20 w-full h-full bg-teal-800 bg-opacity-50 flex flex-col justify-start overflow-hidden items-center;
+                img{
+                    @apply w-[130px] h-auto mt-[20%];
+                }
+            }
             img{
-                @apply absolute w-full h-full object-cover object-bottom;
+                @apply absolute z-10 w-full h-full object-cover object-bottom;
             }
             .articleContent{
-                @apply absolute z-10 flex flex-col uppercase gap-4 bottom-0 px-5 py-5 bg-teal-800 text-white;
+                @apply absolute z-30 flex w-full flex-col uppercase gap-4 bottom-0 px-5 py-5 bg-teal-800 text-white;
                 font-family: 'Montserrat';  
                 h1{
                     @apply text-base font-medium;
