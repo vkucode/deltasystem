@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .modelSection{
-    @apply relative z-[60] h-[650vh] w-screen;
+    @apply relative z-[60] h-[580vh] w-screen;
 }
 .videoBack{
     @apply fixed z-[60] top-0 left-0 w-screen h-dvh object-cover;
@@ -25,8 +25,12 @@
     @apply fixed z-[70];
     font-family: 'Montserrat';
     mix-blend-mode: normal;
+    div{
+        @apply text-4xl sm:text-4xl md:text-7xl uppercase font-bold w-[350px] md:w-[600px];
+        letter-spacing: 10px;
+    }
     h1{
-        @apply text-4xl sm:text-4xl md:text-7xl uppercase font-bold;
+        @apply text-4xl sm:text-4xl md:text-7xl uppercase font-bold w-[350px] md:w-[600px];
         letter-spacing: 10px;
     }
     .voirPlusBTN{
@@ -36,9 +40,14 @@
     .voirPlusBTN:hover{
         @apply uppercase ml-0 mt-3 py-2 px-10 text-lg border-4 bg-white text-teal-900 border-white; 
     }
+    h2{
+        @apply text-xl md:text-3xl -mb-10 md:-mb-16;
+    }
     p{
-        letter-spacing: 1px;
-        line-height: 1.5;
+        @apply text-xs md:text-sm py-5 px-5 mt-5 md:mb-0 mb-5 bg-opacity-60 w-full backdrop-blur-2xl;
+        font-family: 'Poppins';
+        letter-spacing: 1.5px;
+        line-height: 1.8;
     }
     .cardHome{
         @apply h-full w-full flex scale-95 flex-col border-none justify-center items-center;

@@ -12,6 +12,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollSmoother from 'gsap/src/ScrollSmoother';
 import CardCarousel from './components/selection';
+import { NavbarAccueil } from './components/navbarAccueil';
 import '../globals.css'
 
 const Accueil = () => {
@@ -89,11 +90,11 @@ const Accueil = () => {
         id: "firstANIM",
         scrub: true,
         ease: "power2.out",
-        onEnter: () => {setPositionY('-30'), setAnimationBurjEntry("animate__fadeInUp")},
-        onLeave: () => setPositionY('-11'),
+        onEnter: () => {setPositionY('-57'), setAnimationBurjEntry("animate__fadeInUp")},
+        onLeave: () => setPositionY('-15'),
         onUpdate: (self) => {
           const progress = self.progress;
-          const setPostitionBurjY = -30 + (progress * 19);
+          const setPostitionBurjY = -57 + (progress * 42);
           console.log(setPostitionBurjY);
           const rotationValueX = -1.5 + (progress * 1);
           setRotation([rotationValueX, 0, 0]);
@@ -120,7 +121,7 @@ const Accueil = () => {
       onUpdate: (self) => {
         const progress = self.progress;
         const rotationValueY = progress * 4 * Math.PI;
-        const setPostitionBurjY = -11 + (progress * (0 - 49));
+        const setPostitionBurjY = -15 + (progress * (0 - 49));
         setRotation([0, rotationValueY, 0]);
         setPositionY(setPostitionBurjY);
       }
@@ -299,25 +300,25 @@ useEffect(() => {
       </div>
      
       <div>
-        
+        <NavbarAccueil />
         <div className={`${styles.videoBack} pointer-events-none fixed animate__animated animate__fadeIn`}>
               {/* <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/> */}
               <Image src="/assets/img/accueil/bgImg.png" width={1000} height={1000}  />
             </div>
             <div className={`${styles.logoBack}`} id='logoDelta'>
-                <Image src="/assets/img/accueil/logoBig.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
+                <Image src="/assets/img/accueil/logoOr.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
               </div>
 
             
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div id='tlBurjFirst' className={`w-screen hidden min-h-[150vh] top-[0vh] absolute z-0`}></div>
-            <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[210vh] top-[220vh] w-full`} id='timeLineBurj'></div>
-            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[200vh] z-0 w-screen`}></div>
-            <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[260vh] z-0 w-screen`}></div>
-            <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[340vh] z-0 w-screen`}></div>
-            <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[390vh] z-0 w-screen`}></div>
-            <div id='recenterBurj3to4' className={`absolute hidden min-h-[40vh] top-[470vh] z-0 w-screen`}></div>
-            <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[520vh] z-0 w-screen'></div>
+            <div id='tlBurjFirst' className={`w-screen hidden min-h-[100vh] top-[0vh] absolute z-0`}></div>
+            <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[160vh] top-[170vh] w-full`} id='timeLineBurj'></div>
+            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[150vh] z-0 w-screen`}></div>
+            <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[210vh] z-0 w-screen`}></div>
+            <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[290vh] z-0 w-screen`}></div>
+            <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[340vh] z-0 w-screen`}></div>
+            <div id='recenterBurj3to4' className={`absolute hidden min-h-[40vh] top-[420vh] z-0 w-screen`}></div>
+            <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[470vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100vh", zIndex: 10 }}> 
@@ -331,25 +332,31 @@ useEffect(() => {
           <div  className={`${styles.textDiv} text-center left-[50%] md:top-[70%] top-[60%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${firstTextDiv} text-white !text-2xl md:text-4xl flex flex-col gap-3 justify-center items-center text-center`}>Welcome&nbsp;to<br /><Image src="/assets/img/accueil/logoWhite.png" width={400} height={300} /></h1>
           </div>
-          <div className={`${styles.textDiv} text-center left-[60%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${secondTextDiv} text-white`}>
-            notre expertise<br />
-            <p className='py-5 px-2 mt-5 text-sm bg-white bg-opacity-30 backdrop-blur-sm rounded-xl'>
-            Dans l'immobilier, la notion de "delta" symbolise les transitions vécues lors de l'achat ou de la vente d'une propriété. À l'image du delta en philosophie qui représente le changement, notre agence facilite ces moments clés en offrant un service adaptable et réactif, assurant un processus aussi fluide que possible.
-            </p>
-              <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
-            </h1>
+          <div className={`${styles.textDiv} text-center left-[55%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
+            <div className={`animate__animated ${secondTextDiv} text-white`}>
+              <h2 className='text-center'>Delta réinvente l’investissement immobilier.</h2><br />
+              <p className='bg-teal-900 rounded-xl'>
+              Delta, propose des plans de paiement sur des appartements immédiatement disponibles. Contrairement à d'autres agences qui ne proposent des facilités de paiement que pour des projets en construction, Delta vous permet d'investir dans des biens déjà livrés tout en bénéficiant de modalités de paiement flexibles. Cette approche unique a dubai vous offre la sécurité de voir et d'acquérir votre nouvelle propriété sans attendre. Choisir Delta, c'est profiter d'une expertise inégalée et d'une tranquillité d'esprit incomparable.
+              </p>
+                <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
+            </div>
           </div>
-          <div className={`${styles.textDiv} text-center left-[40%] md:left-[25%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${thirdTextDiv} text-white`}>
-              notre<br />selection<br />
-              <CardCarousel />
-            </h1>
+          <div className={`${styles.textDiv} text-left left-[45%] md:left-[35%] lg:left-[25%] max-w-[700px] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
+            <div className={`animate__animated ${thirdTextDiv} text-white`}>
+              <h2 className='text-left'>
+                Delta, une agence immobilière<br/> mais pas que…
+              </h2>
+              <br />
+              <p className='bg-teal-900 text-left max-w-[700px] rounded-xl'>
+              Delta, n’est pas seulement une agence immobilière, nous sommes aussi des investisseurs actifs sur le marché immobilier de Dubaï. Grâce à nos investissements personnels dans des appartements et des villas, nous possédons une connaissance approfondie et réelle des promoteurs immobiliers locaux. Cette double casquette nous confère des avantages financiers significatifs et nous permet de négocier des conditions plus favorables pour nos clients. En choisissant Delta, vous bénéficiez de notre expertise et de notre position privilégiée pour obtenir les meilleures opportunités immobilières à Dubaï.
+              </p>
+            <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
+            </div>
           </div>
 
           <div className={`${styles.textDiv} text-center left-[50%] md:top-[50%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
             <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center w-full`}>
-              <Image src="/assets/img/accueil/logoBig.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
+              <Image src="/assets/img/accueil/logoOr.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
               <div className='flex flex-row w-screen max-w-5xl h-fit justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
                   <Image src="/assets/img/accueil/ACHAT.png" width={300} height={300} />
