@@ -334,8 +334,8 @@ useEffect(() => {
           <div className={`${styles.textDiv} text-center left-[55%] md:left-[75%] md:top-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]`}>
             <div className={`animate__animated ${secondTextDiv} text-white`}>
               <h2 className='text-center'>Delta réinvente l’investissement immobilier.</h2><br />
-              <p className='bg-teal-900 rounded-xl'>
-              Delta, propose des plans de paiement sur des appartements immédiatement disponibles. Contrairement à d'autres agences qui ne proposent des facilités de paiement que pour des projets en construction, Delta vous permet d'investir dans des biens déjà livrés tout en bénéficiant de modalités de paiement flexibles. Cette approche unique a dubai vous offre la sécurité de voir et d'acquérir votre nouvelle propriété sans attendre. Choisir Delta, c'est profiter d'une expertise inégalée et d'une tranquillité d'esprit incomparable.
+              <p className='bg-teal-900'>
+              Delta offre des plans de paiement flexibles pour des appartements immédiatement disponibles, contrairement aux autres agences qui ne proposent ces facilités que pour des projets en construction. À Dubaï, cette approche unique vous permet de voir et d'acquérir votre propriété sans attendre. En choisissant Delta, vous bénéficiez d'une expertise inégalée et d'une tranquillité d'esprit incomparable.
               </p>
                 <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </div>
@@ -346,28 +346,28 @@ useEffect(() => {
                 Delta, une agence immobilière<br/> mais pas que…
               </h2>
               <br />
-              <p className='bg-teal-900 text-left max-w-[700px] rounded-xl'>
-              Delta, n’est pas seulement une agence immobilière, nous sommes aussi des investisseurs actifs sur le marché immobilier de Dubaï. Grâce à nos investissements personnels dans des appartements et des villas, nous possédons une connaissance approfondie et réelle des promoteurs immobiliers locaux. Cette double casquette nous confère des avantages financiers significatifs et nous permet de négocier des conditions plus favorables pour nos clients. En choisissant Delta, vous bénéficiez de notre expertise et de notre position privilégiée pour obtenir les meilleures opportunités immobilières à Dubaï.
+              <p className='bg-teal-900 text-left max-w-[700px]'>
+              Delta est une agence immobilière et un investisseur à Dubaï. Nos investissements personnels nous donnent une connaissance approfondie des promoteurs locaux et nous permettent de négocier des conditions avantageuses pour nos clients. Choisissez Delta pour profiter de notre expertise et des meilleures opportunités immobilières.
               </p>
             <a href='#' className={styles.voirPlusBTN}>Voir plus</a>
             </div>
           </div>
 
           <div className={`${styles.textDiv} text-center left-[50%] md:top-[50%] top-[40%] translate-y-[-50%] translate-x-[-50%]`}>
-            <h1 className={`animate__animated ${lastTextDiv} flex flex-col gap-10 justify-center items-center w-full`}>
-              <Image src="/assets/img/accueil/logoOr.png" width={500} height={500} className='w-[350px] md:w-full max-w-[600px]' alt='logo' />
-              <div className='flex flex-row w-screen max-w-5xl h-fit justify-center items-center'>
+            <div className={`animate__animated ${lastTextDiv} !w-screen flex flex-col gap-10 justify-center items-center`}>
+              <Image src="/assets/img/accueil/logoOr.png" width={500} height={500} className='w-[350px] hidden md: md:w-full max-w-[600px]' alt='logo' />
+              <div className='flex flex-row !w-full max-w-6xl px-2 md:px-5 h-fit justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/ACHAT.png" width={300} height={300} />
+                  <Image src="/assets/img/accueil/ACHAT.png" width={400} height={300} />
                 </a>
                 <a href='/gestion-locative' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={300} height={300} />
+                  <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={400} height={300} />
                 </a>
                 <a href='/achat' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/LOCATION.png" width={300} height={300} />
+                  <Image src="/assets/img/accueil/LOCATION.png" width={400} height={300} />
                 </a>  
               </div>
-            </h1>
+            </div>
           </div>
         </section>
       </>
