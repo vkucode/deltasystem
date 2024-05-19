@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
       <div className={styles.copyrightFooter}>
         <div className={styles.copySeparateur}></div>
-        <div className='flex flex-row justify-center items-center'>©2024&nbsp;&nbsp;<Image src="/assets/img/footer/logoCopy.png" width={100} height={10} alt='logo' />&nbsp;&nbsp;Toutes&nbsp;les&nbsp;droits&nbsp;reserve</div><br/>
+        <div className='flex flex-row justify-center items-center'>©2024&nbsp;&nbsp;<Image src="/assets/img/accueil/logoOrClear.png" width={100} height={10} alt='logo' />&nbsp;&nbsp;Toutes&nbsp;les&nbsp;droits&nbsp;reserve</div><br/>
         <div className='flex flex-row justify-center items-center -mt-4'>Powered&nbsp;by&nbsp;<a href='https://vkucode.com'><Image src="/assets/img/footer/logoVKU.png" width={50} height={10} alt='logo VKU' /></a></div>
       </div>
     </section>
