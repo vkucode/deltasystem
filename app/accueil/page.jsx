@@ -25,7 +25,7 @@ const Accueil = () => {
     const [rotation, setRotation] = useState([-1, 0, 0]);
     const [scale, setScale] = useState(0.07);  //0.07
     const [rotationSpeed, setRotationSpeed] = useState(0.001); // Viteza de rotație inițială
-    const [positionY, setPositionY] = useState(-80); // Poziția inițială pe axa Y
+    const [positionY, setPositionY] = useState(-20); // Poziția inițială pe axa Y
     const [positionX, setPositionX] = useState(0);
     const [positionZ, setPositionZ] = useState(0)
 
@@ -90,13 +90,13 @@ const Accueil = () => {
         id: "firstANIM",
         scrub: true,
         ease: "power2.out",
-        onEnter: () => {setPositionY('-57'), setAnimationBurjEntry("animate__fadeInUp")},
+        onEnter: () => {setPositionY('-20'), setAnimationBurjEntry("animate__fadeInUp")},
         onLeave: () => setPositionY('-15'),
         onUpdate: (self) => {
           const progress = self.progress;
-          const setPostitionBurjY = -57 + (progress * 42);
+          const setPostitionBurjY = -20 + (progress * 5);
           console.log(setPostitionBurjY);
-          const rotationValueX = -1.5 + (progress * 1);
+          const rotationValueX = -1 + (progress * 0.5);
           setRotation([rotationValueX, 0, 0]);
           setPositionY(setPostitionBurjY);
         }
@@ -116,7 +116,7 @@ const Accueil = () => {
       end: "bottom 200px",
       id: "tlLineBurj",
       scrub: true,
-      onEnter: () => {setRotation([0, 0, 0]);},
+      onEnter: () => {setRotation([0, 0, 0])},
       onLeave: () => setRotation([0, 0, 0]),
       onUpdate: (self) => {
         const progress = self.progress;
@@ -145,8 +145,8 @@ useEffect(() => {
 
   ScrollTrigger.create({
     trigger: "#tlFirstTextDiv",
-    start: "top 500px",
-    end: "bottom 400px",
+    start: "top 300px",
+    end: "bottom 250px",
     scrub: true,
     onEnter: () => setFirstTextDiv("animate__fadeInUp"),
     onLeave: () => setFirstTextDiv("animate__fadeOutUp"),
@@ -304,20 +304,20 @@ useEffect(() => {
               {/* <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/> */}
               <Image src="/assets/img/accueil/bgImg.png" width={1000} height={1000}  />
             </div>
-            <div className={`${styles.logoBack}`} id='logoDelta'>
+            {/* <div className={`${styles.logoBack}`} id='logoDelta'>
                 <Image src="/assets/img/accueil/logoOr.png" className={`animate__animated ${logoDelta}`} width={2000} height={500} alt='logo Delta' />
-              </div>
+              </div> */}
 
             
             {/**--------------------------------------------------------------------------------------------- */}  
-            <div id='tlBurjFirst' className={`w-screen hidden min-h-[100vh] top-[0vh] absolute z-0`}></div>
-            <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[160vh] top-[170vh] w-full`} id='timeLineBurj'></div>
-            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[10vh] top-[150vh] md:top-[135vh] z-0 w-screen`}></div>
-            <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[210vh] z-0 w-screen`}></div>
-            <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[290vh] z-0 w-screen`}></div>
-            <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[340vh] z-0 w-screen`}></div>
-            <div id='recenterBurj3to4' className={`absolute hidden min-h-[40vh] top-[420vh] z-0 w-screen`}></div>
-            <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[470vh] z-0 w-screen'></div>
+            <div id='tlBurjFirst' className={`w-screen hidden min-h-[50vh] top-[0vh] absolute z-0`}></div>
+            <div className={`${styles.timelineBurj} absolute hidden min-h-[350vh] z-0 md:top-[110vh] top-[120vh] w-full`} id='timeLineBurj'></div>
+            <div id='tlFirstTextDiv' className={`absolute hidden min-h-[40vh] md:top-[65vh] top-[70vh] z-0 w-screen`}></div>
+            <div id='tlSecondTextDiv' className={`absolute hidden min-h-[70vh] top-[150vh] z-0 w-screen`}></div>
+            <div id='recenterBurj2to3' className={`absolute hidden min-h-[40vh] top-[230vh] z-0 w-screen`}></div>
+            <div id='tlThirdTextDiv' className={`absolute hidden min-h-[70vh] top-[280vh] z-0 w-screen`}></div>
+            <div id='recenterBurj3to4' className={`absolute hidden min-h-[40vh] top-[360vh] z-0 w-screen`}></div>
+            <div id='tlLastTextDiv' className='absolute hidden min-h-[40vh] top-[410vh] z-0 w-screen'></div>
             {/**--------------------------------------------------------------------------------------------- */}  
             <div className={`fixed top-0 z-[70] w-full min-h-[100vh]`} id='burjKhalifa'>
               <Canvas className={`animate__animated ${animationBurjEntry}`} style={{ width: "100vw", height: "100dvh", zIndex: 10 }}> 
