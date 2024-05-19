@@ -25,7 +25,7 @@ const Nav = () => {
 const LogoTop = () => {
   return (
     <div className="fixed z-[9999] top-8 md:top-10 left-5 md:left-10">
-      <Image src="/assets/img/accueil/logoOrClear.png" width={200} height={200} alt="" />
+      <Image src="/assets/img/accueil/logoBig.png" width={200} height={200} alt="" />
     </div>
   );
 };
@@ -90,7 +90,7 @@ const Logo = () => {
       href="#"
       className="grid h-20 w-[200px] md:w-[300px] pl-5 md:pl-10 pt-0 md:pt-10 place-content-center rounded-br-xl rounded-tl-xl bg-transparent transition-colors"
     >
-      <Image src='/assets/img/accueil/logoOrClear.png' width={200} height={200} alt="logo" />
+      <Image src='/assets/img/accueil/logoBig.png' width={200} height={200} alt="logo" />
     </motion.a>
   );
 };

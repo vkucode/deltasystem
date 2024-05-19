@@ -25,7 +25,7 @@ const Logo = () => {
     return (
       <a href="/">
         <div className="py-8 pl-5 lg:px-16 bg-teal-900 max-h-[90px]">
-          <Image src="/assets/img/accueil/logoOrClear.png" width={150} height={90} alt="logo Delta" />
+          <Image src="/assets/img/accueil/logoBig.png" width={150} height={90} alt="logo Delta" />
         </div>
       </a>
       

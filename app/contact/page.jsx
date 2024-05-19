@@ -2,7 +2,7 @@
 import Image from "next/image"
 import styles from './contact.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
-import Navbar from "../components/Navbar"
+import ImgFooter from "../components/ImgFooter"
 import Footer from "../components/Footer"
 import 'animate.css'
 
@@ -17,11 +17,11 @@ export default function Contact(){
                     <ul>
                         <li>
                             <h2>Adresse</h2>
-                            <p>95425 Dubai, Emirat Arabie</p>
+                            <p className="w-full md:w-[70%]">UAE - DUBAI - Business Bay - Bay Square Marasi Drive the Binary Tower / Étage 20</p>
                         </li>
                         <li className="mt-8">
                             <h2>Telephone</h2>
-                            <p>+1254 235 215</p>
+                            <p>+971 58 586 4096</p>
                         </li>
                         <li className="mt-8">
                             <h2>Email</h2>
@@ -46,6 +46,7 @@ export default function Contact(){
                 </form>
             </div>
         </section>
+        <ImgFooter imgSrc="/assets/img/footer/city3.png" />
         <Footer />
         </>
     )

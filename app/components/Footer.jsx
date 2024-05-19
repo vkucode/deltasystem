@@ -36,7 +36,7 @@ const Footer = () => {
             <div className={styles.separateurInfo}></div>
             <ul type="none">
               <a href='#'><li>Achat immobilier</li></a>
-              <a href='#'><li>Vente immobiliere</li></a>
+              <a href='#'><li>Location immobiliere</li></a>
               <a href='#'><li>Gestion locative</li></a>
               <a href='#'><li>Estimer mon projet</li></a>
             </ul>

@@ -1,11 +1,11 @@
 .contactPage{
-    @apply flex flex-col min-h-[70vh] mt-[30%] mb-[20%] lg:mb-0 lg:mt-0 lg:flex-row w-screen justify-start items-center;
+    @apply flex flex-col min-h-[70vh] mt-[30%] mb-[20%] lg:-mb-20 lg:mt-0 lg:flex-row w-screen justify-start items-center;
     .infoDiv{
         @apply w-full lg:w-3/4 flex flex-col justify-center py-10 items-center uppercase;
         background: var(--textColorGreen);
         font-family: "Montserrat";
         div{
-            @apply border-l-[4px] lg:pl-8 pl-5;
+            @apply md:border-l-[4px] border-l-[0px] lg:pl-8 pl-5;
             border-color: var(--textColorGold);
             color: var(--textColorGold);
             letter-spacing: 3px;
