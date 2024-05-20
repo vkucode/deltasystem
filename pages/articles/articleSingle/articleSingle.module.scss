@@ -1,20 +1,10 @@
 .localDetails{
     @apply mt-[9vh] md:mt-[10vh] flex flex-col justify-center items-center;
     .galleryImg{
-        @apply w-screen h-[350px] content-center relative overflow-hidden;
-        .SliderControls{
-            @apply absolute w-full left-0 top-0 z-20 h-full flex flex-row justify-between items-center;
-            button{
-                @apply bg-white flex text-lg items-center justify-center rounded-full text-black w-[30px] h-[30px] mx-5;
-            }
-        }
-        div{
-            @apply w-full h-full;
+        @apply w-screen h-[400px] content-center relative overflow-hidden;
             img{
-                @apply w-full h-full object-cover;
+                @apply w-full h-full object-center object-cover;
             }
-        }
-        
     }
     .content{
         @apply flex flex-col md:flex-row max-w-7xl w-full;
@@ -29,6 +19,16 @@
                 @apply w-full pl-5 lg:pl-0;
                 div{
                     @apply w-full flex flex-row justify-between pb-[3px] pt-3 border-b-[1px] pr-10;
+                }
+            }
+
+            .contentItem{
+                @apply pl-5 md:pr-14 md:pl-0;
+                h2{
+                    @apply text-2xl font-semibold uppercase;
+                }
+                .separateurContent{
+                    @apply h-[2px] w-[50%] bg-teal-800 mt-3 mb-3; 
                 }
             }
         }

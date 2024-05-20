@@ -1,6 +1,6 @@
 // pages/achat/locals/[id].jsx
 'use client'
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
 import FlipNavWrapper from '@/app/components/NewNavbar';
 import Footer from '@/app/components/Footer';
@@ -10,6 +10,7 @@ import '../../../app/globals.css'
 import styles from './singleAchat.module.scss'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io"
 import Slider from 'react-slick';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
@@ -25,6 +26,16 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   const containerStyle = {
     width: '100%',
     height: '350px'
+  };
+
+  const sliderRef = useRef(null);
+
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
   };
 
 
@@ -44,6 +55,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   var settings = {
     infinite: true,
     speed: 500,
+    dots: true,
     slidesToScroll: 3,
     slidesToShow: 3,
     responsive: [
@@ -51,6 +63,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
         breakpoint: 1800,
         settings: {
           slidesToShow: 3,
+          dots: true,
           slidesToScroll: 3,
           infinite: true,
         }
@@ -58,6 +71,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       {
         breakpoint: 1400,
         settings: {
+          dots: true,
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
@@ -66,6 +80,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       {
         breakpoint: 600,
         settings: {
+          dots: true,
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1
@@ -109,7 +124,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       <FlipNavWrapper />
       <section className={styles.localDetails}>
         <section className={styles.galleryImg}>
-        <Slider {...settings}>
+        <div className={styles.SliderControls}>
+            <button onClick={handlePrev}><IoIosArrowBack /></button>
+            <button onClick={handleNext}><IoIosArrowForward /></button>
+          </div>
+        <Slider ref={sliderRef} {...settings}>
           <div>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
             </div>

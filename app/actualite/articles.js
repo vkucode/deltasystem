@@ -16,8 +16,6 @@ export const articlesData = async () => {
       title: item.title,
       dataPost: item.dataPost,
       imgThumbnail: item.imgThumbnail,
-      titleContent: item.content.article.title,
-      textContent: item.content.article.text,
     }));
   } catch (error) {
     console.error("Failed to fetch data:", error.message);

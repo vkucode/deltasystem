@@ -356,13 +356,16 @@ useEffect(() => {
               <Image src="/assets/img/accueil/logoOr.png" width={500} height={500} className='w-[350px] hidden md: md:w-full max-w-[600px]' alt='logo' />
               <div className='flex flex-row !w-full max-w-6xl px-2 md:px-5 h-fit justify-center items-center'>
                 <a href='/achat' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/ACHAT.png" width={400} height={300} />
+                  <Image src="/assets/img/accueil/achatsimple.png" width={700} height={300} />
+                  <p>achat</p>
                 </a>
                 <a href='/gestion-locative' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/GESTION LOCATIVE.png" width={400} height={300} />
+                  <Image src="/assets/img/accueil/gestionsimple.png" width={700} height={300} />
+                  <p>gestion locative</p>
                 </a>
                 <a href='/location' className={`${styles.cardHome}`}>
-                  <Image src="/assets/img/accueil/LOCATION.png" width={400} height={300} />
+                  <Image src="/assets/img/accueil/locationsimple.png" width={700} height={300} />
+                  <p>location</p>
                 </a>  
               </div>
             </div>

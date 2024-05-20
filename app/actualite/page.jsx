@@ -41,7 +41,7 @@ export default function ActualiteArchive() {
             </div>
             <div className={styles.archiveArticles}>
                 {data.map((item) =>(
-                    <Link href={`#`}
+                    <Link href={`/articles/articleSingle/${item._id}`}
                         className={styles.articleCard}
                         key={item._id}
                         onMouseEnter={() => setHoveredItem(item._id)}  // Set hovered item on mouse enter

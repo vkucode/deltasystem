@@ -1,7 +1,13 @@
 .localDetails{
     @apply mt-[9vh] md:mt-[10vh] flex flex-col justify-center items-center;
     .galleryImg{
-        @apply w-screen h-[350px] content-center overflow-hidden;
+        @apply w-screen h-[350px] content-center relative overflow-hidden;
+        .SliderControls{
+            @apply absolute w-full left-0 top-0 z-20 h-full flex flex-row justify-between items-center;
+            button{
+                @apply bg-white flex text-lg items-center justify-center rounded-full text-black w-[30px] h-[30px] mx-5;
+            }
+        }
         div{
             @apply w-full h-full;
             img{
