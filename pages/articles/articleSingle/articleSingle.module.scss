@@ -7,7 +7,7 @@
             }
     }
     .content{
-        @apply flex flex-col md:flex-row max-w-7xl w-full;
+        @apply flex flex-col md:flex-row max-w-7xl my-10 w-full;
         .detailsLocal{
             @apply flex flex-col w-full md:w-[70%] mb-10;
             font-family: 'Montserrat';
@@ -23,7 +23,7 @@
             }
 
             .contentItem{
-                @apply pl-5 md:pr-14 md:pl-0;
+                @apply pl-5 md:pr-14 md:pl-0 mb-10;
                 h2{
                     @apply text-2xl font-semibold uppercase;
                 }
