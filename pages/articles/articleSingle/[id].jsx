@@ -65,7 +65,7 @@ import styles from './articleSingle.module.scss'
                     <div key={index} className={styles.contentItem}>
                         <h2>{item.title}</h2>
                         <div className={styles.separateurContent}></div>
-                        <p>{item.description}</p>
+                        <p>{item.text}</p>
                         <ul type="none" className='mt-2'>
                             {item.liste && item.liste.map((listElement, indexListe) => (
                                 <li key={indexListe} className='mt-2'>{listElement}</li>
