@@ -46,7 +46,6 @@ export default function NotreAgence(){
                     </div>
                 </div>
             </section>
-        <ContactForm />
         <Footer />
         </>
     )
