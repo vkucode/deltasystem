@@ -1,6 +1,6 @@
 
 .headerText{
-    @apply relative flex flex-col lg:min-h-[60vh] min-h-[60vh] px-5 w-screen mt-[90px] justify-center items-center;
+    @apply relative flex flex-col lg:min-h-[60vh] min-h-[100vh] h-fit px-5 w-screen mt-[90px] justify-center items-center;
     img{
         @apply absolute w-full h-full object-cover;
     }
@@ -10,7 +10,7 @@
         letter-spacing: 15px;
     }
     p{
-        @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[700px];
+        @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[1200px];
         font-family: 'Montserrat';
         letter-spacing: 5px;
     }
@@ -26,19 +26,19 @@
     }
 }
 .servicesAgence{
-    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[70vh] md:min-h-[60vh] sm:min-h-[50vh] min-h-[50vh] object-cover sm:object-none flex-col justify-start items-center relative;
+    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[80vh] md:min-h-[70vh] sm:min-h-[50vh] min-h-[50vh] object-cover sm:object-none flex-col justify-start items-center relative;
     img{
-        @apply absolute w-full md:h-full h-[80%] bottom-0 z-0;
+        @apply absolute w-full md:h-[80%] sm:h-[70%] h-[60%] bottom-0 z-0;
     }
     div{
-        @apply relative text-center mt-[5%] md:mt-[10%];
+        @apply relative text-center -mt-[5%] md:mt-[15%];
         h1{
-            @apply relative z-10 text-teal-900 font-medium py-4 -mt-[100px] uppercase text-2xl lg:text-5xl;
+            @apply relative z-10 text-teal-900 font-medium py-4 -mt-[150px] md:-mt-[170px] uppercase text-2xl lg:text-5xl;
             font-family: 'Montserrat';
             letter-spacing: 15px;
         }
         p{
-            @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[700px];
+            @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[1200px];
             font-family: 'Montserrat';
             letter-spacing: 5px;
         }

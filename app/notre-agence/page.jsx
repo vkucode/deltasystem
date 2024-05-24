@@ -19,7 +19,9 @@ export default function NotreAgence(){
                     </h1>
                     <div className={styles.separateur}></div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, atque. Excepturi aut enim pariatur non qui ut? Assumenda delectus, est atque deleniti obcaecati asperiores ipsum quis molestiae, neque numquam voluptates!
+                    Fondée par un entrepreneur français doté de 20 ans d'expérience dans le domaine de l'immobilier, dont plus de 10 ans d'expertise spécifique à Dubaï, Delta est une agence immobilière dédiée à l'investissement sur mesure.<br /><br />
+                    Accompagnée d'une équipe de professionnels, Delta met à profit une connaissance approfondie du marché local et une écoute attentive de vos besoins pour rendre votre acquisition simple, efficace et parfaitement adaptée à votre projet.<br /><br />
+                    Dans l'immobilier, la notion de "delta" symbolise les transitions vécues lors de l'achat ou de la vente d'une propriété. À l'image du delta en philosophie, qui représente le changement, notre agence facilite ces moments clés en offrant un service adaptable et réactif, assurant un processus aussi fluide que possible
                     </p>
                 </div>                
                 <div className={styles.agenceStats}>
@@ -30,7 +32,10 @@ export default function NotreAgence(){
                     <Image src="/assets/img/agence/build.png" width={1400} height={1000} alt="" /> 
                     <div>
                         <h1>nos&nbsp;services</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam ea nisi fuga consectetur, neque consequatur a vel iste quaerat voluptatem repellat sint aspernatur quo numquam necessitatibus error assumenda eligendi tenetur?</p>
+                        <p>
+                            Dubaï, avec son marché immobilier en pleine expansion, ses rendements locatifs attractifs et son cadre de vie dynamique, est devenue une destination prisée des investisseurs internationaux. Investir dans une propriété à Dubaï, c'est s'ouvrir à de nouvelles perspectives dans une ville innovante et tournée vers l'avenir.<br /><br />
+                            Avec notre écosystème complet, nous vous accompagnons à chaque étape de votre parcours d'investissement, de la structuration de votre projet à l'aménagement de votre bien, en passant par la gestion locative. En choisissant Delta, vous bénéficiez d'un partenaire de confiance pour mener à bien vos investissements immobiliers et construire ensemble votre succès.
+                        </p>
                     </div>
                 </div>
                 <div className={styles.concretisezAgence}>
