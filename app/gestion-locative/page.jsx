@@ -15,13 +15,12 @@ export default function GestionLocative(){
         <FlipNavWrapper />
             <section className={styles.gestionPage}>
 
-                    <div className={`animate__animated animate__fadeInDown ${styles.gestionHeader}`}>
-                        <h1>gestion locative</h1>
-                        <div className={styles.separateur}></div>
+                    <div className={styles.gestionHeader}>
+                        <h1 className="animate__animated animate__fadeInUp">gestion locative</h1>
                     </div>
                     <div className="w-screen mt-72 md:mt-0 relative flex flex-col h-fit justify-center items-center">
                         <div className={styles.backgoundContent}>
-                            <div className="max-w-6xl border-2 z-10 border-white">
+                            <div className="max-w-6xl">
                                 <Image src="/assets/img/gestion/img3.png" className={`${styles.imgGestionBack} z-20`} width={500} height={500} />
                             </div>
                         </div>
@@ -35,7 +34,8 @@ export default function GestionLocative(){
                             <div className={`animate__animated animate__fadeInUp ${styles.textGestion}`}>
                                 <h1>Choisissez DELTA, et transformez votre investissement immobilier en une source de revenus sans soucis.</h1>
                                 <div className={styles.separateur}></div>
-                                <p>DELTA propose un accompagnement complet aux propriétaires souhaitant louer leur bien et en assurer la gestion locative grâce à notre expertise spécialisée.
+                                <p>
+                                DELTA propose un accompagnement complet aux propriétaires souhaitant louer leur bien et en assurer la gestion locative grâce à notre expertise spécialisée.
                                 <br /><br />
                                 Après l'acquisition de votre bien immobilier, nous prenons en charge toutes les démarches nécessaires pour que vous puissiez percevoir vos revenus locatifs. Que vous choisissiez une location traditionnelle ou saisonnière, nous gérons l'intégralité de votre bien.
                                 <br /><br />

@@ -1,14 +1,12 @@
 .gestionPage{
-    @apply md:mt-[200px] mt-[150px] flex flex-col;
+    @apply md:mt-[120px] mt-[150px] flex flex-col;
     .gestionHeader{
-        @apply flex flex-col justify-center items-center mb-10;
+        @apply flex flex-col -mb-[1px] min-h-[20vh] bg-teal-800 justify-center items-center;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
         h1{
-            @apply text-4xl uppercase;
+            @apply text-4xl text-yellow-50 uppercase;
             font-family: 'Montserrat';
-            letter-spacing: 2px;
-        }
-        .separateur{
-            @apply w-64 bg-teal-800 h-[2px] mt-5;
+            letter-spacing: 10px;
         }
     }
     .backgoundContent{

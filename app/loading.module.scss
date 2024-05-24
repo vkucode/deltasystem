@@ -1,0 +1,14 @@
+.loadingSection{
+    @apply fixed top-0 left-0 flex flex-col justify-center items-center w-screen h-full bg-gradient-to-tr from-teal-600 to-teal-800;
+    div{
+        @apply flex flex-col justify-center items-center;
+        img{
+            @apply w-[200px];
+        }
+        h1{
+            @apply uppercase text-2xl text-white ;
+            font-family: 'Montserrat';
+            letter-spacing: 5px;
+        }
+    }
+}

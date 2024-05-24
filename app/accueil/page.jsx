@@ -298,7 +298,7 @@ useEffect(() => {
         </div>
       </div>
      
-      <div>
+      <div className='animate__animated animate__fadeIn'>
         <NavbarAccueil />
         <div className={`${styles.videoBack} pointer-events-none fixed animate__animated animate__fadeIn`}>
               {/* <video src="assets/video/sky.mp4" className='pointer-events-none' muted autoPlay loop/> */}

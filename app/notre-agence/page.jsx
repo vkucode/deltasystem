@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from './agence.module.scss'
 import FlipNavWrapper from "../components/NewNavbar"
 import Footer from "../components/Footer"
-import ContactForm from "../components/ContactForm"
+import DoubleScrollingLogos from "./components/Partners"
 import { CountUpStats } from "./components/Stats"
 import 'animate.css'
 
@@ -29,7 +29,7 @@ export default function NotreAgence(){
                     <CountUpStats />
                 </div>
                 <div className={styles.servicesAgence}>
-                    <Image src="/assets/img/agence/build.png" width={1400} height={1000} alt="" /> 
+                    <Image src="/assets/img/agence/build2full.png" width={1400} height={1000} alt="" /> 
                     <div>
                         <h1>nos&nbsp;services</h1>
                         <p>
@@ -44,6 +44,10 @@ export default function NotreAgence(){
                         <h1>concretisez<br />votre&nbsp;projet</h1>
                         <a href="#">contactez&nbsp;nous</a>
                     </div>
+                </div>
+                <div className={styles.partnersAgence}>
+                        <h1>Ils ont parle de nous</h1>
+                        <DoubleScrollingLogos />
                 </div>
             </section>
         <Footer />

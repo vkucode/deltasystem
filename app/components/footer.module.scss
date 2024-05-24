@@ -4,10 +4,9 @@
 
 
     .footerInfo{
-        @apply flex flex-col md:flex-row w-screen justify-center text-white items-center pl-5 pr-3 py-16;
+        @apply flex flex-col md:flex-row w-screen justify-center text-white items-center pl-5 pr-3 py-16 bg-teal-900;
         font-family: 'Montserrat';
         box-shadow: 0px 0px 10px 0px rgba($color: #000000, $alpha: 1.0);
-        background: var(--textColorGreen);
         .separateurInfo{
             @apply md:w-full w-3/4 h-[1px] bg-white mt-3 mb-3;
         }
@@ -19,8 +18,7 @@
         }
     }
     .copyrightFooter{
-        @apply w-screen flex flex-col justify-center items-center pt-10 pb-10 md:pb-5 text-white text-center;
-        background: var(--textColorGreen);
+        @apply w-screen flex flex-col justify-center items-center pt-10 pb-10 md:pb-5 text-white text-center bg-teal-900;
         font-family: 'Montserrat';
         .copySeparateur{
             @apply md:w-1/2 w-3/4 h-[1px] bg-white mt-3 mb-3;

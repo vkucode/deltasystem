@@ -14,9 +14,16 @@ import ContactForm from '../components/ContactForm';
 
 export default function AchatPage() {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);  // State to track hovered item
+  const [filters, setFilters] = useState({
+    type: '',
+    budget: '',
+    surface: '',
+    chambre: ''
+  });
   const mapRef = useRef(null);
   const router = useRouter();
 
@@ -53,6 +60,7 @@ export default function AchatPage() {
           lon: parseFloat(item.lon)
         }));
         setData(convertedData);
+        setFilteredData(convertedData);
         setError(null);
       }
     };
@@ -60,14 +68,72 @@ export default function AchatPage() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    const applyFilters = () => {
+      let filtered = data;
+      if (filters.type) {
+        filtered = filtered.filter(item => item.type === filters.type);
+      }
+      if (filters.budget) {
+        filtered = filtered.filter(item => item.price <= filters.budget);
+      }
+      if (filters.surface) {
+        filtered = filtered.filter(item => item.surface >= filters.surface);
+      }
+      if (filters.chambre) {
+        filtered = filtered.filter(item => item.chambre >= filters.chambre);
+      }
+      setFilteredData(filtered);
+    };
+    applyFilters();
+  }, [filters, data]);
+
   if (error) return <div>Error: {error}</div>;
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [name]: value
+    }));
+  };
 
   return (
     <>
       <FlipNavWrapper />
       <section className={styles.achatPage}>
+        <section className={styles.filtersBlock}>
+          <select name="type" value={filters.type} onChange={handleFilterChange}>
+            <option value="">Type de bien</option>
+            <option value="appartement">Appartement</option>
+            <option value="maison">Maison</option>
+          </select>
+          <input
+            type="number"
+            name="budget"
+            value={filters.budget}
+            onChange={handleFilterChange}
+            placeholder="Budget max"
+          />
+          <input
+            type="number"
+            name="surface"
+            value={filters.surface}
+            onChange={handleFilterChange}
+            placeholder="Surface min (m²)"
+          />
+          <input
+            type="number"
+            name="chambre"
+            value={filters.chambre}
+            onChange={handleFilterChange}
+            placeholder="Nombre de chambres"
+          />
+        </section>
+
+        <div className={styles.contentPage}>
         <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>
-          {data.map((item) => (
+          {filteredData.map((item) => (
             <Link
               href={`/achat/locals/${item._id}`}
               key={item._id}
@@ -89,8 +155,8 @@ export default function AchatPage() {
                 </div>
                 <h2>{item.price}</h2>
                 <div className='hidden'>
-                  <p>{item.lat}</p>
-                  <p>{item.lon}</p>
+                  <p className='hidden'>{item.lat}</p>
+                  <p className='hidden'>{item.lon}</p>
                 </div>
               </div>
             </Link>
@@ -107,7 +173,7 @@ export default function AchatPage() {
               zoom={11}
               ref={mapRef}
             >
-              {icon && data.map((item) => (
+              {icon && filteredData.map((item) => (
                 <Marker
                   key={item._id}
                   position={{ lat: item.lat, lng: item.lon }}
@@ -118,7 +184,9 @@ export default function AchatPage() {
             </GoogleMap>
           </LoadScript>
         </section>
+        </div>
       </section>
+      
       <ContactForm />
       <ImgFooter imgSrc="/assets/img/footer/city.png" />
       <Footer />
