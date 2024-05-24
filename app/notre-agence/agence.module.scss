@@ -1,0 +1,82 @@
+
+.headerText{
+    @apply relative flex flex-col lg:min-h-[60vh] min-h-[60vh] px-5 w-screen mt-[90px] justify-center items-center;
+    img{
+        @apply absolute w-full h-full object-cover;
+    }
+    h1{
+        @apply relative z-10 text-teal-900 font-medium py-4 -mt-[100px] uppercase text-2xl lg:text-5xl;
+        font-family: 'Montserrat';
+        letter-spacing: 15px;
+    }
+    p{
+        @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[700px];
+        font-family: 'Montserrat';
+        letter-spacing: 5px;
+    }
+}
+.separateur{
+    @apply w-[300px] h-[3px] relative bg-teal-900;
+}
+.agenceStats{
+    @apply w-screen bg-gradient-to-tr from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden mb-[10vh] md:mb-0 -mt-[20vh] md:-mt-[20vh] min-h-[60vh] md:min-h-[50vh];
+    clip-path: polygon(0% 28.3%, 100% 0%, 100% 100%, 0% 74.3%);
+    img{
+        @apply absolute opacity-20 -z-10 w-full lg:w-[60%] right-0 h-full object-cover;
+    }
+}
+.servicesAgence{
+    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[70vh] md:min-h-[60vh] sm:min-h-[50vh] min-h-[50vh] object-cover sm:object-none flex-col justify-start items-center relative;
+    img{
+        @apply absolute w-full md:h-full h-[80%] bottom-0 z-0;
+    }
+    div{
+        @apply relative text-center mt-[5%] md:mt-[10%];
+        h1{
+            @apply relative z-10 text-teal-900 font-medium py-4 -mt-[100px] uppercase text-2xl lg:text-5xl;
+            font-family: 'Montserrat';
+            letter-spacing: 15px;
+        }
+        p{
+            @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[700px];
+            font-family: 'Montserrat';
+            letter-spacing: 5px;
+        }
+    }
+}
+.concretisezAgence{
+    @apply w-screen min-h-[40vh] md:min-h-[50vh] bg-gradient-to-tr from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden;
+    img{
+        @apply absolute opacity-10 z-0 w-full lg:w-[70%] bottom-0 h-auto;
+    }
+    div{
+        @apply relative text-center;
+        h1{
+            @apply relative z-10 text-yellow-50 font-medium py-4 mt-0 md:-mt-[100px] mb-5 uppercase text-2xl lg:text-5xl;
+            font-family: 'Montserrat';
+            line-height: 1.5;
+            word-spacing: 5px;
+            letter-spacing: 20px;
+        }
+        a{
+            @apply relative z-10 scale-95 text-yellow-50 border-2 border-yellow-50 font-medium px-5 py-3 uppercase text-lg lg:text-2xl;
+            font-family: 'Montserrat';
+            line-height: 1.5;
+            word-spacing: 5px;
+            letter-spacing: 10px;
+            transition: 0.3s all ease-in-out;
+        }
+        a:hover{
+            @apply text-teal-900 bg-yellow-50 scale-100;
+        }
+        @media (max-width: 768px) {
+            h1{
+                letter-spacing: 10px;
+            }
+            a{
+                @apply text-base;
+                letter-spacing: 5px;
+            }
+        }
+    }
+}

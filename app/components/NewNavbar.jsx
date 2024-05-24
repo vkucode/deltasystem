@@ -40,7 +40,7 @@ const NavLeft = ({ setIsOpen }) => {
       <NavLink text="Location" link="/location" />
       <NavLink text="Gestion locative" link="/gestion-locative" />
       <NavLink text="actualite" link="/actualite" />
-      <NavLink text="notre agence" link="/#" />
+      <NavLink text="notre agence" link="/notre-agence" />
       <NavLink text="nous contacter" link="/contact" />
       <NavLink text="en | fr" link="#" />
       <div>
@@ -87,7 +87,7 @@ const NavMenu = ({ isOpen }) => {
       <MenuLink text="Location" link="/location" />
       <MenuLink text="Gestion locative" link="/gestion-locative" />
       <MenuLink text="actualite" link="/actualite" />
-      <MenuLink text="notre agence" link="/#" />
+      <MenuLink text="notre agence" link="/notre-agence" />
       <MenuLink text="nous contacter" link="/contact" />
       <MenuLink text="en | fr" link="#" />
     </motion.div>
