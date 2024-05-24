@@ -19,14 +19,14 @@
     @apply w-[300px] h-[3px] relative bg-teal-900;
 }
 .agenceStats{
-    @apply w-screen bg-gradient-to-tr from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden mb-[10vh] lg:mb-[20vh] -mt-[20vh] md:-mt-[20vh] min-h-[60vh] md:min-h-[50vh];
+    @apply w-screen bg-gradient-to-tr from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden mb-[10vh] lg:mb-[20vh] -mt-[18vh] md:-mt-[20vh] min-h-[60vh] md:min-h-[50vh];
     clip-path: polygon(0% 28.3%, 100% 0%, 100% 100%, 0% 74.3%);
     img{
         @apply absolute opacity-20 -z-10 w-full lg:w-[60%] right-0 h-full object-cover;
     }
 }
 .servicesAgence{
-    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[80vh] md:min-h-[50vh] min-h-[70vh] object-cover sm:object-none flex-col justify-start items-center relative;
+    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[80vh] md:min-h-[50vh] min-h-[75vh] object-cover sm:object-none flex-col justify-start items-center relative;
     img{
         @apply absolute w-full h-auto bottom-0 z-0;
     }
