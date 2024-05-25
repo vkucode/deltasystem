@@ -45,7 +45,7 @@
     }
 }
 .concretisezAgence{
-    @apply w-screen min-h-[40vh] md:min-h-[50vh] bg-gradient-to-b from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden;
+    @apply w-screen min-h-[40vh] md:min-h-[40vh] bg-gradient-to-b from-teal-600 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden;
     img{
         @apply absolute opacity-10 z-0 w-full lg:w-[70%] bottom-0 h-auto;
     }
@@ -82,9 +82,9 @@
 }
 
 .partnersAgence{
-    @apply w-screen min-h-[40vh] md:min-h-[50vh] bg-gradient-to-t from-teal-900 to-teal-800 relative flex flex-col justify-center items-center overflow-hidden;
+    @apply w-screen min-h-[40vh] md:min-h-[50vh] bg-white relative flex flex-col justify-center items-center overflow-hidden;
     h1{
-        @apply uppercase relative text-xl md:text-2xl px-5 lg:text-4xl text-center text-yellow-50 mb-5;
+        @apply uppercase relative text-xl md:text-2xl px-5 lg:text-4xl text-center text-teal-800 mb-5;
         font-family: 'Montserrat';
         letter-spacing: 5px;
     }

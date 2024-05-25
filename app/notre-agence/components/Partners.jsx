@@ -25,7 +25,7 @@ import { IconType } from "react-icons";
 
 const DoubleScrollingLogos = () => {
   return (
-    <section className="bg-transparent py-4">
+    <section className="bg-white py-4">
       <div className="flex overflow-hidden">
         <TranslateWrapper>
           <LogoItemsTop />
@@ -94,7 +94,7 @@ const LogoItem = ({ Icon }) => {
     <a
       href="#"
       rel="nofollow"z
-      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center text-yellow-50 transition-colors"
+      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center text-teal-800 transition-colors"
     >
       <Icon className="text-4xl md:text-5xl" />
     </a>
