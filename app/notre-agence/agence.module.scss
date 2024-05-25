@@ -1,6 +1,6 @@
 
 .headerText{
-    @apply relative flex flex-col lg:min-h-[60vh] min-h-[100vh] h-fit px-5 w-screen mt-[90px] justify-center items-center;
+    @apply relative flex flex-col lg:min-h-[60vh] min-h-[80vh] h-fit px-5 w-screen mt-[90px] justify-center items-center;
     img{
         @apply absolute w-full h-full object-cover;
     }
@@ -12,7 +12,7 @@
     p{
         @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[1200px];
         font-family: 'Montserrat';
-        letter-spacing: 5px;
+        letter-spacing: 1px;
     }
 }
 .separateur{
@@ -26,12 +26,12 @@
     }
 }
 .servicesAgence{
-    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[80vh] md:min-h-[50vh] min-h-[75vh] object-cover sm:object-none flex-col justify-start items-center relative;
+    @apply w-screen flex px-5 2xl:min-h-[100vh] lg:min-h-[80vh] md:min-h-[50vh] min-h-[55vh] object-cover sm:object-none flex-col justify-start items-center relative;
     img{
         @apply absolute w-full h-auto bottom-0 z-0;
     }
     div{
-        @apply relative text-center mt-[10%] lg:mt-[0%];
+        @apply relative text-center mt-[20%] lg:mt-[0%];
         h1{
             @apply relative z-10 text-teal-900 font-medium py-4 -mt-[150px] md:-mt-[170px] uppercase text-2xl lg:text-5xl;
             font-family: 'Montserrat';
@@ -40,7 +40,7 @@
         p{
             @apply relative z-10 py-4 font-semibold text-sm lg:text-base text-center text-teal-900 w-full lg:w-[1200px];
             font-family: 'Montserrat';
-            letter-spacing: 5px;
+            letter-spacing: 1px;
         }
     }
 }
@@ -82,9 +82,9 @@
 }
 
 .partnersAgence{
-    @apply w-screen min-h-[40vh] md:min-h-[50vh] bg-white relative flex flex-col justify-center items-center overflow-hidden;
+    @apply w-screen min-h-[40vh] md:min-h-[40vh] bg-white relative flex flex-col justify-center items-center overflow-hidden;
     h1{
-        @apply uppercase relative text-xl md:text-2xl px-5 lg:text-4xl text-center text-teal-800 mb-5;
+        @apply uppercase relative text-xl font-semibold md:text-2xl px-5 lg:text-4xl text-center text-teal-800 mb-5;
         font-family: 'Montserrat';
         letter-spacing: 5px;
     }

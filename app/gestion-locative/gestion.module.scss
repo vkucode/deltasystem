@@ -1,12 +1,20 @@
 .gestionPage{
     @apply md:mt-[120px] mt-[150px] flex flex-col;
     .gestionHeader{
-        @apply flex flex-col -mb-[1px] min-h-[20vh] bg-teal-800 justify-center items-center;
+        @apply flex flex-col -mb-[1px] min-h-[50px] md:min-h-[20vh] bg-transparent lg:bg-teal-800 justify-center items-center;
         clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        .separateur{
+            @apply lg:hidden flex max-w-[360px] w-full bg-teal-800 mt-5 h-[2px];
+        }
         h1{
-            @apply text-4xl text-yellow-50 uppercase;
+            @apply text-2xl md:text-4xl lg:text-yellow-50 text-teal-900 text-center uppercase;
             font-family: 'Montserrat';
             letter-spacing: 10px;
+        }
+    }
+    @media (max-width: 1024px) {
+        .gestionHeader{
+            clip-path: none;
         }
     }
     .backgoundContent{
@@ -32,7 +40,7 @@
         @apply absolute bottom-0 right-0 w-full md:max-w-[800px] lg:max-w-[1000px] 2xl:max-w-[1200px];
     }
     .contentGestion{
-        @apply relative z-20 flex flex-col py-0 md:py-20 xl:pb-[500px] lg:pb-[500px] md:pb-[450px] px-10 md:px-0 pb-[350px] md:flex-row max-w-6xl gap-5 justify-center items-center;
+        @apply relative z-20 flex flex-col lg:flex-row py-0 md:py-20 xl:pb-[500px] lg:pb-[500px] md:pb-[450px] lg:px-0 pb-[350px]  max-w-6xl gap-5 justify-center items-center;
         .imgGestion{
             @apply w-full max-w-[250px] md:max-w-[400px];
             img{
@@ -40,7 +48,7 @@
             }
         }
         .textGestion{
-            @apply text-yellow-50 w-full md:text-left text-center;
+            @apply text-yellow-50 w-full px-5 lg:text-left text-center;
             font-family: 'Montserrat';
             h1{
                 @apply uppercase text-2xl md:text-3xl;

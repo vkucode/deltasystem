@@ -17,6 +17,7 @@ export default function GestionLocative(){
 
                     <div className={styles.gestionHeader}>
                         <h1 className="animate__animated animate__fadeInUp">gestion locative</h1>
+                        <div className={styles.separateur}></div>
                     </div>
                     <div className="w-screen mt-72 md:mt-0 relative flex flex-col h-fit justify-center items-center">
                         <div className={styles.backgoundContent}>
