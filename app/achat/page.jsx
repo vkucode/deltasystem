@@ -11,6 +11,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import ImgFooter from '../components/ImgFooter';
 import 'animate.css';
 import ContactForm from '../components/ContactForm';
+import { VscSettings } from "react-icons/vsc";
 
 export default function AchatPage() {
   const [data, setData] = useState([]);
@@ -90,19 +91,36 @@ export default function AchatPage() {
 
   if (error) return <div>Error: {error}</div>;
 
-  const handleFilterChange = (e) => {
-    const { name, value } = e.target;
-    setFilters(prevFilters => ({
-      ...prevFilters,
-      [name]: value
-    }));
-  };
 
-  return (
-    <>
-      <FlipNavWrapper />
-      <section className={styles.achatPage}>
-        <section className={styles.filtersBlock}>
+/** FILTER BLOCK */
+
+  const FilterLocals = () =>{
+
+    const [activeMobileFilter, setActiveMobileFilter] = useState("-mt-[100%]")
+
+    // const handleOpenMobileFilter = (e) =>{
+    //     if(activeMobileFilter === "hidden"){
+    //       setActiveMobileFilter("flex");
+    //     }
+    //     else{
+    //       setActiveMobileFilter("hidden")
+    //     }
+    // }
+    const handleOpenMobileFilter = (e) =>{
+      if(activeMobileFilter === "-mt-[100%]"){
+        setActiveMobileFilter("animate__fadeInDown");
+      }
+      else if(activeMobileFilter === "animate__fadeInDown"){
+        setActiveMobileFilter("animate__fadeOutUp")
+      }
+      else{
+        setActiveMobileFilter("-mt-[100%]")
+      }
+  }
+
+    return(
+      <>
+      <section className={styles.filtersBlock}>
           <select name="type" value={filters.type} onChange={handleFilterChange}>
             <option value="">Type de bien</option>
             <option value="appartement">Appartement</option>
@@ -130,6 +148,59 @@ export default function AchatPage() {
             placeholder="Nombre de chambres"
           />
         </section>
+        <div className={styles.filtersMobile}>
+            <button className={styles.filterBTN} onClick={handleOpenMobileFilter}>
+              Filters <VscSettings />
+            </button>  
+            <div className={`flex z-30 flex-col animate__animated ${activeMobileFilter} text-teal-800 justify-center gap-4 py-5 px-5 items-start w-[100%] bg-white`}>
+              <select name="type" className='w-[50%] outline-none' value={filters.type} onChange={handleFilterChange}>
+                <option value="">Type de bien</option>
+                <option value="appartement">Appartement</option>
+                <option value="maison">Maison</option>
+              </select>
+              <input
+                type="number"
+                name="budget"
+                className='w-full outline-none'
+                value={filters.budget}
+                onChange={handleFilterChange}
+                placeholder="Budget max"
+              />
+              <input
+                type="number"
+                name="surface"
+                className='w-full outline-none'
+                value={filters.surface}
+                onChange={handleFilterChange}
+                placeholder="Surface min (m²)"
+              />
+              <input
+                type="number"
+                name="chambre"
+                className='w-full outline-none'
+                value={filters.chambre}
+                onChange={handleFilterChange}
+                placeholder="Nombre de chambres"
+              />
+            </div>
+        </div>
+      </>
+    )
+  }
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [name]: value
+    }));
+  };
+
+  return (
+    <>
+      <FlipNavWrapper />
+      <section className={styles.achatPage}>
+        <FilterLocals />
 
         <div className={styles.contentPage}>
         <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>

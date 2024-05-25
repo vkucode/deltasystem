@@ -30,7 +30,7 @@ export default function NotreAgence(){
                 <div className={styles.servicesAgence}>
                     <Image src="/assets/img/agence/build2full.png" width={1400} height={1000} alt="" /> 
                     <div>
-                        <h1>nos&nbsp;services</h1>
+                        <h1>votre allié immobilier</h1>
                         <p>
                         Le terme "delta" en immobilier symbolise les transitions lors de l'achat ou de la vente. Delta facilite ces moments clés avec un service réactif et adaptable pour un processus fluide.<br /><br/>
                         Nous vous accompagnons à chaque étape de votre investissement, de la structuration à la gestion locative. Choisir Delta, c'est s'assurer un partenaire de confiance pour réussir vos projets immobiliers.

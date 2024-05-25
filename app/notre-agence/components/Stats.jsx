@@ -8,20 +8,20 @@ export const CountUpStats = () => {
         <Stat
           num={15}
           suffix="+"
-          subheading="Lorem ipsum dolor"
+          subheading="années d'expérience"
         />
         <div className="h-[1px] w-12 bg-yellow-200 sm:h-12 sm:w-[1px]" />
         <Stat
-          num={15.5}
-          decimals={1}
+          num={3}
+          // decimals={1}
           suffix="K+"
-          subheading="Lorem ipsum dolor"
+          subheading="clients satisfaits"
         />
         <div className="h-[1px] w-12 bg-yellow-200 sm:h-12 sm:w-[1px]" />
         <Stat
           num={20}
           suffix="B+"
-          subheading="Lorem ipsum dolor"
+          subheading="transactions effectuées"
         />
       </div>
     </div>
@@ -51,7 +51,7 @@ const Stat = ({ num, suffix, decimals = 0, subheading }) => {
         <span ref={ref}></span>
         {suffix}
       </p>
-      <p className="max-w-48 text-center text-base md:text-lg text-yellow-50 uppercase">{subheading}</p>
+      <p className="max-w-72 text-center text-sm md:text-base text-yellow-50 uppercase">{subheading}</p>
     </div>
   );
 };
