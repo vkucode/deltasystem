@@ -16,6 +16,7 @@ export const achatData = async () => {
       name: item.name,
       img: item.img,
       price: item.price,
+      category: item.category,
       lat: item.localisation.lat,
       lon: item.localisation.lon,
       chambre: item.details.chambre,

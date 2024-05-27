@@ -1,4 +1,4 @@
-
+import Image from "next/image"
 import styles from './loading.module.scss'
 
 export default function Loading(){

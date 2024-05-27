@@ -43,17 +43,26 @@ export default function AchatPage() {
 
   useEffect(() => {
     const loadData = async () => {
-      const fetchedData = await locationData();
-      if (fetchedData.length === 0) {
-        setError("Failed to fetch data or no data available.");
-      } else {
-        const convertedData = fetchedData.map(item => ({
-          ...item,
-          lat: parseFloat(item.lat),
-          lon: parseFloat(item.lon)
-        }));
-        setData(convertedData);
-        setError(null);
+      try {
+        const fetchedData = await locationData();
+        console.log('Fetched Data:', fetchedData); // Debug: Log fetched data
+        if (fetchedData.length === 0) {
+          setError("Failed to fetch data or no data available.");
+        } else {
+          const filteredData = fetchedData
+            .filter(item => item.category === 'location')
+            .map(item => ({
+              ...item,
+              lat: parseFloat(item.lat),
+              lon: parseFloat(item.lon)
+            }));
+          console.log('Filtered Data:', filteredData); // Debug: Log filtered data
+          setData(filteredData);
+          setError(null);
+        }
+      } catch (err) {
+        console.error('Error fetching data:', err); // Debug: Log errors
+        setError("An error occurred while fetching data.");
       }
     };
 
