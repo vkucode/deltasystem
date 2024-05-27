@@ -35,27 +35,27 @@ const Footer = () => {
           <h3>Les services Delta:</h3>
             <div className={styles.separateurInfo}></div>
             <ul type="none">
-              <a href='#'><li>Achat immobilier</li></a>
-              <a href='#'><li>Location immobiliere</li></a>
-              <a href='#'><li>Gestion locative</li></a>
-              <a href='#'><li>Estimer mon projet</li></a>
+              <a href='/achat'><li>Achat immobilier</li></a>
+              <a href='/location'><li>Location immobiliere</li></a>
+              <a href='/gestion-locative'><li>Gestion locative</li></a>
+              <a href='/contact'><li>Estimer mon projet</li></a>
             </ul>
           </div>
           <div className='w-full md:w-1/3'>
           <h3>Informations:</h3>
             <div className={styles.separateurInfo}></div>
             <ul type="none">
-              <a href='#'><li>Notre agence</li></a>
-              <a href='#'><li>Actualite       </li></a>
-              <a href='#'><li>Mentions legales</li></a>
-              <a href='#'><li>Politique de confidentialite</li></a>
+              <a href='/notre-agence'><li>Notre agence</li></a>
+              <a href='/actualite'><li>Actualite       </li></a>
+              <a href='/legales/mentions-legales'><li>Mentions legales</li></a>
+              <a href='/legales/politique-de-confidentialite'><li>Politique de confidentialite</li></a>
             </ul>
           </div>
         </div>
       </div>
       <div className={styles.copyrightFooter}>
         <div className={styles.copySeparateur}></div>
-        <div className='flex flex-row justify-center items-center'>©2024&nbsp;&nbsp;<Image src="/assets/img/accueil/logoOrClear.png" width={100} height={10} alt='logo' />&nbsp;&nbsp;Toutes&nbsp;les&nbsp;droits&nbsp;reserve</div><br/>
+        <div className='flex flex-row justify-center items-center'><Image src="/assets/img/accueil/logoOrClear.png" width={100} height={10} alt='logo' />&nbsp;&nbsp;Toutes&nbsp;les&nbsp;droits&nbsp;reserve&nbsp;2024©&nbsp;</div><br/>
         <div className='flex flex-row justify-center items-center -mt-4'>Powered&nbsp;by&nbsp;<a href='https://vkucode.com'><Image src="/assets/img/footer/logoVKU.png" width={50} height={10} alt='logo VKU' /></a></div>
       </div>
     </section>

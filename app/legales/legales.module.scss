@@ -1,0 +1,19 @@
+.legalSection{
+    @apply md:mt-[90px] mt-[60px] flex flex-col max-w-7xl mx-auto py-10;
+    .titleLegal{
+        @apply uppercase text-teal-800 text-3xl lg:text-5xl pt-10 pb-5 lg:px-0 px-3;
+        font-family: 'Montserrat';
+        letter-spacing: 4px;
+        .separateur{
+            @apply w-[75%] max-w-[800px] h-[2px] bg-teal-800 my-5 lg:px-0 px-5;
+        }
+    }
+    .contectLegal{
+        @apply lg:px-0 px-5;
+        h3{
+            @apply uppercase text-teal-800 font-medium text-xl lg:text-2xl border-b-[1px] py-1 mb-2;
+            font-family: 'Montserrat';
+            letter-spacing: 2px;
+        }
+    }
+}
