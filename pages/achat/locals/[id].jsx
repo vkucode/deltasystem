@@ -22,6 +22,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
+  const [isAED, setIsAED] = useState(true);
+
+    const toggleCurrency = () => {
+        setIsAED(!isAED);
+    };
   
   const containerStyle = {
     width: '100%',
@@ -148,7 +153,12 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                 </div>
                 
                 <div className='flex flex-row w-full text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
-                    <p>{local.price}</p>
+                    <p className='flex flex-row items-center'>
+                        {isAED ? local.price.aed : local.price.dolar}
+                        <button onClick={toggleCurrency} className='bg-teal-700 rounded text-yellow-50 font-regular px-2 py-1 text-sm ml-2'>
+                           {isAED ? '$' : 'AED'}
+                        </button>
+                    </p>
                     <p>{local.details.surface} m<sup>2</sup></p>
                 </div>
                 
@@ -165,14 +175,17 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                            <p>{local.details.surface}&nbsp;m<sup>2</sup></p>  
                         </div>
                         <div>
+                            <p>Etage</p>
+                            <p>{local.details.etage}</p>
+                        </div>
+                        <div>
                             <p>Chambre</p>
                             <p>{local.details.chambre}</p>
                         </div>
-                        <div>
-                            <p>Piece</p>
-                            <p>{local.details.chambre}</p>
-                        </div>
                         
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+
                     </div>
                 </div>
               <div className={styles.singleMap}>

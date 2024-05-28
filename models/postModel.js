@@ -15,7 +15,7 @@ const postSchema = new Schema(
       required: true,
     },
     price: {
-      type: String,
+      type: Object,
       required: true,
     },
     img: {
