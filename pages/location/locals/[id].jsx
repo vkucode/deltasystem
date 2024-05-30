@@ -1,4 +1,4 @@
-// pages/achat/locals/[id].jsx
+// pages/location/locals/[id].jsx
 'use client'
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
@@ -10,8 +10,8 @@ import '../../../app/globals.css'
 import styles from './singleLocation.module.scss'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
 import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io"
+import Slider from 'react-slick';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 
@@ -22,6 +22,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   const [local, setLocal] = useState(null);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
+  const [isAED, setIsAED] = useState(true);
+
+    const toggleCurrency = () => {
+        setIsAED(!isAED);
+    };
   
   const containerStyle = {
     width: '100%',
@@ -55,6 +60,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   var settings = {
     infinite: true,
     speed: 500,
+    dots: true,
     slidesToScroll: 3,
     slidesToShow: 3,
     responsive: [
@@ -62,6 +68,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
         breakpoint: 1800,
         settings: {
           slidesToShow: 3,
+          dots: true,
           slidesToScroll: 3,
           infinite: true,
         }
@@ -69,6 +76,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       {
         breakpoint: 1400,
         settings: {
+          dots: true,
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
@@ -77,6 +85,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
       {
         breakpoint: 600,
         settings: {
+          dots: true,
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1
@@ -126,11 +135,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
           </div>
         <Slider ref={sliderRef} {...settings}>
           <div>
-            <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
+            <Image src={`/assets/img/locals/location/${local.img}`} width={500} height={500} alt={local.name} />
             </div>
               {local.gallery.img.map((imgUrl, index) => (
                 <div>
-                <Image key={index} src={`/assets/img/locals/achat/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
+                <Image key={index} src={`/assets/img/locals/location/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
                 </div>
               ))}
           </Slider>
@@ -144,7 +153,12 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                 </div>
                 
                 <div className='flex flex-row w-full text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
-                    <p>{local.price}</p>
+                    <p className='flex flex-row items-center'>
+                        {isAED ? local.price.aed : local.price.dolar}
+                        <button onClick={toggleCurrency} className='bg-teal-700 rounded text-yellow-50 font-regular px-2 py-1 text-sm ml-2'>
+                           {isAED ? '$' : 'AED'}
+                        </button>
+                    </p>
                     <p>{local.details.surface} m<sup>2</sup></p>
                 </div>
                 
@@ -161,11 +175,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                            <p>{local.details.surface}&nbsp;m<sup>2</sup></p>  
                         </div>
                         <div>
-                            <p>Chambre</p>
-                            <p>{local.details.chambre}</p>
+                            <p>Etage</p>
+                            <p>{local.details.etage}</p>
                         </div>
                         <div>
-                            <p>Piece</p>
+                            <p>Chambre</p>
                             <p>{local.details.chambre}</p>
                         </div>
                         

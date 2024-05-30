@@ -1,9 +1,8 @@
-import { locationPosts } from "@/_actions/locationActions";
 import { getPosts } from "@/_actions/postActions";
 
 export const locationData = async () => {
   try {
-    const { data, errMsg } = await locationPosts();
+    const { data, errMsg } = await getPosts();
     if (!data && errMsg) {
       console.error("Error Message from Location:", errMsg);
       throw new Error(errMsg); // Throw to catch block
@@ -16,7 +15,8 @@ export const locationData = async () => {
       _id: item._id,
       name: item.name,
       img: item.img,
-      price: item.price,
+      price_dolar: item.price.dolar,
+      price_aed: item.price.aed,
       category: item.category,
       lat: item.localisation.lat,
       lon: item.localisation.lon,

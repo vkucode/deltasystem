@@ -1,6 +1,6 @@
 // pages/api/achat/locals/[id].jsx
 import connectDB from '@/config/database';
-import LocationModel from '@/models/locationModel';
+import PostModel from '@/models/postModel';
 
 export default async function handler(req, res) {
   const {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const location = await LocationModel.findById(id);
+        const location = await PostModel.findById(id);
         if (!location) {
           return res.status(404).json({ message: 'Location not found' });
         }
