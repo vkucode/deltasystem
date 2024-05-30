@@ -11,7 +11,7 @@ const AddLocal = () => {
     details: { chambre: '', surface: '' },
     price: { dolar: '', aed: '' },
     img: '',
-    gallery: { img: [] },
+    gallery: { imgs: [] }, // Inițializare corectă
     category: ''
   });
 
@@ -35,7 +35,7 @@ const AddLocal = () => {
   };
 
   const handleGalleryChange = (index, value) => {
-    const newGallery = [...formData.gallery.img];
+    const newGallery = [...formData.gallery.imgs];
     newGallery[index] = value;
     setFormData({
       ...formData,
@@ -46,12 +46,12 @@ const AddLocal = () => {
   const addGalleryImage = () => {
     setFormData({
       ...formData,
-      gallery: { imgs: [...formData.gallery.img, ''] }
+      gallery: { imgs: [...formData.gallery.imgs, ''] }
     });
   };
 
   const removeGalleryImage = (index) => {
-    const newGallery = formData.gallery.img.filter((_, i) => i !== index);
+    const newGallery = formData.gallery.imgs.filter((_, i) => i !== index);
     setFormData({
       ...formData,
       gallery: { imgs: newGallery }
@@ -82,7 +82,7 @@ const AddLocal = () => {
 
       <div>
         <label>Gallery Images:</label>
-        {formData.gallery.img.map((img, index) => (
+        {formData.gallery.imgs.map((img, index) => (
           <div key={index}>
             <input
               type="text"

@@ -143,7 +143,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
           <div>
             <Image src={`/assets/img/locals/achat/${local.img}`} width={500} height={500} alt={local.name} />
             </div>
-              {local.gallery.img.map((imgUrl, index) => (
+              {local.gallery.imgs.map((imgUrl, index) => (
                 <div>
                 <Image key={index} src={`/assets/img/locals/achat/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
                 </div>
