@@ -224,7 +224,7 @@ export default function AchatPage() {
                 <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
                   <Image src="/assets/img/accueil/iconFiltre.png" width={100} height={100} alt='filtre' />
                 </div>
-                <Image src={`/assets/img/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
+                <Image src={`https://deltainvested.com/imgs/locals/achat/${item.img}`} width={400} height={400} alt={item.name} />
               </div>
               <div className={styles.cardContent}>
                 <h1>{item.name}</h1>

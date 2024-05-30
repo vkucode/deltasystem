@@ -12,7 +12,7 @@ import ImgFooter from '../components/ImgFooter';
 import 'animate.css';
 import ContactForm from '../components/ContactForm';
 
-export default function AchatPage() {
+export default function LocationPage() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
@@ -88,7 +88,7 @@ export default function AchatPage() {
                 <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
                   <Image src="/assets/img/accueil/iconFiltreWhite.png" width={100} height={100} alt='filtre' />
                 </div>
-                <Image src={`/assets/img/locals/location/${item.img}`} width={400} height={400} alt={item.name} />
+                <Image src={`https://deltainvested.com/imgs/locals/location/${item.img}`} width={400} height={400} alt={item.name} />
               </div>
               <div className={styles.cardContent}>
                 <h1>{item.name}</h1>

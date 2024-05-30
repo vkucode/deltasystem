@@ -135,11 +135,11 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
           </div>
         <Slider ref={sliderRef} {...settings}>
           <div>
-            <Image src={`/assets/img/locals/location/${local.img}`} width={500} height={500} alt={local.name} />
+            <Image src={`https://deltainvested.com/imgs/locals/location/${local.img}`} width={500} height={500} alt={local.name} />
             </div>
               {local.gallery.imgs.map((imgUrl, index) => (
                 <div>
-                <Image key={index} src={`/assets/img/locals/location/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
+                <Image key={index} src={`https://deltainvested.com/imgs/locals/location/${imgUrl}`} width={500} height={500} alt={`Image ${index}`} />
                 </div>
               ))}
           </Slider>
