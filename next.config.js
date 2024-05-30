@@ -4,6 +4,9 @@
 const nextConfig = {
   /* config options here */
   // output: "export",
+  images: {
+    domains: ["deltainvested.com"],
+  },
 };
 
 module.exports = nextConfig;
