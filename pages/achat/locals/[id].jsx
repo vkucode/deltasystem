@@ -23,6 +23,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
   const [error, setError] = useState(null);
   const [icon, setIcon] = useState(null);
   const [isAED, setIsAED] = useState(true);
+  const [priceAed, setPriceAed] = useState(null);
 
     const toggleCurrency = () => {
         setIsAED(!isAED);
@@ -105,10 +106,14 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
     const fetchLocal = async () => {
       const response = await fetch(`/api/achat/locals/${id}`);
       const data = await response.json();
+      let price_aed = 0;
       if (response.ok) {
         // Convert lat and lon to numbers
         data.localisation.lat = parseFloat(data.localisation.lat);
         data.localisation.lon = parseFloat(data.localisation.lon);
+        data.price = parseFloat(data.price);
+        price_aed = data.price * 3.67;
+        setPriceAed(price_aed);
         setLocal(data);
       } else {
         setError(data.message || 'Something went wrong');
@@ -160,7 +165,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                 
                 <div className='flex flex-row w-full text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
                 <p className='flex flex-row items-center'>
-                    {isAED ? formatNumberWithSpaces(local.price.aed) + " AED" : formatNumberWithSpaces(local.price.dolar) + " $"}
+                    {isAED ? formatNumberWithSpaces(priceAed) + " AED" : formatNumberWithSpaces(local.price) + " $"}
                     <button onClick={toggleCurrency} className='bg-teal-700 rounded text-yellow-50 font-regular px-2 py-1 text-sm ml-2'>
                         {isAED ? '$' : 'AED'}
                     </button>

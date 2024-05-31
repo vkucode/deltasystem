@@ -1,17 +1,19 @@
 // pages/locals/add.jsx
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 import axios from 'axios';
 import styles from './addLocal.module.scss'
 
 const AddLocal = () => {
   const [formData, setFormData] = useState({
     name: '',
-    localisation: { lat: '', lon: '' },
-    details: { chambre: '', surface: '' },
-    price: { dolar: '', aed: '' },
+    localisation: { lat: '', lon: '', country: '', city: '', adress: '', postal_code: ''},
+    details: { chambre: '', surface: '', surface_max: '', etage: '' },
+    price: '',
     img: '',
-    gallery: { imgs: [] }, // Inițializare corectă
+    description: '',
+    gallery: { imgs: [] },
     category: ''
   });
 
@@ -69,17 +71,27 @@ const AddLocal = () => {
   };
 
   return (
+    <section className={styles.addLocalPage}>
     <form onSubmit={handleSubmit} className={styles.formAdd}>
-      <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
-      <input name="lat" value={formData.localisation.lat} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Latitude" required />
-      <input name="lon" value={formData.localisation.lon} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Longitude" required />
-      <input name="chambre" value={formData.details.chambre} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Chambre" required />
-      <input name="surface" value={formData.details.surface} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Surface" required />
-      <input name="dolar" value={formData.price.dolar} onChange={(e) => handleNestedChange(e, 'price')} placeholder="Price in Dolars" required />
-      <input name="aed" value={formData.price.aed} onChange={(e) => handleNestedChange(e, 'price')} placeholder="Price in AED" required />
-      <input name="img" value={formData.img} onChange={handleChange} placeholder="Image URL" required />
-      <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" required />
-
+      <Image src="/assets/img/accueil/logoBig.png" width={300} height={300}  />
+      <div className={styles.divInput}>
+        <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
+        <input name="adress" value={formData.localisation.adress} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Adress" required />
+        <input name="ville" value={formData.localisation.city} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Ville" required />
+        <input name="postal_code" value={formData.localisation.postal_code} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Postal Code" required />
+        <input name="pays" value={formData.localisation.country} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Country" required />
+        <input name="lat" value={formData.localisation.lat} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Latitude" required />
+        <input name="lon" value={formData.localisation.lon} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Longitude" required />
+        <input name="chambre" value={formData.details.chambre} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Chambre" required />
+        <input name="surface" value={formData.details.surface} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Surface" required />
+        <input name="surface_max" value={formData.details.surface_max} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Surface max" required />
+        <input name="etage" value={formData.details.etage} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Etage" required />
+        <input name="price" value={formData.price} onChange={handleChange} placeholder="Price in Dolars" required />
+        <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" required />
+        <input name="description" value={formData.description} onChange={handleChange} placeholder="Description text" required />
+        <input name="img" value={formData.img} onChange={handleChange} placeholder="Image URL" required />
+      </div>
+      <br />
       <div>
         <label>Gallery Images:</label>
         {formData.gallery.imgs.map((img, index) => (
@@ -99,6 +111,7 @@ const AddLocal = () => {
 
       <button type="submit">Add Local</button>
     </form>
+    </section>
   );
 };
 
