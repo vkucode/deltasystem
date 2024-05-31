@@ -77,9 +77,9 @@ const AddLocal = () => {
       <div className={styles.divInput}>
         <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
         <input name="adress" value={formData.localisation.adress} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Adress" required />
-        <input name="ville" value={formData.localisation.city} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Ville" required />
+        <input name="city" value={formData.localisation.city} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="City" required />
         <input name="postal_code" value={formData.localisation.postal_code} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Postal Code" required />
-        <input name="pays" value={formData.localisation.country} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Country" required />
+        <input name="country" value={formData.localisation.country} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Country" required />
         <input name="lat" value={formData.localisation.lat} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Latitude" required />
         <input name="lon" value={formData.localisation.lon} onChange={(e) => handleNestedChange(e, 'localisation')} placeholder="Longitude" required />
         <input name="chambre" value={formData.details.chambre} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Chambre" required />
