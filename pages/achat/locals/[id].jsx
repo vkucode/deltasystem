@@ -163,13 +163,16 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                     <h1>{local.localisation.city} - {local.localisation.country}</h1>
                 </div>
                 
-                <div className='flex flex-row w-full text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
-                <p className='flex flex-row items-center'>
-                    {isAED ? formatNumberWithSpaces(priceAed) + " AED" : formatNumberWithSpaces(local.price) + " $"}
-                    <button onClick={toggleCurrency} className='bg-teal-700 rounded text-yellow-50 font-regular px-2 py-1 text-sm ml-2'>
-                        {isAED ? '$' : 'AED'}
-                    </button>
-                </p>
+                <div className='flex flex-row w-full mt-5 lg:mt-3 text-lg md:text-2xl pr-10 pl-5 lg:pl-0 justify-between font-bold'>
+                <div className='flex flex-col'>
+                  <span className='uppercase text-xs -mt-3 -mb-1 font-semibold'>à partir de</span>
+                  <p className='flex flex-row items-center'>
+                      {isAED ? formatNumberWithSpaces(priceAed) + " AED" : formatNumberWithSpaces(local.price) + " $"}
+                      <button onClick={toggleCurrency} className='bg-teal-700 rounded text-yellow-50 font-regular px-2 py-1 text-sm ml-2'>
+                          {isAED ? '$' : 'AED'}
+                      </button>
+                  </p>
+                </div>
 
                     <p>{local.details.surface}-{local.details.surface_max} m<sup>2</sup></p>
                 </div>
