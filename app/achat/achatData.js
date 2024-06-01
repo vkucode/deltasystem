@@ -21,6 +21,7 @@ export const achatData = async () => {
       lat: item.localisation.lat,
       lon: item.localisation.lon,
       chambre: item.details.chambre,
+      text_content: item.text_content,
       surface: item.details.surface,
     }));
   } catch (error) {

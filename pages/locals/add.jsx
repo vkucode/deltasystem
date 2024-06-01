@@ -12,7 +12,7 @@ const AddLocal = () => {
     details: { chambre: '', surface: '', surface_max: '', etage: '' },
     price: '',
     img: '',
-    description: '',
+    text_content: '',
     gallery: { imgs: [] },
     category: ''
   });
@@ -88,7 +88,7 @@ const AddLocal = () => {
         <input name="etage" value={formData.details.etage} onChange={(e) => handleNestedChange(e, 'details')} placeholder="Etage" required />
         <input name="price" value={formData.price} onChange={handleChange} placeholder="Price in Dolars" required />
         <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" required />
-        <input name="description" value={formData.description} onChange={handleChange} placeholder="Description text" required />
+        <input name="text_content" value={formData.text_content} onChange={handleChange} placeholder="Description text" required />
         <input name="img" value={formData.img} onChange={handleChange} placeholder="Image URL" required />
       </div>
       <br />

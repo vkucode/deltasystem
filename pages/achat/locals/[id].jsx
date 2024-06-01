@@ -174,7 +174,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                     <p>{local.details.surface} m<sup>2</sup></p>
                 </div>
                 
-                <p className='mt-5 mb-5 pl-5 lg:pl-0 text-sm pr-10'>{local.description}</p>
+                <p className='mt-5 mb-5 pl-5 lg:pl-0 text-sm pr-10'>{local.text_content}</p>
                 
                 <div className='mt-10'>
                     <h2 className='uppercase text-xl mb-3 pl-5 lg:pl-0'>caractéristique&nbsp;du&nbsp;bien</h2>

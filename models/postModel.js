@@ -26,6 +26,10 @@ const postSchema = new Schema(
       type: Object,
       required: true,
     },
+    text_content: {
+      type: String,
+      required: true,
+    },
     category: {
       type: String,
       required: true,
