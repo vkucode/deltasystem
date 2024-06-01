@@ -230,7 +230,7 @@ export default function AchatPage() {
                 <h1>{item.name}</h1>
                 <div className='flex flex-row gap-2'>
                   <span>{item.chambre}&nbsp;Chambres</span>
-                  <span>{item.surface}&nbsp;m<sup>2</sup></span>
+                  <span>{item.surface}-{item.surface_max}&nbsp;m<sup>2</sup></span>
                 </div>
                 <h2>{item.price}</h2>
                 <div className='hidden'>

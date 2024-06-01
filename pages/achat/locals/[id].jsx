@@ -171,7 +171,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                     </button>
                 </p>
 
-                    <p>{local.details.surface} m<sup>2</sup></p>
+                    <p>{local.details.surface}-{local.details.surface_max} m<sup>2</sup></p>
                 </div>
                 
                 <p className='mt-5 mb-5 pl-5 lg:pl-0 text-sm pr-10'>{local.text_content}</p>

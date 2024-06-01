@@ -23,6 +23,7 @@ export const achatData = async () => {
       chambre: item.details.chambre,
       text_content: item.text_content,
       surface: item.details.surface,
+      surface_max: item.details.surface_max,
     }));
   } catch (error) {
     console.error("Failed to fetch data:", error.message);
