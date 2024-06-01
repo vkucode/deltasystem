@@ -34,7 +34,7 @@
 
 
 .localsShow{
-    @apply flex flex-row flex-wrap justify-center lg:justify-start items-center w-[100%] lg:w-[65%] max-h-[80vh] scroll-smooth overflow-y-scroll h-fit md:h-fit lg:pl-10 lg:pr-5 gap-x-2 md:gap-x-5 md:gap-y-5 gap-y-2 py-5;
+    @apply flex flex-row flex-wrap justify-center lg:justify-start items-center w-[100%] lg:w-[65%] max-h-[100vh] lg:max-h-[80vh] scroll-smooth overflow-y-scroll h-fit md:h-fit lg:pl-10 lg:pr-5 gap-x-2 md:gap-x-5 md:gap-y-5 gap-y-2 py-5;
     // direction: rtl;
     .localsCard{
         @apply md:w-[250px] md:h-[300px] xl:w-[300px] xl:h-[350px] w-[48%] h-[250px] scale-95 relative cursor-pointer;
