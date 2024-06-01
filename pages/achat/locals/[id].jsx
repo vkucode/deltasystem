@@ -184,7 +184,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
                         </div>
                         <div>
                            <p>Surface</p>
-                           <p>{local.details.surface}&nbsp;m<sup>2</sup></p>  
+                           <p>{local.details.surface}-{local.details.surface_max} m<sup>2</sup></p>  
                         </div>
                         <div>
                             <p>Etage</p>
