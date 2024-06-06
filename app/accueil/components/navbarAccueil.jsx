@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export const NavbarAccueil = () => {
   return (
-      <Nav />
+    <Nav />
   );
 };
 
@@ -18,10 +18,13 @@ const Nav = () => {
     <>
       <LogoTop />
       <HamburgerButton active={active} setActive={setActive} />
-      <AnimatePresence>{active && <LinksOverlay />}</AnimatePresence>
+      <AnimatePresence>
+        {active && <LinksOverlay setActive={setActive} />}
+      </AnimatePresence>
     </>
   );
 };
+
 const LogoTop = () => {
   return (
     <div className="fixed z-[9999] top-8 md:top-10 left-5 md:left-10">
@@ -30,13 +33,36 @@ const LogoTop = () => {
   );
 };
 
-const LinksOverlay = () => {
+const LinksOverlay = ({ setActive }) => {
   return (
-    <nav className="fixed right-4 top-4 z-[9999] h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
+    <nav className="fixed right-4 top-4 z-[9999999999999999] h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       <Logo />
+      <CloseButton setActive={setActive} />
       <LinksContainer />
       <FooterCTAs />
     </nav>
+  );
+};
+
+const CloseButton = ({ setActive }) => {
+  return (
+    <div className="fixed right-6 cursor-pointer w-[50px] h-[50px] top-6" onClick={() => setActive(false)}>
+      {/* <motion.div
+        initial={{ rotate: 0 }}
+        whileHover={{ rotate: 90 }}
+        transition={{ duration: 0.3 }}
+        className="absolute w-full h-full flex items-center justify-center"
+      >
+        <motion.span
+          className="block w-8 h-1 bg-white"
+          style={{ rotate: 45, position: 'absolute' }}
+        />
+        <motion.span
+          className="block w-8 h-1 bg-white"
+          style={{ rotate: -45, position: 'absolute' }}
+        />
+      </motion.div> */}
+    </div>
   );
 };
 
@@ -103,14 +129,14 @@ const HamburgerButton = ({ active, setActive }) => {
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 16, right: 16 }}
-        className="fixed z-[9999] rounded-xl bg-gradient-to-br from-teal-900 to-teal-600 shadow-lg shadow-violet-800/20"
+        className="fixed z-[999999] rounded-xl bg-gradient-to-br from-teal-900 to-teal-600 shadow-lg shadow-violet-800/20"
       />
 
       <motion.button
         initial={false}
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
-        className={`group fixed right-2 md:right-4 top-2 md:top-4 z-[99999] h-20 w-20 bg-white/0 transition-all ${
+        className={`group fixed right-2 md:right-4 top-2 md:top-4 z-[999999999999999999] h-20 w-20 bg-white/0 transition-all ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >
@@ -239,7 +265,7 @@ const UNDERLAY_VARIANTS = {
     transition: {
       delay: 0.75,
       type: "spring",
-      mass: 3,
+      mass: 3, 
       stiffness: 400,
       damping: 50,
     },
