@@ -187,7 +187,7 @@ const FooterCTAs = () => {
         })}
       </div>
 
-      <motion.button
+      <a href="/contact"><motion.button
         initial={{ opacity: 0, y: 8 }}
         animate={{
           opacity: 1,
@@ -203,6 +203,7 @@ const FooterCTAs = () => {
       >
         <span className="hidden md:block">nous contacter</span> <FiArrowRight />
       </motion.button>
+      </a>
     </>
   );
 };

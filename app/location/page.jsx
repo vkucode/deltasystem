@@ -76,34 +76,43 @@ export default function LocationPage() {
       <FlipNavWrapper />
       <section className={styles.achatPage}>
         <section className={`animate__animated animate__fadeIn ${styles.localsShow}`}>
-          {data.map((item) => (
-            <Link
-              href={`/location/locals/${item._id}`}
-              key={item._id}
-              className={styles.localsCard}
-              onMouseEnter={() => setHoveredItem(item._id)}  // Set hovered item on mouse enter
-              onMouseLeave={() => setHoveredItem(null)}      // Reset hovered item on mouse leave
-            >
-              <div className={styles.bgImg}>
-                <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
-                  <Image src="/assets/img/accueil/iconFiltreWhite.png" width={100} height={100} alt='filtre' />
+          {data.length > 0 ? (
+            data.map((item) => (
+              <Link
+                href={`/location/locals/${item._id}`}
+                key={item._id}
+                className={styles.localsCard}
+                onMouseEnter={() => setHoveredItem(item._id)}  // Set hovered item on mouse enter
+                onMouseLeave={() => setHoveredItem(null)}      // Reset hovered item on mouse leave
+              >
+                <div className={styles.bgImg}>
+                  <div className={`${styles.overlayBg} ${hoveredItem === item._id ? 'animate__fadeOutDown flex' : 'flex animate__fadeInUp'} animate__animated flex-col justify-center items-center`} style={{transition: "0.2s all ease-in-out"}} > 
+                    <Image src="/assets/img/accueil/iconFiltreWhite.png" width={100} height={100} alt='filtre' />
+                  </div>
+                  <Image src={`https://deltainvested.com/imgs/locals/location/${item.img}`} width={400} height={400} alt={item.name} />
                 </div>
-                <Image src={`https://deltainvested.com/imgs/locals/location/${item.img}`} width={400} height={400} alt={item.name} />
-              </div>
-              <div className={styles.cardContent}>
-                <h1>{item.name}</h1>
-                <div className='flex flex-row gap-2'>
-                  <span>{item.chambre}&nbsp;Chambres</span>
-                  <span>{item.surface}&nbsp;m<sup>2</sup></span>
+                <div className={styles.cardContent}>
+                  <h1>{item.name}</h1>
+                  <div className='flex flex-row gap-2'>
+                    <span>{item.chambre}&nbsp;Chambres</span>
+                    <span>{item.surface}&nbsp;m<sup>2</sup></span>
+                  </div>
+                  <h2>{item.price}</h2>
+                  <div className='hidden'>
+                    <p>{item.lat}</p>
+                    <p>{item.lon}</p>
+                  </div>
                 </div>
-                <h2>{item.price}</h2>
-                <div className='hidden'>
-                  <p>{item.lat}</p>
-                  <p>{item.lon}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))
+          ) : (
+            <div className={styles.voidContainer}>
+              <Image src="/assets/img/accueil/iconFiltreGreen.png" width={100} height={100} alt='logo' />
+              <h2>
+                Rien à afficher pour le moment
+              </h2>
+            </div>
+          )}
         </section>
         <section className={`animate__animated animate__fadeIn ${styles.mapShow}`}>
           <LoadScript
