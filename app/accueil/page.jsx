@@ -95,7 +95,7 @@ const Accueil = () => {
         onUpdate: (self) => {
           const progress = self.progress;
           const setPostitionBurjY = -20 + (progress * 5);
-          console.log(setPostitionBurjY);
+          // console.log(setPostitionBurjY);
           const rotationValueX = -1 + (progress * 0.5);
           setRotation([rotationValueX, 0, 0]);
           setPositionY(setPostitionBurjY);

@@ -12,6 +12,7 @@ import ImgFooter from '../components/ImgFooter';
 import 'animate.css';
 import ContactForm from '../components/ContactForm';
 import { VscSettings } from "react-icons/vsc";
+import Head from 'next/head';
 
 export default function AchatPage() {
   const [data, setData] = useState([]);
@@ -206,6 +207,7 @@ export default function AchatPage() {
 
   return (
     <>
+
       <FlipNavWrapper />
       <section className={styles.achatPage}>
         <FilterLocals />
