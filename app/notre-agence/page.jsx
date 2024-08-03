@@ -45,7 +45,7 @@ export default function NotreAgence(){
                     </div>
                 </div>
                 <div className={styles.partnersAgence}>
-                        <h1>Ils ont parle de nous</h1>
+                        <h1>Ils ont parlé de nous</h1>
                         <DoubleScrollingLogos />
                 </div>
             </section>
